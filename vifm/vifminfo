@@ -30,24 +30,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/adam/.cache/sxiv
-	home
-1
-d/home/adam/.cache
-	sxiv
-9
-d/home/adam
-	school
-12
-d/home/adam/school
-	architecture
-1
-d/home/adam/school/architecture
-	1hw
-2
-d/home/adam/school/architecture/1hw
-	cisc340-hw1.pdf
-1
 d/home/adam/school/architecture
 	1hw
 2
@@ -328,8 +310,26 @@ d/home
 	adam
 1
 d/home/adam
-	.config
-2
+	school
+13
+d/home/adam/school
+	architecture
+1
+d/home/adam/school/architecture
+	assembler
+3
+d/home/adam/school/architecture/assembler
+	project1-single-cycle.pdf
+1
+d/home/adam/school/architecture
+	assembler
+3
+d/home/adam
+	.profigs
+8
+d/home/adam/.profigs
+	linkprofigs
+21
 d
 
 # Right window history (oldest to newest):
@@ -369,6 +369,7 @@ D
 /store
 /**store
 /*store
+/sc
 
 # Prompt history (oldest to newest):
 

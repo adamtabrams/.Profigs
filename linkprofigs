@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Create backup directory
+backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
+mkdir -pv $backup
+
+# Archive old configs in $HOME, then create links
+mv -nv $HOME/.vimrc $backup/
+ln -sv $HOME/.profigs/.vimrc $HOME/
+
+mv -nv $HOME/.bashrc $backup/
+ln -sv $HOME/.profigs/.bashrc $HOME/
+
+mv -nv $HOME/.zshrc $backup/
+ln -sv $HOME/.profigs/.zshrc $HOME/
+
+mv -nv $HOME/.profile $backup/
+ln -sv $HOME/.profigs/.profile $HOME/
+
+mv -nv $HOME/.Xdefaults $backup/
+ln -sv $HOME/.profigs/.Xdefaults $HOME/
+
+mv -nv $HOME/.Xresources $backup/
+ln -sv $HOME/.profigs/.Xresources $HOME/
+
+mv -nv $HOME/.scripts $backup/
+ln -sv $HOME/.profigs/.scripts $HOME/
+
+mv -nv $HOME/.examples $backup/
+ln -sv $HOME/.profigs/.examples $HOME/
+
+# Archive old configs in $HOME/.config, then create links
+mkdir -pv $HOME/.config/
+
+mv -nv $HOME/.config/dunst/ $backup/
+ln -sv $HOME/.profigs/dunst/ $HOME/.config/
+
+mv -nv $HOME/.config/gtk-2.0/ $backup/
+ln -sv $HOME/.profigs/gtk-2.0/ $HOME/.config/
+
+mv -nv $HOME/.config/gtk-3.0/ $backup/
+ln -sv $HOME/.profigs/gtk-3.0/ $HOME/.config/
+
+mv -nv $HOME/.config/htop/ $backup/
+ln -sv $HOME/.profigs/htop/ $HOME/.config/
+
+mv -nv $HOME/.config/i3/ $backup/
+ln -sv $HOME/.profigs/i3/ $HOME/.config/
+
+mv -nv $HOME/.config/i3blocks/ $backup/
+ln -sv $HOME/.profigs/i3blocks/ $HOME/.config/
+
+mv -nv $HOME/.config/latexmk/ $backup/
+ln -sv $HOME/.profigs/latexmk/ $HOME/.config/
+
+mv -nv $HOME/.config/mpv/ $backup/
+ln -sv $HOME/.profigs/mpv/ $HOME/.config/
+
+mv -nv $HOME/.config/nvim/ $backup/
+ln -sv $HOME/.profigs/nvim/ $HOME/.config/
+
+mv -nv $HOME/.config/vifm/ $backup/
+ln -sv $HOME/.profigs/vifm/ $HOME/.config/
+
+mv -nv $HOME/.config/wall.png $backup/
+ln -sv $HOME/.profigs/wallpaper.jpg $HOME/.config/wall.png
+
+
+#/ect
+	#pacman, lightdm, ssh
