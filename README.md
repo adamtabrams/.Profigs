@@ -14,6 +14,7 @@ backup directory.
 Finally, you can run $HOME/.profigs/.scripts/linkprofigs to create
 symlinks to each of the config files/directories.
 
+
 ### Todo
 Add important files from /etc and others
 Add list of required/recommended programs
