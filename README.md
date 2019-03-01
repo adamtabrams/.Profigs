@@ -41,8 +41,7 @@ tig\
 bat\
 zsh\
 zsh-syntax-highlighting\
-(Non-Arch: pacapt - pacman wrapper for other package managers)\
-
+(Non-Arch: pacapt - pacman wrapper for other package managers)
 
 These are the rest of my major packages, either not needed or not
 available with MacOS.
