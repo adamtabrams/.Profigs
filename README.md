@@ -18,12 +18,9 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-Fix newlines in README
-remove vifm.info tracking
-fix .examples
-
-Add important files from /etc and others
 Complete list of programs
+Add important files from /etc and others
+Polish .examples
 Polish config files and clean up repo
 Add more documentation
 
