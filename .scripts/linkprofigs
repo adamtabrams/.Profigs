@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#home
+ln -sv $HOME/.profigs/.vimrc $HOME/
+ln -sv $HOME/.profigs/.bashrc $HOME/
+ln -sv $HOME/.profigs/.zshrc $HOME/
+ln -sv $HOME/.profigs/.profile $HOME/
+ln -sv $HOME/.profigs/.Xdefaults $HOME/
+ln -sv $HOME/.profigs/.Xresources $HOME/
+ln -sv $HOME/.profigs/.scripts $HOME/
+ln -sv $HOME/.profigs/.examples $HOME/
+
+#.config
+mkdir -p $HOME/.config/
+ln -sv $HOME/.profigs/dunst/ $HOME/.config/
+ln -sv $HOME/.profigs/gtk-2.0/ $HOME/.config/
+ln -sv $HOME/.profigs/gtk-3.0/ $HOME/.config/
+ln -sv $HOME/.profigs/htop/ $HOME/.config/
+ln -sv $HOME/.profigs/i3/ $HOME/.config/
+ln -sv $HOME/.profigs/i3blocks/ $HOME/.config/
+ln -sv $HOME/.profigs/latexmk/ $HOME/.config/
+ln -sv $HOME/.profigs/mpv/ $HOME/.config/
+ln -sv $HOME/.profigs/nvim/ $HOME/.config/
+ln -sv $HOME/.profigs/vifm/ $HOME/.config/
+ln -sv $HOME/.profigs/wallpaper.jpg $HOME/.config/wall.png
+
+#/ect
+	#pacman, lightdm, ssh

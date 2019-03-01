@@ -1,0 +1,77 @@
+!! System colors
+!!black
+*.color0:  #000000
+!!darkgray
+*.color1:  #7c6f64
+!!darkorange
+*.color2:  #d65d0e
+!!orange
+*.color3:  #fe8019
+!!darkblue
+*.color4:  #458588
+!!green
+*.color5:  #b8bb26
+!!magenta (deviating for vifm)
+!*.color6:  #d3869b
+*.color6:  #689d6a
+!!darkmagenta (deviating for vifm) outside
+!*.color7:  #b16286
+*.color7:  #928374
+!!yellow
+*.color8:  #fabd2f
+!!darkyellow
+*.color9:  #d79921
+!!darkgreen
+*.color10: #98971a
+!!blue
+*.color11: #83a598
+!!darkaqua
+*.color12: #689d6a
+!!red
+*.color13: #fb4934
+!!gray
+*.color14: #928374
+!!white (almost)
+*.color15: #bdae93
+!! Other colors
+*.foreground: #bdae93
+*.foreground_bold: #928374
+*.cursor: #fb4934
+!*.color1: #cc241d
+
+!! Transparency (0-255)
+*.alpha: 230
+!! Set default font and size
+*.font: xft:Fira Code:pixelsize=14
+
+
+!! URxvt settings
+!URxvt.cursorColor: magenta
+URxvt.cursorColor: #fe8019
+URxvt.background: [80]#000000
+URxvt.depth: 32
+URxvt.intensityStyles: false
+URxvt.scrollBar: false
+!!URxvt.font: xft:Fira Code:pixelsize=14
+
+!! only jump to bottom on keypress
+URxvt*scrollTtyOutput: false
+URxvt*xcrollTtyKeypress: true
+
+!! dont scroll terminal in programs
+URxvt*scrollWithBuffer: true
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
+!! allow Shift-Space bindings
+URxvt.keysym.S-space: \033[32;2u
+
+!! extensions
+URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
+
+URxvt.url-select.launcher:  /usr/bin/xdg-open
+URxvt.url-select.underline:  true
+URxvt.keysym.M-u:  perl:url-select:select_next
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:  perl:keyboard-select:search

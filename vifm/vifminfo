@@ -1,0 +1,395 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/adam/
+	..
+1550369321
+'b
+	/home/adam/bin/
+	..
+1550369321
+'h
+	/home/adam/
+	..
+1550369321
+'k
+	/home/adam
+	temp
+1550369417
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/adam/.cache/sxiv
+	home
+1
+d/home/adam/.cache
+	sxiv
+9
+d/home/adam
+	school
+12
+d/home/adam/school
+	architecture
+1
+d/home/adam/school/architecture
+	1hw
+2
+d/home/adam/school/architecture/1hw
+	cisc340-hw1.pdf
+1
+d/home/adam/school/architecture
+	1hw
+2
+d/home/adam/school
+	architecture
+1
+d/home/adam
+	.scripts
+8
+d/home/adam/.scripts
+	statusbar
+3
+d/home/adam/.scripts/statusbar
+	internet
+6
+d/home/adam/.scripts
+	statusbar
+3
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	i3blocks
+8
+d/home/adam/.config/i3blocks
+	config
+1
+d/home/adam/.config
+	latexmk
+9
+d/home/adam
+	school
+13
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	4hw
+1
+d/home/adam/school/lewis/4hw
+	in.ms
+2
+d/home/adam/school/lewis
+	4hw
+1
+d/home/adam/school/lewis/4hw
+	in.ms
+2
+d/home/adam/school/lewis
+	4hw
+1
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	4hw
+1
+d/home/adam
+	.mozilla
+7
+d/home/adam/.mozilla
+	firefox
+2
+d/home/adam/.mozilla/firefox
+	ngeb2238.default
+3
+d/home/adam/.mozilla/firefox/ngeb2238.default
+	bookmarkbackups
+1
+d/home/adam/.mozilla/firefox/ngeb2238.default/bookmarkbackups
+	..
+0
+d/home/adam/.mozilla/firefox/ngeb2238.default
+	crashes
+3
+d/home/adam/.mozilla/firefox/ngeb2238.default/crashes
+	..
+0
+d/home/adam/.mozilla/firefox/ngeb2238.default
+	xulstore.json
+35
+d/home/adam/.mozilla/firefox
+	profiles.ini
+4
+d/home/adam/.mozilla
+	systemextensionsdev
+3
+d/home/adam
+	school
+12
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	4hw
+2
+d/home/adam/school
+	lewis
+3
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	vifm
+13
+d/home/adam/.config/vifm
+	colors
+1
+d/home/adam/.config/vifm/colors
+	Default.vifm
+1
+d/home/adam/.config/vifm
+	colors
+1
+d/home/adam/.config
+	vifm
+13
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	vifm
+13
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	vifm
+13
+d/home/adam/.config/vifm
+	scripts
+2
+d/home/adam/.config
+	GIMP
+1
+d/home/adam
+	school
+12
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	5hw
+3
+d/home/adam/school/lewis/5hw
+	in.ms
+2
+d/home/adam
+	temp
+11
+d/home/adam/temp
+	trash
+2
+d/home/adam
+	school
+12
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	5hw
+3
+d/home/adam/school/lewis/5hw
+	text.txt
+4
+d/home/adam/school/lewis
+	5hw
+3
+d/home/adam/school
+	lewis
+3
+d/home/adam
+	school
+12
+d/home/adam/school
+	lewis
+3
+d/home/adam/school/lewis
+	5hw
+3
+d/home/adam/school/lewis/5hw
+	in.ms
+2
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	vifm
+9
+d/home/adam/.config/vifm
+	scripts
+2
+d/home/adam/.config
+	yay
+10
+d/home/adam
+	media
+11
+d/home/adam/media
+	pictures
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures/wallpapers/favorites
+	..
+0
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media
+	..
+0
+d/home/adam
+	media
+11
+d/home/adam/media
+	pictures
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures/wallpapers/favorites
+	mountain-cloud.jpg
+2
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media
+	pictures
+1
+d/home/adam
+	media
+11
+d/home/adam/media
+	pictures
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures/wallpapers/favorites
+	forest-steps.jpg
+1
+d/home/adam/media/pictures/wallpapers
+	favorites
+1
+d/home/adam/media/pictures
+	wallpapers
+1
+d/home/adam/media
+	pictures
+1
+d/home/adam
+	.config
+2
+d/home/adam/.config
+	dconf
+2
+d/home/adam
+	.config
+2
+d/home
+	adam
+1
+d/home/adam
+	.config
+2
+d
+
+# Right window history (oldest to newest):
+D/home/adam
+	temp
+2
+D/home
+	adam
+1
+D/home/adam
+	temp
+2
+D/home
+	adam
+1
+D/home/adam
+	..
+0
+D
+
+# Command line history (oldest to newest):
+:help
+:!sx -t .
+:! setsid sxiv -t .
+:h
+:colo?
+:colo
+:q
+:cq
+:cd
+
+# Search history (oldest to newest):
+/help
+/man
+/~
+/conf
+/store
+/**store
+/*store
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/adam/school/lewis/4hw
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/adam/.local/share/vifm/Trash/000_Desktop
+	/home/adam/Desktop
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].1
+]F
+s0

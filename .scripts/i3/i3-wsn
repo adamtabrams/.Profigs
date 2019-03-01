@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WSN="$(expr $(expr $(i3-focus-ws) % 10) + 1)"
+i3-msg "move container to workspace number $WSN"
+i3-msg "workspace $WSN"

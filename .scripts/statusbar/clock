@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#case $BLOCK_BUTTON in
+#	1) pgrep -x dunst >/dev/null && notify-send "$(cal)"
+#esac
+
+#date '+%a %b %d %I:%M%p'
+date '+%I:%M%p'
