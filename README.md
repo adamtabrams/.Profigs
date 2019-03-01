@@ -1,7 +1,6 @@
 # .profigs
 These are my current system configurations and .RCs
 
-
 ### To Use
 First, clone or download this DIRECTLY to your home directory (these files are intended only for unix systems)
 
