@@ -26,9 +26,9 @@ $HOME/.old-configs/{data-time}.
   + /etc/ssh/sshd_config #probably don't want to change this
   + /etc/lightdm/lightdm.conf
   + /etc/lightdm/lightdm-webkit2-greeter.conf
-    + #needs /usr/share/backgrounds
-    + #need to generate mkinitcpio
-    + ?how to save aether configs
+    + needs /usr/share/backgrounds
+    + need to generate mkinitcpio
+    + how to save aether configs?
 
 
 ### List of Programs
@@ -70,12 +70,29 @@ available with MacOS.
 + light-locker
 + arc-icon-theme
 + numix-gtk-theme
++ ttf-emojione
++ ttf-fira-code
++ ttf-fira-mono
 + lightdm-webkit-theme-aether
   + (switching to litarvan when 3.0 is released)
 + gtk-engine-murrine
++ unclutter-xfixes-git (aur)
++ light-git (aur)
+
+These packages shouldn't be required by any scripts or configs, but I highly recommend them.
+
++ reflector
++ htop-vim-git (aur)
++ openssh
 + system-config-printer
 + hplip
 + network-manager-applet (sometime called nm-applet)
-+ unclutter-xfixes-git (aur)
-+ light-git (aur)
-+ htop-vim-git (aur)
++ gimp
++ firefox
++ mpv
++ jq
++ minder-git (aur)
+
++ wireless_tools
++ iputils
++ make
