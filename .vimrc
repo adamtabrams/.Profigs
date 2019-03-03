@@ -47,6 +47,7 @@
 	set wrap
 	set linebreak
 	set formatoptions+=j
+	set formatoptions-=o
 	autocmd BufWritePre * %s/\s\+$//e
 "------------------------------------------------------
 " Indentation

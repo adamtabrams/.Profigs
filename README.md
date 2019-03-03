@@ -18,11 +18,17 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-Complete list of programs\
-Add important files from /etc and others\
-Polish .examples\
-Polish config files and clean up repo\
-Add more documentation
++ Polish .examples
++ Polish config files and clean up repo
++ Add more documentation
++ Add important files from /etc and others
+  + /etc/pacman.conf
+  + /etc/ssh/sshd_config #probably don't want to change this
+  + /etc/lightdm/lightdm.conf
+  + /etc/lightdm/lightdm-webkit2-greeter.conf
+    + #needs /usr/share/backgrounds
+    + #need to generate mkinitcpio
+    + ?how to save aether configs
 
 
 ### List of Programs
@@ -30,42 +36,46 @@ These are packages as found in the official Arch repos.
 
 These are my most important programs, and they can all be used on a Mac with Homebrew.
 
-i3-gaps (Mac: i3)\
-mupdf\
-vifm\
-sxiv\
-neovim\
-rxvt-unicode\
-sc-im (AUR)\
-tig\
-bat\
-zsh\
-zsh-syntax-highlighting\
-(Non-Arch: pacapt - pacman wrapper for other package managers)
++ i3-gaps (Mac: i3)
++ mupdf
++ vifm
++ sxiv
++ neovim
++ rxvt-unicode
++ sc-im (AUR)
++ tig
++ bat
++ fzf
++ zsh
++ zsh-syntax-highlighting
++ (Non-Arch: pacapt - pacman wrapper for other package managers)
 
 These are the rest of my major packages, either not needed or not
 available with MacOS.
 
-i3blocks\
-urxvt-perls\
-xcompmgr\
-scrot\
-xcape\
-xclip\
-xorg-xmodmap\
-transset-df\
-alsa-utils\
-acpi\
-dunst\
-dialog\
-hsetroot (Multi-monitor: use xwallpaper until hsetroot is fixed)\
-light-locker\
-arc-icon-theme\
-numix-gtk-theme\
-gtk-engine-murrine\
-system-config-printer\
-hplip\
-network-manager-applet (sometime called nm-applet)\
-unclutter-xfixes-git (aur)\
-light-git (aur)\
-htop-vim-git (aur)
++ i3blocks
++ urxvt-perls
++ xcompmgr
++ scrot
++ xcape
++ xclip
++ xorg-xmodmap
++ transset-df
++ alsa-utils
++ acpi
++ dunst
++ dialog
++ hsetroot
+  + (using xwallpaper until hsetroot mulit-monitor is fixed)
++ light-locker
++ arc-icon-theme
++ numix-gtk-theme
++ lightdm-webkit-theme-aether
+  + (switching to litarvan when 3.0 is released)
++ gtk-engine-murrine
++ system-config-printer
++ hplip
++ network-manager-applet (sometime called nm-applet)
++ unclutter-xfixes-git (aur)
++ light-git (aur)
++ htop-vim-git (aur)
