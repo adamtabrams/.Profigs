@@ -25,6 +25,10 @@ exec --no-startup-id remaps
 # Locks screen on hibernate and suspend
 exec --no-startup-id setsid light-locker
 
+# Welcomes user and ensure notification are working
+exec --no-startup-id notify-send "Welcome! 👍"
+
+
 # KEYBINDINGS
 # launch program
 bindsym $mod+v              exec $term -e vifm

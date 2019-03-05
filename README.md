@@ -18,6 +18,7 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
++ Clean .zsh, alias -> scripts
 + Polish .examples
 + Polish config files and clean up repo
 + Add more documentation
@@ -25,10 +26,8 @@ $HOME/.old-configs/{data-time}.
   + /etc/pacman.conf
   + /etc/ssh/sshd_config #probably don't want to change this
   + /etc/lightdm/lightdm.conf
+    + need to generate mkinitcpio?
   + /etc/lightdm/lightdm-webkit2-greeter.conf
-    + needs /usr/share/backgrounds
-    + need to generate mkinitcpio
-    + how to save aether configs?
 
 
 ### List of Programs
@@ -73,8 +72,7 @@ available with MacOS.
 + ttf-emojione
 + ttf-fira-code
 + ttf-fira-mono
-+ lightdm-webkit-theme-aether
-  + (switching to litarvan when 3.0 is released)
++ lightdm-webkit-theme-litarvan
 + gtk-engine-murrine
 + unclutter-xfixes-git (aur)
 + light-git (aur)
