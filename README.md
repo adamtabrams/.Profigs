@@ -18,16 +18,23 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ Clean .zsh, alias -> scripts
 + Polish .examples
 + Polish config files and clean up repo
 + Add more documentation
++ Add default monitor-setup script
++ Add dmenu utils
+  + switch monitor setup
+	+ connect to new wifi
 + Add important files from /etc and others
+	+ ask user to confirm each change...
+  + /etc/ssh/sshd_config
   + /etc/pacman.conf
-  + /etc/ssh/sshd_config #probably don't want to change this
+	  + colorize
   + /etc/lightdm/lightdm.conf
-    + need to generate mkinitcpio?
+    + point to webkit
+		+ blah-display-setup-script=xdotool mousemove 100 100
   + /etc/lightdm/lightdm-webkit2-greeter.conf
+	  + set to litarvan
 
 
 ### List of Programs
@@ -63,6 +70,7 @@ available with MacOS.
 + alsa-utils
 + acpi
 + dunst
++ xdotool
 + dialog
 + hsetroot
   + (using xwallpaper until hsetroot mulit-monitor is fixed)
@@ -85,6 +93,7 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + system-config-printer
 + hplip
 + network-manager-applet (sometime called nm-applet)
++ arandr
 + gimp
 + firefox
 + mpv

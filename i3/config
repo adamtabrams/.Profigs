@@ -113,9 +113,9 @@ bar {
 		statusline $white
 		separator $darkblue
 		focused_workspace $blue $darkblue $black
-		active_workspace $blue $blue $white
+		active_workspace $blue $blue $black
 		inactive_workspace $black $black $white
-		urgent_workspace $black $black $white
+		urgent_workspace $black $black $red
 	}
   #status_command i3status
 	status_command i3blocks
