@@ -21,7 +21,7 @@ $HOME/.old-configs/{data-time}.
 + Polish .examples
 + Polish config files and clean up repo
 + Add more documentation
-+ add ssh keyring
++ add ssh keyring (ssh-agent and ssh-add)
 + Add default monitor-setup script
 + Add dmenu utils
   + switch monitor setup
