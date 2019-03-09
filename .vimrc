@@ -49,6 +49,7 @@
 	set formatoptions+=j
 	set formatoptions-=o
 	autocmd BufWritePre * %s/\s\+$//e
+	autocmd BufNewFile,BufRead * setlocal formatoptions -=o
 "------------------------------------------------------
 " Indentation
 "------------------------------------------------------
@@ -64,6 +65,7 @@
 	set ignorecase
 	set smartcase
 	set incsearch
+	set inccommand=split
 "------------------------------------------------------
 " Numbering
 "------------------------------------------------------
@@ -135,7 +137,7 @@
 		if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
 			return "\<Tab>"
 		else
-			return "\<C-N>"
+			return "\<C-P>"
 		endif
 	endfunction
 "------------------------------------------------------
@@ -161,6 +163,7 @@
 "------------------------------------------------------
 	nnoremap <Tab> :bn<CR>
 	nnoremap <S-Tab> :bp<CR>
+	tnoremap <S-Tab> <C-\><C-N>:bp<CR>
 "------------------------------------------------------
 " Better Scrolling
 "------------------------------------------------------
