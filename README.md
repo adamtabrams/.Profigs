@@ -30,7 +30,9 @@ $HOME/.old-configs/{data-time}.
 	+ ask user to confirm each change...
   + /etc/ssh/sshd_config
   + /etc/pacman.conf
-	  + colorize
+	  + Color
+	  + ILoveCandy
+	  + CheckSpace (maybe default)
   + /etc/lightdm/lightdm.conf
     + point to webkit
 		+ blah-display-setup-script=xdotool mousemove 100 100
