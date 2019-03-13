@@ -1,5 +1,8 @@
 # .profigs
 These are my current system configurations and .RCs
+A lot of credit is due to Luke Smith.
+I took inspiration from his setup and have borrow some of his scripts
+and configs.
 
 
 ### To Use
@@ -21,6 +24,7 @@ $HOME/.old-configs/{data-time}.
 + Polish .examples
 + Polish config files and clean up repo
 + Add more documentation
++ image viewing in vifm (check Luke Smith uberzug config)
 + add ssh keyring (ssh-agent and ssh-add)
 + Add default monitor-setup script
 + Add dmenu utils
