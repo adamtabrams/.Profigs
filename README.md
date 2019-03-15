@@ -26,6 +26,7 @@ $HOME/.old-configs/{data-time}.
 + Add more documentation
 + image viewing in vifm (check Luke Smith uberzug config)
 + add ssh keyring (ssh-agent and ssh-add)
++ add BitTorrent and RSS utils
 + Add default monitor-setup script
 + Add dmenu utils
   + switch monitor setup
