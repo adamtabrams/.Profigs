@@ -1,70 +1,25 @@
 #!/bin/bash
 
 # Create backup directory
+pfgs=$HOME/.Profigs
 backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -pv $backup
 
 # Archive old configs in $HOME, then create links
-mv -nv $HOME/.vimrc $backup/
-ln -sv $HOME/.Profigs/.vimrc $HOME/
+mv -nv -t "$backup/" $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples
 
-mv -nv $HOME/.bashrc $backup/
-ln -sv $HOME/.Profigs/.bashrc $HOME/
-
-mv -nv $HOME/.zshrc $backup/
-ln -sv $HOME/.Profigs/.zshrc $HOME/
-
-mv -nv $HOME/.profile $backup/
-ln -sv $HOME/.Profigs/.profile $HOME/
-
-mv -nv $HOME/.Xdefaults $backup/
-ln -sv $HOME/.Profigs/.Xdefaults $HOME/
-
-mv -nv $HOME/.Xresources $backup/
-ln -sv $HOME/.Profigs/.Xresources $HOME/
-
-mv -nv $HOME/.scripts $backup/
-ln -sv $HOME/.Profigs/.scripts $HOME/
-
-mv -nv $HOME/.examples $backup/
-ln -sv $HOME/.Profigs/.examples $HOME/
+ln -sv -t "$HOME/" $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples
 
 # Archive old configs in $HOME/.config, then create links
 mkdir -pv $HOME/.config/
+cnfg=$HOME/.config
 
-mv -nv $HOME/.config/dunst/ $backup/
-ln -sv $HOME/.Profigs/dunst/ $HOME/.config/
+mv -nv -t "$backup/" $cnfg/dunst $cnfg/gtk-2.0 $cnfg/gtk-3.0 $cnfg/htop $cnfg/i3 $cnfg/i3blocks $cnfg/latexmk $cnfg/mpv $cnfg/nvim $cnfg/vifm
 
-mv -nv $HOME/.config/gtk-2.0/ $backup/
-ln -sv $HOME/.Profigs/gtk-2.0/ $HOME/.config/
-
-mv -nv $HOME/.config/gtk-3.0/ $backup/
-ln -sv $HOME/.Profigs/gtk-3.0/ $HOME/.config/
-
-mv -nv $HOME/.config/htop/ $backup/
-ln -sv $HOME/.Profigs/htop/ $HOME/.config/
-
-mv -nv $HOME/.config/i3/ $backup/
-ln -sv $HOME/.Profigs/i3/ $HOME/.config/
-
-mv -nv $HOME/.config/i3blocks/ $backup/
-ln -sv $HOME/.Profigs/i3blocks/ $HOME/.config/
-
-mv -nv $HOME/.config/latexmk/ $backup/
-ln -sv $HOME/.Profigs/latexmk/ $HOME/.config/
-
-mv -nv $HOME/.config/mpv/ $backup/
-ln -sv $HOME/.Profigs/mpv/ $HOME/.config/
-
-mv -nv $HOME/.config/nvim/ $backup/
-ln -sv $HOME/.Profigs/nvim/ $HOME/.config/
-
-mv -nv $HOME/.config/vifm/ $backup/
-ln -sv $HOME/.Profigs/vifm/ $HOME/.config/
+ln -sv -t "$cnfg/" $pfgs/dunst $pfgs/gtk-2.0 $pfgs/gtk-3.0 $pfgs/htop $pfgs/i3 $pfgs/i3blocks $pfgs/latexmk $pfgs/mpv $pfgs/nvim $pfgs/vifm
 
 mv -nv $HOME/.config/wall.png $backup/
 ln -sv $HOME/.Profigs/wallpaper.jpg $HOME/.config/wall.png
-
 
 #/ect
 	#pacman, lightdm, ssh

@@ -1,4 +1,4 @@
-# .profigs
+# .Profigs
 These are my current system configurations and .RCs
 A lot of credit is due to Luke Smith.
 I took inspiration from his setup and have borrow some of his scripts
@@ -9,9 +9,9 @@ and configs.
 First, clone or download this DIRECTLY to your $HOME directory (these files are intended only for unix systems)
 
 To ensure the directory is in the correct location and to see which
-files and directories it contains, run: ls $HOME/.profigs/
+files and directories it contains, run: ls $HOME/.Profigs/
 
-Now you can run $HOME/.profigs/linkprofigs to create
+Now you can run $HOME/.Profigs/linkprofigs to create
 symlinks to each of the config files and directories.
 
 Note: The script will print a lot of output, that verbosity is
