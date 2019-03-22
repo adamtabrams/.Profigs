@@ -6,64 +6,64 @@ mkdir -pv $backup
 
 # Archive old configs in $HOME, then create links
 mv -nv $HOME/.vimrc $backup/
-ln -sv $HOME/.profigs/.vimrc $HOME/
+ln -sv $HOME/.Profigs/.vimrc $HOME/
 
 mv -nv $HOME/.bashrc $backup/
-ln -sv $HOME/.profigs/.bashrc $HOME/
+ln -sv $HOME/.Profigs/.bashrc $HOME/
 
 mv -nv $HOME/.zshrc $backup/
-ln -sv $HOME/.profigs/.zshrc $HOME/
+ln -sv $HOME/.Profigs/.zshrc $HOME/
 
 mv -nv $HOME/.profile $backup/
-ln -sv $HOME/.profigs/.profile $HOME/
+ln -sv $HOME/.Profigs/.profile $HOME/
 
 mv -nv $HOME/.Xdefaults $backup/
-ln -sv $HOME/.profigs/.Xdefaults $HOME/
+ln -sv $HOME/.Profigs/.Xdefaults $HOME/
 
 mv -nv $HOME/.Xresources $backup/
-ln -sv $HOME/.profigs/.Xresources $HOME/
+ln -sv $HOME/.Profigs/.Xresources $HOME/
 
 mv -nv $HOME/.scripts $backup/
-ln -sv $HOME/.profigs/.scripts $HOME/
+ln -sv $HOME/.Profigs/.scripts $HOME/
 
 mv -nv $HOME/.examples $backup/
-ln -sv $HOME/.profigs/.examples $HOME/
+ln -sv $HOME/.Profigs/.examples $HOME/
 
 # Archive old configs in $HOME/.config, then create links
 mkdir -pv $HOME/.config/
 
 mv -nv $HOME/.config/dunst/ $backup/
-ln -sv $HOME/.profigs/dunst/ $HOME/.config/
+ln -sv $HOME/.Profigs/dunst/ $HOME/.config/
 
 mv -nv $HOME/.config/gtk-2.0/ $backup/
-ln -sv $HOME/.profigs/gtk-2.0/ $HOME/.config/
+ln -sv $HOME/.Profigs/gtk-2.0/ $HOME/.config/
 
 mv -nv $HOME/.config/gtk-3.0/ $backup/
-ln -sv $HOME/.profigs/gtk-3.0/ $HOME/.config/
+ln -sv $HOME/.Profigs/gtk-3.0/ $HOME/.config/
 
 mv -nv $HOME/.config/htop/ $backup/
-ln -sv $HOME/.profigs/htop/ $HOME/.config/
+ln -sv $HOME/.Profigs/htop/ $HOME/.config/
 
 mv -nv $HOME/.config/i3/ $backup/
-ln -sv $HOME/.profigs/i3/ $HOME/.config/
+ln -sv $HOME/.Profigs/i3/ $HOME/.config/
 
 mv -nv $HOME/.config/i3blocks/ $backup/
-ln -sv $HOME/.profigs/i3blocks/ $HOME/.config/
+ln -sv $HOME/.Profigs/i3blocks/ $HOME/.config/
 
 mv -nv $HOME/.config/latexmk/ $backup/
-ln -sv $HOME/.profigs/latexmk/ $HOME/.config/
+ln -sv $HOME/.Profigs/latexmk/ $HOME/.config/
 
 mv -nv $HOME/.config/mpv/ $backup/
-ln -sv $HOME/.profigs/mpv/ $HOME/.config/
+ln -sv $HOME/.Profigs/mpv/ $HOME/.config/
 
 mv -nv $HOME/.config/nvim/ $backup/
-ln -sv $HOME/.profigs/nvim/ $HOME/.config/
+ln -sv $HOME/.Profigs/nvim/ $HOME/.config/
 
 mv -nv $HOME/.config/vifm/ $backup/
-ln -sv $HOME/.profigs/vifm/ $HOME/.config/
+ln -sv $HOME/.Profigs/vifm/ $HOME/.config/
 
 mv -nv $HOME/.config/wall.png $backup/
-ln -sv $HOME/.profigs/wallpaper.jpg $HOME/.config/wall.png
+ln -sv $HOME/.Profigs/wallpaper.jpg $HOME/.config/wall.png
 
 
 #/ect

@@ -24,6 +24,7 @@ $HOME/.old-configs/{data-time}.
 + Polish .examples
 + Polish config files and clean up repo
 + Add more documentation
++ Remove Desktop option in gtk2filechooser
 + image viewing in vifm (check Luke Smith uberzug config)
 + add ssh keyring (ssh-agent and ssh-add)
 + add BitTorrent and RSS utils
