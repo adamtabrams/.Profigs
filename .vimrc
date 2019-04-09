@@ -104,7 +104,7 @@
 "------------------------------------------------------
 " Filetypes
 "------------------------------------------------------
-	autocmd FileType text setlocal formatoptions+=a spell textwidth=90
+	"autocmd FileType text setlocal formatoptions+=a spell textwidth=90
 "------------------------------------------------------
 " Theme
 "------------------------------------------------------
@@ -121,12 +121,12 @@
 	hi User1 ctermbg=Black ctermfg=Red
 	hi User2 ctermbg=Black ctermfg=Magenta
 	set laststatus=2
-	set statusline=%{getcwd()}\|
-	set statusline+=%1*%.60f
+	set statusline=%1*%.60f
 	set statusline+=%2*%M
 	set statusline+=%1*\ B:
-	set statusline+=%2*%n
-	set statusline+=%*\ [L:%l/%L\ C:%c\ D:%b\ H:%B]%<
+	set statusline+=%2*%n%*
+	set statusline+=\ %{getcwd()}
+	set statusline+=\ %1*[L:%l/%L\ C:%c\ D:%b\ H:%B]%<
 
 "------------------------------------------------------
 "-------------------- REMAPPINGS ----------------------
@@ -144,7 +144,7 @@
 " Tabbing and Autocomplete
 "------------------------------------------------------
 	inoremap <silent> <Tab> <C-R>=CleverTab()<CR>
-	inoremap <S-Tab> <C-P>
+	inoremap <S-Tab> <C-N>
 	inoremap <C-T> <C-V><Tab>
 "------------------------------------------------------
 " Autocomplete Filename or Line
@@ -181,6 +181,9 @@
 	inoremap <C-S> <++>
 	"paste from clipboard
 	inoremap <C-V> <CR><Esc>k:read !xclip -o -selection clipboard<CR>kJJ
+	"set essay writing formatting or back to normal
+	nnoremap <C-F> :setlocal formatoptions+=a spell textwidth=90<CR>
+	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
 	"ADD: auto space align
 "------------------------------------------------------
 "--------------------- REMINDERS ----------------------
