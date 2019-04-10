@@ -27,6 +27,8 @@ $HOME/.old-configs/{data-time}.
 + Remove Desktop option in gtk2filechooser
 + image viewing in vifm (check Luke Smith uberzug config)
 + add ssh keyring (ssh-agent and ssh-add)
++ remove latex?
++ setup example project deployment (groff, bash, etc)
 + add BitTorrent and RSS utils
 + Add default monitor-setup script
 + Add dmenu utils
