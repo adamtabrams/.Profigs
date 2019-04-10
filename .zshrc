@@ -61,8 +61,8 @@
 	alias hibe='systemctl hibernate'
 	## Other
 	alias mkdir='mkdir -pv'
-	alias yt='youtube-dl --add-metadata -ic'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
+	alias xsync='xclip -o -selection clipboard | xclip'
 #------------------------------------------------------
 # Functions
 #------------------------------------------------------
