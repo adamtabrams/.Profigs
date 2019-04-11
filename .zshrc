@@ -50,7 +50,7 @@
 	alias vim='nvim'
 	alias vi='nvim'
 	alias vifm='vimfm'
-	alias v='vimfm'
+	alias v='vimfm $(pwd)'
 	alias m='setsid mupdf'
 	alias sx='setsid sxiv'
 	alias x='sxiv'
