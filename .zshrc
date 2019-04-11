@@ -54,11 +54,6 @@
 	alias m='setsid mupdf'
 	alias sx='setsid sxiv'
 	alias x='sxiv'
-	## System controls
-	alias syc='sudo systemctl'
-	alias shut='shutdown -h now'
-	alias susp='systemctl suspend'
-	alias hibe='systemctl hibernate'
 	## Other
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
