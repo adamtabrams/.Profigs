@@ -32,7 +32,7 @@ exec --no-startup-id notify-send "Welcome! 👍"
 # KEYBINDINGS
 # launch program
 bindsym $mod+v              exec $term -e vifm
-bindsym $mod+b              exec $brow
+bindsym $mod+b              gaps inner current set 0 ;; gaps outer current set 0 ;; exec $brow
 
 # basics
 bindsym $mod+Return         exec $term
