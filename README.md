@@ -6,7 +6,7 @@ and configs.
 
 
 ### To Use
-First, clone or download this DIRECTLY to your $HOME directory (these files are intended only for unix systems)
+First, clone or download this DIRECTLY to your $HOME directory (these files are intended only for Linux systems)
 
 To ensure the directory is in the correct location and to see which
 files and directories it contains, run: ls $HOME/.Profigs/
@@ -21,19 +21,18 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ Polish .examples
-+ Polish config files and clean up repo
-+ Add more documentation
-+ Remove Desktop option in gtk2filechooser
-+ image viewing in vifm (check Luke Smith uberzug config)
-+ add ssh keyring (ssh-agent and ssh-add)
-+ remove latex?
-+ setup example project deployment (groff, bash, etc)
-+ add BitTorrent and RSS utils
-+ Add default monitor-setup script
 + Add dmenu utils
   + switch monitor setup
 	+ connect to new wifi
++ Add default monitor-setup script
++ Remove Desktop option in gtk2filechooser
+
++ Polish .examples
++ setup example project deployment (groff, bash, etc)
++ image viewing in vifm (check Luke Smith uberzug config)
++ add ssh keyring (ssh-agent and ssh-add)
++ remove latex?
++ add BitTorrent and RSS utils
 + Add important files from /etc and others
 	+ ask user to confirm each change...
   + /etc/ssh/sshd_config
