@@ -25,7 +25,6 @@ $HOME/.old-configs/{data-time}.
   + switch monitor setup
 	+ connect to new wifi
 + Add default monitor-setup script
-+ Remove Desktop option in gtk2filechooser
 
 + Polish .examples
 + setup example project deployment (groff, bash, etc)
