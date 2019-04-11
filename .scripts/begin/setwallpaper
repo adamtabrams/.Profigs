@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 hsetroot -fill $HOME/.config/wall.png -brightness -.12
 #hsetroot -screens 3 -fill $HOME/.config/wall.png -brightness -.12

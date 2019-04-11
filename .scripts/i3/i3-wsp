@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 WSP="$(expr $(expr $(expr $(i3-focus-ws) + 8) % 10) + 1)"
 i3-msg "move container to workspace number $WSP"

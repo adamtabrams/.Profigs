@@ -62,7 +62,6 @@
 	## Other
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
-	alias xsync='xclip -o -selection clipboard | xclip'
 #------------------------------------------------------
 # Functions
 #------------------------------------------------------
