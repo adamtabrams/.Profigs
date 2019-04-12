@@ -161,9 +161,10 @@
 "------------------------------------------------------
 " Navigating Buffers
 "------------------------------------------------------
-	nnoremap <Tab> :bn<CR>
-	nnoremap <S-Tab> :bp<CR>
-	tnoremap <S-Tab> <C-\><C-N>:bp<CR>
+	nnoremap <C-N> :bn<CR>
+	nnoremap <C-P> :bp<CR>
+	tnoremap <C-N> <C-\><C-N>:bn<CR>
+	tnoremap <C-P> <C-\><C-N>:bp<CR>
 "------------------------------------------------------
 " Better Scrolling
 "------------------------------------------------------
@@ -172,15 +173,17 @@
 "------------------------------------------------------
 " Other
 "------------------------------------------------------
-  "toggle line numbers
-	nnoremap <C-N> :set nu! rnu!<CR>
+  "toggle hiding line numbers
+	nnoremap <C-H> :set nu! rnu!<CR>
+  "faster escape in terminal mode
+	tnoremap <C-\> <C-\><C-N>
 	"proper yank-to-line-end
 	nnoremap <S-Y> y$
+	"allows writing to files with sudo
+	cnoremap w!! w !sudo tee > /dev/null %
 	"set or jump to special mark
 	noremap <C-S> /<++><CR>cf>
 	inoremap <C-S> <++>
-	"paste from clipboard
-	inoremap <C-V> <CR><Esc>k:read !xclip -o -selection clipboard<CR>kJJ
 	"set essay writing formatting or back to normal
 	nnoremap <C-F> :setlocal formatoptions+=a spell textwidth=90<CR>
 	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
