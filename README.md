@@ -21,15 +21,9 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ Add dmenu utils
-  + switch monitor setup
-	+ connect to new wifi
-+ Add default monitor-setup script
-
 + Polish .examples
 + setup example project deployment (groff, bash, etc)
 + image viewing in vifm (check Luke Smith uberzug config)
-+ add ssh keyring (ssh-agent and ssh-add)
 + remove latex?
 + add BitTorrent and RSS utils
 + Add important files from /etc and others
@@ -99,6 +93,7 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + reflector
 + htop-vim-git (aur)
 + openssh
++ sshfs
 + system-config-printer
 + hplip
 + network-manager-applet (sometime called nm-applet)

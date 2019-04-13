@@ -39,12 +39,6 @@
 	bindkey -M vicmd "k" up-line-or-beginning-search
 	bindkey -M vicmd "j" down-line-or-beginning-search
 #------------------------------------------------------
-# Colors
-#------------------------------------------------------
-	alias ls='ls -hN --color=auto --group-directories-first'
-	alias diff='diff --color=auto'
-	alias grep='grep --color=auto'
-#------------------------------------------------------
 # Aliases
 #------------------------------------------------------
 	alias vim='nvim'
@@ -54,9 +48,19 @@
 	alias m='setsid mupdf'
 	alias sx='setsid sxiv'
 	alias x='sxiv'
-	## Other
+#------------------------------------------------------
+# Other
+#------------------------------------------------------
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
+	alias savekeypass='pkill ssh-agent && eval $(ssh-agent) && ssh-add'
+	alias savekeypass2='eval $(ssh-agent) && ssh-add'
+#------------------------------------------------------
+# Colors
+#------------------------------------------------------
+	alias ls='ls -hN --color=auto --group-directories-first'
+	alias diff='diff --color=auto'
+	alias grep='grep --color=auto'
 #------------------------------------------------------
 # Functions
 #------------------------------------------------------
