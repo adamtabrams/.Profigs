@@ -32,7 +32,8 @@ exec --no-startup-id notify-send "Welcome! 👍"
 # KEYBINDINGS
 # launch program
 bindsym $mod+v              exec $term -e vifm
-bindsym $mod+b              gaps inner current set 0 ;; gaps outer current set 0 ;; exec $brow
+bindsym $mod+b              exec $brow
+bindsym $mod+Shift+b        exec i3-browser
 bindsym $mod+x              exec xsync
 
 # basics
@@ -153,7 +154,6 @@ set $ws10 "10"
 workspace $ws8 gaps inner 0
 workspace $ws8 gaps outer 0
 
-#for_window [class="Firefox"] move to workspace $ws2
 for_window [title="GIMP Startup"] move to workspace $ws8
 for_window [class="Gimp"] move to workspace $ws8
 for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50 ppt
