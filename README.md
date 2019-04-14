@@ -107,3 +107,10 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + wireless_tools
 + iputils
 + make
+
+### Testing Programs
++ tig vs lazygit
++ dict vs aiksaurus
++ aspell, proselint
++ rem: latex
++ rem: mars mips
