@@ -21,8 +21,6 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ Polish .examples
-+ setup example project deployment (groff, bash, etc)
 + image viewing in vifm (check Luke Smith uberzug config)
 + remove latex?
 + add BitTorrent and RSS utils
@@ -107,10 +105,11 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + wireless_tools
 + iputils
 + make
++ ctags
++ cscope
 
 ### Testing Programs
 + tig vs lazygit
++ sc-im
 + dict vs aiksaurus
 + aspell, proselint
-+ rem: latex
-+ rem: mars mips

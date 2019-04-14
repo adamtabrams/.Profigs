@@ -1,26 +1,27 @@
 .ds CH
+.ds RF %
+.nr HY 0
+.nr PD 0
+.nr PS 12
+.nr LL 6.5i
+.nr HM 1i
 .TL
-Cheatsheet
+Title
 .AU
-Adam
+Author
 .ND
 .NH
 Numbered heading
 .NH 2
-More numbered heading
-.NH 2
-Numbered heading
+2-Tier numbered heading
 .NH 3
-Numbered heading
+3-Tier numbered heading
 .SH
 Simple heading
-.SH
-Simple
-heading
 
 Another simple heading
 .PP
-Indented paragraph.
+Indented paragraph
 Same Line.
 
 Same .PP, new paragraph, no indent.
@@ -30,8 +31,6 @@ Below, extra space.
 
 .LP
 New paragraph, no indent.
-
-This is normal text.
 
 This
 .B "bold" " text!" "is "
@@ -63,10 +62,10 @@ Right aligned
 Break page after this.
 .bp
 
-Here's an image
-
+For an image:
 convert pic.png eps2:pic.eps
-.PSPIC -R prob3.eps 3
+
+".PSPIC [-L|-R|-C|-I n] file [width [height]]"
 
 .LP
 Compile groffs with images with

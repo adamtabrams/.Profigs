@@ -28,6 +28,7 @@
 	set wildmode=longest,list,full
 	set path+=**
 	"set tags+=./.tags/tags;~
+	set tags+=./.tags;$HOME
 "------------------------------------------------------
 " Display
 "------------------------------------------------------
@@ -189,6 +190,32 @@
 	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
 	"ADD: auto space align
 "------------------------------------------------------
+"---------------------- CSCOPE ------------------------
+"------------------------------------------------------
+	if has("cscope")
+		set csprg=/usr/bin/cscope
+		set csto=0
+		set cst
+		set cscopequickfix=a-,c-,d-,e-,f-,g-,i-,s-,t-
+		set cscopepathcomp=3
+
+		if filereadable(".cscope.out")
+				silent cs add .cscope.out
+		endif
+
+		nnoremap <C-[>? :echo "[A]ssign [C]alling [D]called by [E]grep [F]ile [G]definition [I]ncluding [S]ymbol [T]ext"<CR>
+		nnoremap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+		nnoremap <C-[>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+		nnoremap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+	endif
+
+"------------------------------------------------------
 "--------------------- REMINDERS ----------------------
 "------------------------------------------------------
 " Visual
@@ -286,4 +313,3 @@
 "------------------------------------------------------
 	" :tabnew, :tabedit name, :tabn, :tabp, :tabc, :tabo
 	" new,     open,          next,  prev,  close, only
-
