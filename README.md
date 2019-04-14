@@ -53,6 +53,9 @@ These are my most important programs, and they can all be used on a Mac with Hom
 + tig
 + bat
 + fzf
++ jq
++ sshfs
++ httpie
 + zsh
 + zsh-syntax-highlighting
 + (Non-Arch: pacapt - pacman wrapper for other package managers)
@@ -91,7 +94,6 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + reflector
 + htop-vim-git (aur)
 + openssh
-+ sshfs
 + system-config-printer
 + hplip
 + network-manager-applet (sometime called nm-applet)
@@ -99,7 +101,6 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + gimp
 + firefox
 + mpv
-+ jq
 + minder-git (aur)
 
 + wireless_tools
@@ -113,3 +114,4 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + sc-im
 + dict vs aiksaurus
 + aspell, proselint
++ cht.sh
