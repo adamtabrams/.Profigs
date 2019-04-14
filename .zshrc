@@ -53,8 +53,8 @@
 #------------------------------------------------------
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
-	alias savekeypass='pkill ssh-agent && eval $(ssh-agent) && ssh-add'
-	alias savekeypass2='eval $(ssh-agent) && ssh-add'
+	alias savekeypass='eval $(ssh-agent) && ssh-add'
+	alias savekeypassclear='pkill ssh-agent && eval $(ssh-agent) && ssh-add'
 #------------------------------------------------------
 # Colors
 #------------------------------------------------------
