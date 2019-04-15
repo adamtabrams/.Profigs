@@ -115,3 +115,4 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + dict vs aiksaurus
 + aspell, proselint
 + cht.sh
++ MEGA

@@ -174,8 +174,10 @@
 "------------------------------------------------------
 " Other
 "------------------------------------------------------
+	"fix indentation in code block
+	nnoremap <Tab> =i{<C-o>
   "toggle hiding line numbers
-	nnoremap <C-H> :set nu! rnu!<CR>
+	nnoremap <S-Tab> :set nu! rnu!<CR>
   "faster escape in terminal mode
 	tnoremap <C-\> <C-\><C-N>
 	"proper yank-to-line-end
@@ -203,7 +205,7 @@
 				silent cs add .cscope.out
 		endif
 
-		nnoremap <C-[>? :echo "[A]ssign [C]alling [D]called by [E]grep [F]ile [G]definition [I]ncluding [S]ymbol [T]ext"<CR>
+		nnoremap <C-[><C-[> :echo "[G]defined [A]ssign [C]alled-by [S]ymbol \|\| [I]ncluded-by [T]ext [D]calls [F]ile [E]grep"<CR>
 		nnoremap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>
 		nnoremap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>
 		nnoremap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>
@@ -213,6 +215,8 @@
 		nnoremap <C-[>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 		nnoremap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 		nnoremap <C-[>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+		nnoremap <C-[><Space> :cs<CR>:cs find<Space>
+		nnoremap <C-[><S-A> :cs add .cscope.out<CR>
 	endif
 
 "------------------------------------------------------
