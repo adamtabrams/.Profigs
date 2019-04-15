@@ -27,7 +27,6 @@
 	set wildignore+=tags,.pyc,.swp
 	set wildmode=longest,list,full
 	set path+=**
-	"set tags+=./.tags/tags;~
 	set tags+=./.tags;$HOME
 "------------------------------------------------------
 " Display
@@ -66,7 +65,9 @@
 	set ignorecase
 	set smartcase
 	set incsearch
-	set inccommand=split
+	if has("nvim")
+		set inccommand=split
+	endif
 "------------------------------------------------------
 " Numbering
 "------------------------------------------------------
@@ -147,6 +148,8 @@
 	inoremap <silent> <Tab> <C-R>=CleverTab()<CR>
 	inoremap <S-Tab> <C-N>
 	inoremap <C-T> <C-V><Tab>
+	"fix indentation in code block
+	nnoremap <Tab> =i{<C-o>
 "------------------------------------------------------
 " Autocomplete Filename or Line
 "------------------------------------------------------
@@ -172,24 +175,36 @@
 	nnoremap <Space> <C-D>
 	nnoremap <S-Space> <C-U>
 "------------------------------------------------------
+" Yank Delete and Paste
+"------------------------------------------------------
+	"proper yank-to-line-end
+	nnoremap <S-Y> y$
+	"delete to Black Hole reg
+	nnoremap dD "_d
+	"interact with the Merge reg
+	nnoremap <C-y> "My
+	nnoremap <C-d> "Md
+	nnoremap <C-m> :call setreg('m', [])<CR>
+	nnoremap <C-p> "mp
+"------------------------------------------------------
+" Special Jump-to Mark
+"------------------------------------------------------
+	noremap <C-S> /<++><CR>cf>
+	inoremap <C-S> <++>
+"------------------------------------------------------
+" Essay Formatting
+"------------------------------------------------------
+	nnoremap <C-F> :setlocal formatoptions+=a spell textwidth=90<CR>
+	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
+"------------------------------------------------------
 " Other
 "------------------------------------------------------
-	"fix indentation in code block
-	nnoremap <Tab> =i{<C-o>
   "toggle hiding line numbers
 	nnoremap <S-Tab> :set nu! rnu!<CR>
   "faster escape in terminal mode
 	tnoremap <C-\> <C-\><C-N>
-	"proper yank-to-line-end
-	nnoremap <S-Y> y$
 	"allows writing to files with sudo
 	cnoremap w!! w !sudo tee > /dev/null %
-	"set or jump to special mark
-	noremap <C-S> /<++><CR>cf>
-	inoremap <C-S> <++>
-	"set essay writing formatting or back to normal
-	nnoremap <C-F> :setlocal formatoptions+=a spell textwidth=90<CR>
-	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
 	"ADD: auto space align
 "------------------------------------------------------
 "---------------------- CSCOPE ------------------------
@@ -205,18 +220,19 @@
 				silent cs add .cscope.out
 		endif
 
-		nnoremap <C-[><C-[> :echo "[G]defined [A]ssign [C]alled-by [S]ymbol \|\| [I]ncluded-by [T]ext [D]calls [F]ile [E]grep"<CR>
-		nnoremap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-		nnoremap <C-[>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-		nnoremap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-		nnoremap <C-[><Space> :cs<CR>:cs find<Space>
-		nnoremap <C-[><S-A> :cs add .cscope.out<CR>
+		nnoremap <C-\> :cs<CR>:cs find<Space>
+		"nnoremap <C-[><C-[> :echo "[G]defined [A]ssign [C]alled-by [S]ymbol \|\| [I]ncluded-by [T]ext [D]calls [F]ile [E]grep"<CR>
+		"nnoremap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+		"nnoremap <C-[>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+		"nnoremap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+		"nnoremap <C-[><Space> :cs<CR>:cs find<Space>
+		"nnoremap <C-[><S-A> :cs add .cscope.out<CR>
 	endif
 
 "------------------------------------------------------

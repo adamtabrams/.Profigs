@@ -48,6 +48,7 @@
 	alias m='setsid mupdf'
 	alias sx='setsid sxiv'
 	alias x='sxiv'
+	alias lg='lazygit'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------

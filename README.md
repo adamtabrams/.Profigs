@@ -21,6 +21,11 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
++ File rename script
++ .vimrc
+	+ align with spaces shortcut
+	+ testing: simplified cscope
+
 + image viewing in vifm (check Luke Smith uberzug config)
 + remove latex?
 + add BitTorrent and RSS utils
