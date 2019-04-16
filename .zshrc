@@ -11,6 +11,7 @@
 	bindkey -v
 	export KEYTIMEOUT=1
 	stty -ixon
+	#autoload -Uz zmv
 #------------------------------------------------------
 # Prompt setting
 #------------------------------------------------------
@@ -65,8 +66,6 @@
 #------------------------------------------------------
 # Functions
 #------------------------------------------------------
-  ## Clears terminal and list directories
-	cl() { cd "$1" && clear && ls -hN --color=auto --group-directories-first; }
 	## Changes working directory when vifm exits
 	vimfm()
 	{
