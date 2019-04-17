@@ -24,7 +24,6 @@ $HOME/.old-configs/{data-time}.
 + File rename script
 + .vimrc
 	+ align with spaces shortcut
-	+ testing: simplified cscope
 
 + image viewing in vifm (check Luke Smith uberzug config)
 + remove latex?
@@ -55,6 +54,7 @@ These are my most important programs, and they can all be used on a Mac with Hom
 + neovim
 + rxvt-unicode
 + sc-im (AUR)
++ lazygit
 + tig
 + bat
 + fzf

@@ -1,18 +1,18 @@
 #!/bin/sh
 
 show_help() {
-echo fixnames [OPTIONS...] [FILE...]
-echo
-echo OPTIONS
-echo -i   ignore FILES listed
-echo -d   include directories
-echo -.   include dot files
-echo -h   show this message
-echo -?   same as -h
-echo
-echo FILE
-echo if included, only those filenames are fixed
-echo
+	echo fixnames [OPTIONS...] [FILE...]
+	echo
+	echo OPTIONS
+	echo -i   ignore FILES listed
+	echo -d   include directories
+	echo -.   include dot files
+	echo -h   show this message
+	echo -?   same as -h
+	echo
+	echo FILE
+	echo if included, only those filenames are fixed
+	echo
 }
 
 OPTIND=1

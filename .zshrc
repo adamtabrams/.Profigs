@@ -11,7 +11,7 @@
 	bindkey -v
 	export KEYTIMEOUT=1
 	stty -ixon
-	#autoload -Uz zmv
+	autoload -Uz zmv
 #------------------------------------------------------
 # Prompt setting
 #------------------------------------------------------
@@ -67,6 +67,7 @@
 # Functions
 #------------------------------------------------------
 	## Changes working directory when vifm exits
+	## use :cq[uit] to cancel directory change
 	vimfm()
 	{
 		local dst="$(command vifm --choose-dir - "$@")"

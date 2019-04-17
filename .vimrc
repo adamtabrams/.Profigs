@@ -148,8 +148,6 @@
 	inoremap <silent> <Tab> <C-R>=CleverTab()<CR>
 	inoremap <S-Tab> <C-N>
 	inoremap <C-T> <C-V><Tab>
-	"fix indentation in code block
-	nnoremap <Tab> =i{<C-o>
 "------------------------------------------------------
 " Autocomplete Filename or Line
 "------------------------------------------------------
@@ -181,11 +179,12 @@
 	nnoremap <S-Y> y$
 	"delete to Black Hole reg
 	nnoremap dD "_d
-	"interact with the Merge reg
-	nnoremap <C-y> "My
-	nnoremap <C-d> "Md
-	nnoremap <C-m> :call setreg('m', [])<CR>
-	nnoremap <C-p> "mp
+	"interact with the extended reg
+	nnoremap <C-y> "Ey
+	nnoremap <C-d> "Ed
+	nnoremap <C-e>e :call setreg('e', [])<CR>
+	nnoremap <C-e>p "ep
+	nnoremap <C-e><S-P> "eP
 "------------------------------------------------------
 " Special Jump-to Mark
 "------------------------------------------------------
@@ -220,19 +219,9 @@
 				silent cs add .cscope.out
 		endif
 
-		nnoremap <C-\> :cs<CR>:cs find<Space>
-		"nnoremap <C-[><C-[> :echo "[G]defined [A]ssign [C]alled-by [S]ymbol \|\| [I]ncluded-by [T]ext [D]calls [F]ile [E]grep"<CR>
-		"nnoremap <C-[>a :cs find a <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-		"nnoremap <C-[>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-		"nnoremap <C-[>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-		"nnoremap <C-[><Space> :cs<CR>:cs find<Space>
-		"nnoremap <C-[><S-A> :cs add .cscope.out<CR>
+		nnoremap \ :cs<CR>:cs find<Space>
+		nnoremap <C-\><C-\> :make tags<CR>
+		nnoremap <C-\>a :cs add .cscope.out<CR>
 	endif
 
 "------------------------------------------------------
