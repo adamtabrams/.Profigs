@@ -6,7 +6,10 @@
 	HISTFILE=~/.histfile
 	HISTSIZE=10000
 	SAVEHIST=10000
-	setopt appendhistory autocd extendedglob notify
+	setopt appendhistory extendedhistory incappendhistory
+	setopt histfindnodups nohistbeep sharehistory
+	setopt histignorespace
+	setopt autocd extendedglob notify
 	unsetopt beep nomatch
 	bindkey -v
 	export KEYTIMEOUT=1
