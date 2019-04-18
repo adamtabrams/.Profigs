@@ -21,13 +21,12 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ File rename script
-+ .vimrc
-	+ align with spaces shortcut
-
-+ image viewing in vifm (check Luke Smith uberzug config)
-+ remove latex?
 + add BitTorrent and RSS utils
++ image viewing in vifm (check Luke Smith uberzug config)
+
++ emacs (evil mode)
++ NeoMutt
+
 + Add important files from /etc and others
 	+ ask user to confirm each change...
   + /etc/ssh/sshd_config
@@ -47,7 +46,6 @@ These are packages as found in the official Arch repos.
 
 These are my most important programs, and they can all be used on a Mac with Homebrew.
 
-+ i3-gaps (Mac: i3)
 + mupdf
 + vifm
 + sxiv
@@ -68,6 +66,10 @@ These are my most important programs, and they can all be used on a Mac with Hom
 These are the rest of my major packages, either not needed or not
 available with MacOS.
 
++ i3-gaps
+	+ (i3 no longer in Brew repo)
+	+ maybe try amethyst
+	+ or xmonad
 + i3blocks
 + urxvt-perls
 + xcompmgr
@@ -103,6 +105,7 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + hplip
 + network-manager-applet (sometime called nm-applet)
 + arandr
++ irssi
 + gimp
 + firefox
 + mpv
