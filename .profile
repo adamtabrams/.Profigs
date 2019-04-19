@@ -5,6 +5,7 @@ export BROWSER="firefox"
 export READER="mupdf"
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')$PATH"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+export BAT_THEME="Monokai Extended Origin"
 export HANK="140.209.68.61"
 
 amixer sset Master 100%-

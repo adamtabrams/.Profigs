@@ -83,6 +83,8 @@ available with MacOS.
 + dunst
 + xdotool
 + dialog
++ docx2txt
++ odt2txt
 + hsetroot
   + (using xwallpaper until hsetroot mulit-monitor is fixed)
 + light-locker
