@@ -21,11 +21,12 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ add BitTorrent and RSS utils
-+ image viewing in vifm (check Luke Smith uberzug config)
++ add Transmission
++ add Newsboat RSS
 
 + emacs (evil mode)
 + NeoMutt
++ irssi and spot
 
 + Add important files from /etc and others
 	+ ask user to confirm each change...
