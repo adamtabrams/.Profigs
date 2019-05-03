@@ -10,7 +10,7 @@ icon="$2"
 [ -z "$2" ] && icon="$1"
 
 case $BLOCK_BUTTON in
-	1) pgrep -x dunst >/dev/null && notify-send "<b>💽 Disk space:</b>
+	1) pgrep -x dunst >/dev/null && notify-send "💽 Disk space:
 $(df -h --output=target,used,size)" ;;
 esac
 

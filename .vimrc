@@ -82,8 +82,9 @@
 " Completion
 "------------------------------------------------------
 	set complete-=i
-	set complete+=k,kspell
-	set dictionary+=/usr/share/dict/words
+	set complete+=.,w,b,u,t,k,kspell
+	set dictionary=
+	"set dictionary+=/usr/share/dict/words
 "------------------------------------------------------
 " Folding
 "------------------------------------------------------
@@ -128,7 +129,7 @@
 	set statusline+=%1*\ B:
 	set statusline+=%2*%n%*
 	set statusline+=\ %{getcwd()}
-	set statusline+=\ %1*[L:%l/%L\ C:%c\ D:%b\ H:%B]%<
+	set statusline+=\ %1*[L:%l/%L\ C:%v\ D:%b\ H:%B]%<
 
 "------------------------------------------------------
 "-------------------- REMAPPINGS ----------------------
@@ -141,6 +142,17 @@
 		else
 			return "\<C-P>"
 		endif
+	endfunction
+"------------------------------------------------------
+" Align = append spaces to line until vcol x is reached
+"------------------------------------------------------
+	function Align(col)
+		execute "normal $"
+		if virtcol('.') < a:col
+			let numApp = a:col - virtcol('.') - 1
+			execute "normal " . numApp . "A "
+		endif
+		execute "normal j"
 	endfunction
 "------------------------------------------------------
 " Tabbing and Autocomplete
@@ -205,6 +217,7 @@
 	"allows writing to files with sudo
 	cnoremap w!! w !sudo tee > /dev/null %
 	"ADD: auto space align
+
 "------------------------------------------------------
 "---------------------- CSCOPE ------------------------
 "------------------------------------------------------

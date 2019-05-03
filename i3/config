@@ -6,7 +6,7 @@ gaps inner 15
 gaps outer 15
 
 # General
-font pango:hack 12
+font pango:Fira Code 12
 set $mod Mod4
 set $term --no-startup-id $TERMINAL
 set $brow --no-startup-id $BROWSER
@@ -27,6 +27,10 @@ exec --no-startup-id setsid light-locker
 
 # Welcomes user and ensure notification are working
 exec --no-startup-id notify-send "Welcome! 👍"
+
+# Sets starting volume settings
+exec --no-startup-id amixer sset Master 0%
+exec --no-startup-id amixer sset Master off
 
 
 # KEYBINDINGS
@@ -109,7 +113,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	font pango:mono 10
+	font pango:Fira Code 9
 	colors {
 		background $black
 		statusline $white

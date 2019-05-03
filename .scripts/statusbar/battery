@@ -5,7 +5,7 @@
 for x in "$(xrdb -query | grep color | sed "s/.*\./export /g;s/:\s*/=\"/g;s/$/\"/g")"; do eval "$x"; done
 
 case $BLOCK_BUTTON in
-    3) pgrep -x dunst >/dev/null && notify-send "<b>🔋 Battery module:</b>
+    3) pgrep -x dunst >/dev/null && notify-send "🔋 Battery module:
 🔋: discharging
 🛑: not charging
 ♻: stagnant charge

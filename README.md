@@ -21,16 +21,8 @@ $HOME/.old-configs/{data-time}.
 
 
 ### Todo
-+ add Transmission
-+ add Newsboat RSS
-
-+ emacs (evil mode)
-+ NeoMutt
-+ irssi and spot
-
 + Add important files from /etc and others
 	+ ask user to confirm each change...
-  + /etc/ssh/sshd_config
   + /etc/pacman.conf
 	  + Color
 	  + ILoveCandy
@@ -89,6 +81,7 @@ available with MacOS.
 + hsetroot
   + (using xwallpaper until hsetroot mulit-monitor is fixed)
 + light-locker
++ gnome-keyring
 + arc-icon-theme
 + numix-gtk-theme
 + ttf-emojione
@@ -108,6 +101,7 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + hplip
 + network-manager-applet (sometime called nm-applet)
 + arandr
++ dict
 + irssi
 + gimp
 + firefox
@@ -121,9 +115,11 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + cscope
 
 ### Testing Programs
-+ tig vs lazygit
-+ sc-im
-+ dict vs aiksaurus
-+ aspell, proselint
 + cht.sh
++ sc-im
++ tig vs lazygit
++ aspell, proselint
++ aiksaurus
 + MEGA
++ Remmina
++ valgrind

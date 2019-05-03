@@ -50,16 +50,13 @@
 	alias vifm='vimfm'
 	alias v='vimfm $(pwd)'
 	alias m='setsid mupdf'
-	alias sx='setsid sxiv'
-	alias x='sxiv'
+	alias s='setsid sxiv'
 	alias lg='lazygit'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
-	alias savekeypass='eval $(ssh-agent) && ssh-add'
-	alias savekeypassclear='pkill ssh-agent && eval $(ssh-agent) && ssh-add'
 #------------------------------------------------------
 # Colors
 #------------------------------------------------------
@@ -80,6 +77,13 @@
 		fi
 		cd "$dst"
 	}
+	## allows for private key and terminal passwords to be saved
+	## to save git https passwords run:
+	## git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+	if [ -n "$DESKTOP_SESSION" ];then
+		eval $(gnome-keyring-daemon --start)
+		export SSH_AUTH_SOCK
+	fi
 #------------------------------------------------------
 # Dirstack
 #------------------------------------------------------

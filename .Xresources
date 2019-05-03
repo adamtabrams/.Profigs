@@ -43,6 +43,7 @@
 *.alpha: 230
 !! Set default font and size
 *.font: xft:Fira Code:pixelsize=14
+!*.font: xft:Fira Code:pixelsize=14, xft:Emojione:pixelsize=14
 
 
 !! URxvt settings
@@ -57,6 +58,9 @@ URxvt.scrollBar: false
 !! only jump to bottom on keypress
 URxvt*scrollTtyOutput: false
 URxvt*xcrollTtyKeypress: true
+
+!! disable all bells
+URxvt*visualBell: false
 
 !! dont scroll terminal in programs
 URxvt*scrollWithBuffer: true
