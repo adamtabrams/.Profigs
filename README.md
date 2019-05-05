@@ -123,3 +123,5 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + MEGA
 + Remmina
 + valgrind
++ entr
++ emacs

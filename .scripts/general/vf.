@@ -1,0 +1,13 @@
+#!/bin/sh
+
+CMD="$EDITOR "
+
+FILES=$(find ./* -type f | fzf -m | tr '\n' ' ' | sed 's/ $//')
+
+[ -z "$FILES" ] && exit 1
+
+CMD+=$FILES
+
+echo "$CMD" >> $HOME/.histfile
+
+eval $CMD

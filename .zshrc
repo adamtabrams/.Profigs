@@ -58,11 +58,16 @@
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
 #------------------------------------------------------
+# Fuzzy Nav
+#------------------------------------------------------
+	alias cf='cd $(echo -e "$(find ~/* -type d | grep -v '.git')\n$HOME/.Profigs" | fzf)'
+	alias cf.='cd $(find ./* -type d | grep -v '.git' | fzf)'
+#------------------------------------------------------
 # Colors
 #------------------------------------------------------
-	alias ls='ls -hN --color=auto --group-directories-first'
-	alias diff='diff --color=auto'
-	alias grep='grep --color=auto'
+	alias ls='ls -hNp --color=always --group-directories-first'
+	alias diff='diff --color=always'
+	alias grep='grep --color=always'
 #------------------------------------------------------
 # Functions
 #------------------------------------------------------

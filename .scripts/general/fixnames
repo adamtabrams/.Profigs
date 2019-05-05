@@ -69,7 +69,7 @@ fi
 for x in $(echo -e "$list")
 do
 	if [ "$x" ]; then
-		fixName=$(echo "$x" | tr -dc "[:alnum:][:blank:]-_.")
+		fixName=$(echo "$x" | tr -dc "[:alnum:][:blank:]-_.:")
 		fixName=$(echo "$fixName" | tr '[A-Z]' '[a-z]')
 		fixName=$(echo "$fixName" | tr '_[:blank:]' '-')
 		fixName=$(echo "$fixName" | tr -s '-' '-')
