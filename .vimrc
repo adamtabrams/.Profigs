@@ -165,7 +165,7 @@
 "------------------------------------------------------
 	inoremap <C-F> <C-X><C-F>
 	inoremap <C-L> <C-X><C-L>
-	"block completion
+	"block complete (hit repeatedly: fuzzy line complete)
 	inoremap <C-B> <C-X><C-P>
 "------------------------------------------------------
 " Navigating Splits

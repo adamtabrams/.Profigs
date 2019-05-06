@@ -113,15 +113,14 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + make
 + ctags
 + cscope
++ entr
 
 ### Testing Programs
 + cht.sh
 + sc-im
 + tig vs lazygit
 + aspell, proselint
-+ aiksaurus
 + MEGA
 + Remmina
 + valgrind
-+ entr
 + emacs
