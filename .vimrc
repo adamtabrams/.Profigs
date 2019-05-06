@@ -195,8 +195,9 @@
 	nnoremap <C-y> "Ey
 	nnoremap <C-d> "Ed
 	nnoremap <C-e>e :call setreg('e', [])<CR>
-	nnoremap <C-e>p "ep
-	nnoremap <C-e><S-P> "eP
+	nnoremap <C-e>p a<C-R>e<ESC>kJx
+	nnoremap <C-e><S-P> i<C-R>e<ESC>kJx
+	nnoremap <C-e><C-P> "ep
 "------------------------------------------------------
 " Special Jump-to Mark
 "------------------------------------------------------
