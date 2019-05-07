@@ -49,7 +49,7 @@ bindsym $mod+q              kill
 bindsym $mod+d              exec dmenu_run
 bindsym $mod+space          focus mode_toggle
 bindsym $mod+Shift+space    floating toggle
-bindsym $mod+Shift+f        fullscreen toggle
+bindsym $mod+f              fullscreen toggle
 
 # add gap grow and shrink
 bindsym $mod+g              gaps outer current plus 5
