@@ -7,6 +7,9 @@ export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')$PATH"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export BAT_THEME="Monokai Extended Origin"
 export HANK="140.209.68.61"
+#default: find * -type f
+#export FZF_DEFAULT_COMMAND="{ find ~/.Profigs -type f | grep -v '.git'; find ~/* -type f; }"
+
 
 # Start graphical server if i3 isn't already running
 #[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx

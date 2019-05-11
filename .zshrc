@@ -86,7 +86,7 @@
 	## to save git https passwords run:
 	## git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 	if [ -n "$DESKTOP_SESSION" ];then
-		eval $(gnome-keyring-daemon --start)
+		eval $(gnome-keyring-daemon --start) > /dev/null
 		export SSH_AUTH_SOCK
 	fi
 #------------------------------------------------------
