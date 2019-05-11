@@ -88,11 +88,13 @@ available with MacOS.
 + numix-gtk-theme
 + ttf-emojione
 + ttf-fira-code
-+ ttf-fira-mono
++ clipmenu
++ clipnotify
 + lightdm-webkit-theme-litarvan
 + gtk-engine-murrine
 + unclutter-xfixes-git (aur)
 + light-git (aur)
++ menu-calc (aur)
 
 These packages shouldn't be required by any scripts or configs, but I highly recommend them.
 

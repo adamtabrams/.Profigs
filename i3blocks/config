@@ -27,7 +27,7 @@ label=🕔
 interval=10
 
 [volume]
-interval=once
+interval=5
 signal=10
 
 [battery]

@@ -29,8 +29,8 @@ exec --no-startup-id setsid light-locker
 exec --no-startup-id notify-send "Welcome! 👍"
 
 # Sets starting volume settings
-exec --no-startup-id amixer sset Master 0%
-exec --no-startup-id amixer sset Master off
+exec --no-startup-id pulsemixer --change-volume -200
+exec --no-startup-id pulsemixer --mute
 
 
 # KEYBINDINGS
