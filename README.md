@@ -71,7 +71,9 @@ available with MacOS.
 + xclip
 + xorg-xmodmap
 + transset-df
-+ alsa-utils
++ pulseaudio
++ pulseaudio-alsa
++ pulsemixer
 + acpi
 + dunst
 + xdotool
