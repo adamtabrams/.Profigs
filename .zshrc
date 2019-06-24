@@ -65,8 +65,7 @@
 #------------------------------------------------------
 # Colors
 #------------------------------------------------------
-	alias ls='ls -hNp --color=always --group-directories-first'
-	alias diff='diff --color=always'
+	alias ls='ls -hpG'
 	alias grep='grep --color=always'
 #------------------------------------------------------
 # Functions
@@ -109,4 +108,4 @@
 #------------------------------------------------------
 # Plugins
 #------------------------------------------------------
-	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
