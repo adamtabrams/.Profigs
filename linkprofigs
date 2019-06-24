@@ -6,17 +6,17 @@ backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -pv $backup
 
 # Archive old configs in $HOME, then create links
-mv -nv -t "$backup/" $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples
+mv -nv $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples "$backup/"
 
-ln -sv -t "$HOME/" $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples
+ln -sv $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples "$HOME/"
 
 # Archive old configs in $HOME/.config, then create links
 mkdir -pv $HOME/.config/
 cnfg=$HOME/.config
 
-mv -nv -t "$backup/" $cnfg/dunst $cnfg/gtk-2.0 $cnfg/gtk-3.0 $cnfg/htop $cnfg/i3 $cnfg/i3blocks $cnfg/latexmk $cnfg/mpv $cnfg/nvim $cnfg/vifm
+mv -nv $cnfg/gtk-2.0 $cnfg/gtk-3.0 $cnfg/htop $cnfg/latexmk $cnfg/mpv $cnfg/nvim $cnfg/vifm "$backup/"
 
-ln -sv -t "$cnfg/" $pfgs/dunst $pfgs/gtk-2.0 $pfgs/gtk-3.0 $pfgs/htop $pfgs/i3 $pfgs/i3blocks $pfgs/latexmk $pfgs/mpv $pfgs/nvim $pfgs/vifm
+ln -sv $pfgs/gtk-2.0 $pfgs/gtk-3.0 $pfgs/htop $pfgs/latexmk $pfgs/mpv $pfgs/nvim $pfgs/vifm "$cnfg/"
 
 mv -nv $HOME/.config/wall.png $backup/
 ln -sv $HOME/.Profigs/wallpaper.jpg $HOME/.config/wall.png
