@@ -53,8 +53,8 @@
 "------------------------------------------------------
 " Indentation
 "------------------------------------------------------
-	set tabstop=2
-	set shiftwidth=2
+	set tabstop=4
+	set shiftwidth=4
 	set shiftround
 	set autoindent
 	set smartindent
@@ -111,7 +111,7 @@
 "------------------------------------------------------
 " Theme
 "------------------------------------------------------
-"	set t_Co=256
+	set t_Co=256
 	try
 "		colorscheme delek
 		colorscheme solarized
