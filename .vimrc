@@ -174,6 +174,10 @@
 	nnoremap <C-J> <C-W>j
 	nnoremap <C-K> <C-W>k
 	nnoremap <C-L> <C-W>l
+	tnoremap <C-H> <C-\><C-N><C-W>h
+	tnoremap <C-J> <C-\><C-N><C-W>j
+	tnoremap <C-K> <C-\><C-N><C-W>k
+	tnoremap <C-L> <C-\><C-N><C-W>l
 "------------------------------------------------------
 " Navigating Buffers
 "------------------------------------------------------
