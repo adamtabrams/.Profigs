@@ -32,12 +32,17 @@ exec --no-startup-id notify-send "Welcome! 👍"
 exec --no-startup-id pulsemixer --change-volume -200
 exec --no-startup-id pulsemixer --mute
 
+# Starts tracking items copied
+exec --no-startup-id setsid clipmenud
+
 
 # KEYBINDINGS
 # launch program
 bindsym $mod+v              exec $term -e vifm
 bindsym $mod+b              exec $brow
 bindsym $mod+Shift+b        exec i3-browser
+bindsym $mod+w              exec networkmanager_dmenu
+bindsym $mod+c              exec clipmenu
 bindsym $mod+x              exec xsync
 
 # basics
@@ -58,14 +63,14 @@ bindsym $mod+Shift+g        gaps inner current plus 5
 bindsym $mod+Shift+s        gaps inner current minus 5
 
 # toggle gaps completely
-bindsym $mod+m              gaps inner current set 15; gaps outer current set 15
-bindsym $mod+Shift+m        gaps inner current set 0; gaps outer current set 0
+bindsym $mod+m              gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+m        gaps inner current set 15; gaps outer current set 15
 
 # fast resizing windown
-bindsym $mod+y              resize shrink width 10 px or 10 ppt
+bindsym $mod+y              resize grow width 10 px or 10 ppt
 bindsym $mod+u              resize shrink height 10 px or 10 ppt
 bindsym $mod+i              resize grow height 10 px or 10 ppt
-bindsym $mod+o              resize grow width 10 px or 10 ppt
+bindsym $mod+o              resize shrink width 10 px or 10 ppt
 bindsym $mod+equal          move position center
 
 # size workspace for text/writing
@@ -88,20 +93,19 @@ bindsym XF86MonBrightnessDown          exec --no-startup-id light -U 10
 #bindsym Shift+XF86MonBrightnessDown    exec --no-startup-id light -U 2
 
 # volume
-bindsym XF86AudioMute            exec --no-startup-id amixer sset Master mute
-#bindsym Shift+XF86AudioMute      exec --no-startup-id amixer sset Master toggle
-bindsym XF86AudioMicMute      exec --no-startup-id amixer sset Master toggle
-bindsym XF86AudioLowerVolume     exec --no-startup-id amixer sset Master 10%-
-bindsym XF86AudioRaiseVolume     exec --no-startup-id amixer sset Master 10%+
+bindsym XF86AudioMute            exec --no-startup-id pulsemixer --toggle-mute
+#bindsym Shift+XF86AudioMute      exec --no-startup-id pulsemixer --toggle-mute
+#bindsym XF86AudioMicMute         exec --no-startup-id pulsemixer --toggle-mute
+bindsym XF86AudioLowerVolume     exec --no-startup-id pulsemixer --change-volume -5
+bindsym XF86AudioRaiseVolume     exec --no-startup-id pulsemixer --change-volume +5
 
 #turn transparency up and down
-bindsym $mod+F10                  exec --no-startup-id transset-df -a --dec .10
+bindsym $mod+F10                 exec --no-startup-id transset-df -a --dec .10
 bindsym $mod+F11                 exec --no-startup-id transset-df -a --inc .10
 
 #screen capture
 bindsym Print                    exec --no-startup-id scrot $HOME/temp/ss-%Y-%m-%d-%H:%M:%S.png
-#bindsym Shift-Print              exec --no-startup-id scrot -u $HOME/temp/ss-%Y-%m-%d-%H:%M:%S.png
-bindsym $mod+F9              exec --no-startup-id scrot -u $HOME/temp/ss-%Y-%m-%d-%H:%M:%S.png
+bindsym $mod+Print               exec --no-startup-id scrot -u $HOME/temp/ss-%Y-%m-%d-%H:%M:%S.png
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

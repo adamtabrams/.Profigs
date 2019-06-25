@@ -95,7 +95,7 @@
 "------------------------------------------------------
 " Scrolling
 "------------------------------------------------------
-	set scrolloff=5
+	set scrolloff=2
 	set sidescrolloff=5
 	set display+=lastline
 "------------------------------------------------------
@@ -214,12 +214,29 @@
 " Other
 "------------------------------------------------------
   "toggle hiding line numbers
-	nnoremap <S-Tab> :set nu! rnu!<CR>
+	"nnoremap <S-Tab> :set nu! rnu!<CR>
   "faster escape in terminal mode
 	tnoremap <C-\> <C-\><C-N>
 	"allows writing to files with sudo
 	cnoremap w!! w !sudo tee > /dev/null %
-	"ADD: auto space align
+
+	"testing better find navigations
+	function QFind()
+		" this can throw an error (ESC,ESC)
+		" this does not switch highlight or NEXT,PREV
+		let ch1 = nr2char(getchar())
+		let ch2 = nr2char(getchar())
+		return ch1 . ch2
+		"execute "normal /" . ch1 . ch2 . ""
+		""execute 'call feedkeys(":nohlsearch\n")'
+	endfunction
+
+	"nnoremap // :<C-u>call QFind()<CR>
+	nnoremap <silent> // :<C-u>exec "normal /".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
+	nnoremap <silent> ?? :<C-u>exec "normal ?".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
+	" tied to ctrl-i
+	nnoremap <silent> <S-Tab> :set hlsearch!<CR>
+	set nohlsearch
 
 "------------------------------------------------------
 "---------------------- CSCOPE ------------------------
