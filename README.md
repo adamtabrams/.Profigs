@@ -94,22 +94,23 @@ available with MacOS.
 + gtk-engine-murrine
 + unclutter-xfixes-git (aur)
 + light-git (aur)
-+ menu-calc (aur)
++ network-manager-applet (sometime called nm-applet)
++ networkmanager-dmenu-git (aur)
 
 These packages shouldn't be required by any scripts or configs, but I highly recommend them.
 
 + reflector
-+ htop-vim-git (aur)
 + openssh
 + system-config-printer
 + hplip
-+ network-manager-applet (sometime called nm-applet)
 + arandr
 + dict
 + irssi
 + gimp
 + firefox
 + mpv
++ menu-calc (aur)
++ htop-vim-git (aur)
 + minder-git (aur)
 
 + wireless_tools
@@ -125,6 +126,4 @@ These packages shouldn't be required by any scripts or configs, but I highly rec
 + tig vs lazygit
 + aspell, proselint
 + MEGA
-+ Remmina
-+ valgrind
 + emacs

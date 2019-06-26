@@ -1,0 +1,107 @@
+"------------------------------------------------------
+"--------------------- REMINDERS ----------------------
+"------------------------------------------------------
+" Visual
+"------------------------------------------------------
+	" :nohl
+	" :redraw
+
+"------------------------------------------------------
+"	Folds
+"------------------------------------------------------
+	" za, zA	= toggle this fold, toggle all folds
+	" zr, zR	= remove 1 level from all folds, remove every levels
+	" zm, zM	= add 1 level to all folds, add every levels
+
+"------------------------------------------------------
+"	Completion
+"------------------------------------------------------
+	" C-N,  C-P,  C-Y, C-E
+	" next, prev, yes, exit
+	" C-F,  C-T,       C-L,  C-I,          C-],  C-O,  S
+	" file, thesaurus, line, search files, tags, omni, spell
+
+"------------------------------------------------------
+"	Buffers
+"------------------------------------------------------
+	" C-6,  C-^,  :b#,  :b [fname]Tab
+	" next, prev, goto, find
+
+"------------------------------------------------------
+"	Snippets
+"------------------------------------------------------
+	" :-1read ~/.vim/snippets/
+
+"------------------------------------------------------
+"	Spelling
+"------------------------------------------------------
+	" z=,  zg,   zw,    ]s,   [s
+	" fix, good, wrong, next, prev
+
+"------------------------------------------------------
+"	Sessions
+"------------------------------------------------------
+	" :mks ~/.vim/sessions/name.vim
+	" :source !/.vim/sessions/name.vim
+	" :mks!                                  = overwrite prev
+
+"------------------------------------------------------
+"	Registers
+"------------------------------------------------------
+	" :reg, "ry, "Ry,    "rp,  C-R,   qr
+	" show, to,  append, from, paste, record
+
+"------------------------------------------------------
+"	Tag jumping
+"------------------------------------------------------
+	" :tag, C-],  C-O, C-I
+	" show, jump, out, in
+
+"------------------------------------------------------
+"	Ctags
+"------------------------------------------------------
+	" ctags *.c             = generate tags for .c files
+	" ctags -R .            = generate recursively from here
+	" ctags -L filelist     = generate tags for files in list
+
+"------------------------------------------------------
+"	Marks
+"------------------------------------------------------
+	" :marks, ma,   `a,   'a,   mA,     '0,      :delm aBc
+	" show,   mark, goto, line, global, prev vim, delete
+
+"------------------------------------------------------
+"	Substitute
+"------------------------------------------------------
+	" :s/find/rep             = this line, first occurance
+	" :%s/find/rep/gc         = whole file, all occurances, must confirm
+	" :5,12%s/\<exact\>/rep/I = range, whole word match, case sensitive
+
+"------------------------------------------------------
+"	Splits
+"------------------------------------------------------
+	" C-W, n,   s,     v,    c,     o,    n,    p,    x
+	"      new, split, vert, close, only, next, prev, exchange
+	" +/-/</>,     =,          _,      H/J/K/L
+	" grow/shrink, equal size, expand, move window
+
+"------------------------------------------------------
+"	Splits
+"------------------------------------------------------
+	" :tabnew file, C-WT, gt, gT, #gt, :tabmove #, :tabc, :tabo, :tabdo
+	" new, split->tab, prev, next, goto, shift pos, close, only, run
+
+"------------------------------------------------------
+"	Tabs
+"------------------------------------------------------
+	" :tabnew, :tabedit name, :tabn, :tabp, :tabc, :tabo
+	" new,     open,          next,  prev,  close, only
+
+
+"------------------------------------------------------
+"	Need to add
+"------------------------------------------------------
+	g; gf gF
+	C-D
+	:jumps
+	personal mappings

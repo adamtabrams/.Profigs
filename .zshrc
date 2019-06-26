@@ -52,6 +52,8 @@
 	alias m='setsid mupdf'
 	alias s='setsid sxiv'
 	alias lg='lazygit'
+	alias yay='pacapt'
+	alias pacman='pacapt'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------

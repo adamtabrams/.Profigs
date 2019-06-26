@@ -53,8 +53,8 @@
 "------------------------------------------------------
 " Indentation
 "------------------------------------------------------
-	set tabstop=2
-	set shiftwidth=2
+	set tabstop=4
+	set shiftwidth=4
 	set shiftround
 	set autoindent
 	set smartindent
@@ -95,7 +95,7 @@
 "------------------------------------------------------
 " Scrolling
 "------------------------------------------------------
-	set scrolloff=5
+	set scrolloff=2
 	set sidescrolloff=5
 	set display+=lastline
 "------------------------------------------------------
@@ -113,18 +113,20 @@
 "------------------------------------------------------
 	set t_Co=256
 	try
-		colorscheme delek
+"		colorscheme delek
+		colorscheme solarized
 	catch
 	endtry
 
-	hi Folded cterm=bold ctermbg=DarkGray ctermfg=Yellow
+"	hi Folded cterm=bold ctermbg=DarkGray ctermfg=Yellow
 
-	hi StatusLine ctermbg=Black ctermfg=Blue
-	hi StatusLineNC ctermbg=Black ctermfg=DarkGreen
-	hi User1 ctermbg=Black ctermfg=Red
-	hi User2 ctermbg=Black ctermfg=Magenta
+	hi StatusLine ctermbg=Black ctermfg=LightBlue
+	hi StatusLineNC ctermbg=Black ctermfg=Blue
+	hi User1 ctermbg=Black ctermfg=Magenta
+	hi User2 ctermbg=Black ctermfg=Red
+	hi User3 ctermbg=Black ctermfg=LightBlue
 	set laststatus=2
-	set statusline=%1*%.60f
+	set statusline=%3*%.60f
 	set statusline+=%2*%M
 	set statusline+=%1*\ B:
 	set statusline+=%2*%n%*
@@ -174,6 +176,10 @@
 	nnoremap <C-J> <C-W>j
 	nnoremap <C-K> <C-W>k
 	nnoremap <C-L> <C-W>l
+	tnoremap <C-H> <C-\><C-N><C-W>h
+	tnoremap <C-J> <C-\><C-N><C-W>j
+	tnoremap <C-K> <C-\><C-N><C-W>k
+	tnoremap <C-L> <C-\><C-N><C-W>l
 "------------------------------------------------------
 " Navigating Buffers
 "------------------------------------------------------
@@ -215,12 +221,29 @@
 " Other
 "------------------------------------------------------
   "toggle hiding line numbers
-	nnoremap <S-Tab> :set nu! rnu!<CR>
+	"nnoremap <S-Tab> :set nu! rnu!<CR>
   "faster escape in terminal mode
 	tnoremap <C-\> <C-\><C-N>
 	"allows writing to files with sudo
 	cnoremap w!! w !sudo tee > /dev/null %
-	"ADD: auto space align
+
+	"testing better find navigations
+	function QFind()
+		" this can throw an error (ESC,ESC)
+		" this does not switch highlight or NEXT,PREV
+		let ch1 = nr2char(getchar())
+		let ch2 = nr2char(getchar())
+		return ch1 . ch2
+		"execute "normal /" . ch1 . ch2 . ""
+		""execute 'call feedkeys(":nohlsearch\n")'
+	endfunction
+
+	"nnoremap // :<C-u>call QFind()<CR>
+	nnoremap <silent> // :<C-u>exec "normal /".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
+	nnoremap <silent> ?? :<C-u>exec "normal ?".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
+	" tied to ctrl-i
+	nnoremap <silent> <S-Tab> :set hlsearch!<CR>
+	set nohlsearch
 
 "------------------------------------------------------
 "---------------------- CSCOPE ------------------------
@@ -240,102 +263,3 @@
 		nnoremap <C-\><C-\> :make tags<CR>
 		nnoremap <C-\>a :cs add .cscope.out<CR>
 	endif
-
-"------------------------------------------------------
-"--------------------- REMINDERS ----------------------
-"------------------------------------------------------
-" Visual
-"------------------------------------------------------
-	" :nohl
-	" :redraw
-
-"------------------------------------------------------
-"	Folds
-"------------------------------------------------------
-	" za, zA	= toggle this fold, toggle all folds
-	" zr, zR	= remove 1 level from all folds, remove every levels
-	" zm, zM	= add 1 level to all folds, add every levels
-
-"------------------------------------------------------
-"	Completion
-"------------------------------------------------------
-	" C-N,  C-P,  C-Y, C-E
-	" next, prev, yes, exit
-	" C-F,  C-T,       C-L,  C-I,          C-],  C-O,  S
-	" file, thesaurus, line, search files, tags, omni, spell
-
-"------------------------------------------------------
-"	Buffers
-"------------------------------------------------------
-	" C-6,  C-^,  :b#,  :b [fname]Tab
-	" next, prev, goto, find
-
-"------------------------------------------------------
-"	Snippets
-"------------------------------------------------------
-	" :-1read ~/.vim/snippets/
-
-"------------------------------------------------------
-"	Spelling
-"------------------------------------------------------
-	" z=,  zg,   zw,    ]s,   [s
-	" fix, good, wrong, next, prev
-
-"------------------------------------------------------
-"	Sessions
-"------------------------------------------------------
-	" :mks ~/.vim/sessions/name.vim
-	" :source !/.vim/sessions/name.vim
-	" :mks!                                  = overwrite prev
-
-"------------------------------------------------------
-"	Registers
-"------------------------------------------------------
-	" :reg, "ry, "Ry,    "rp,  C-R,   qr
-	" show, to,  append, from, paste, record
-
-"------------------------------------------------------
-"	Tag jumping
-"------------------------------------------------------
-	" :tag, C-],  C-O, C-I
-	" show, jump, out, in
-
-"------------------------------------------------------
-"	Ctags
-"------------------------------------------------------
-	" ctags *.c             = generate tags for .c files
-	" ctags -R .            = generate recursively from here
-	" ctags -L filelist     = generate tags for files in list
-
-"------------------------------------------------------
-"	Marks
-"------------------------------------------------------
-	" :marks, ma,   `a,   'a,   mA,     '0,      :delm aBc
-	" show,   mark, goto, line, global, prev vim, delete
-
-"------------------------------------------------------
-"	Substitute
-"------------------------------------------------------
-	" :s/find/rep             = this line, first occurance
-	" :%s/find/rep/gc         = whole file, all occurances, must confirm
-	" :5,12%s/\<exact\>/rep/I = range, whole word match, case sensitive
-
-"------------------------------------------------------
-"	Splits
-"------------------------------------------------------
-	" C-W, n,   s,     v,    c,     o,    n,    p,    x
-	"      new, split, vert, close, only, next, prev, exchange
-	" +/-/</>,     =,          _,      H/J/K/L
-	" grow/shrink, equal size, expand, move window
-
-"------------------------------------------------------
-"	Splits
-"------------------------------------------------------
-	" :tabnew file, C-WT, gt, gT, #gt, :tabmove #, :tabc, :tabo, :tabdo
-	" new, split->tab, prev, next, goto, shift pos, close, only, run
-
-"------------------------------------------------------
-"	Tabs
-"------------------------------------------------------
-	" :tabnew, :tabedit name, :tabn, :tabp, :tabc, :tabo
-	" new,     open,          next,  prev,  close, only
