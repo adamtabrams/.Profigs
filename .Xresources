@@ -36,7 +36,8 @@
 #define S_cyan          #2aa198
 #define S_green         #859900
 
-*background:            S_base03
+!!*background:            S_base03
+*background:            [80]S_base03
 *foreground:            S_base00
 *fading:                40
 *fadeColor:             S_base03
@@ -118,7 +119,7 @@
 !*.color1: #cc241d
 
 !! Transparency (0-255)
-*.alpha: 230
+!!*.alpha: 230
 !! Set default font and size
 *.font: xft:Fira Code:pixelsize=14
 !*.font: xft:Fira Code:pixelsize=14, xft:Emojione:pixelsize=14

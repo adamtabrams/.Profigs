@@ -119,10 +119,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bar {
 	font pango:Fira Code 9
 	colors {
-		background $black
+		background $transparent
 		statusline $white
-		separator $darkblue
-		focused_workspace $blue $darkblue $black
+		separator $blue
+		focused_workspace $blue $blue $black
 		active_workspace $blue $blue $black
 		inactive_workspace $black $black $white
 		urgent_workspace $black $black $red
@@ -206,26 +206,26 @@ bindsym $mod+r mode "resize"
 
 # Set Xresources colors:
 set_from_resource $black        color0  #000000
-set_from_resource $darkgray     color1  #000000
-set_from_resource $darkorange   color2  #000000
-set_from_resource $orange       color3  #000000
-set_from_resource $darkblue     color4  #000000
-set_from_resource $green        color5  #000000
-set_from_resource $magenta      color6  #000000
-set_from_resource $darkmagenta  color7  #000000
-set_from_resource $yellow       color8  #000000
-set_from_resource $darkyellow   color9  #000000
-set_from_resource $darkgreen    color10 #000000
-set_from_resource $blue         color11 #000000
-set_from_resource $darkaqua     color12 #000000
-set_from_resource $red          color13 #000000
-set_from_resource $gray         color14 #000000
+set_from_resource $brblack      color8  #000000
+set_from_resource $red          color1  #000000
+set_from_resource $orange       color9  #000000
+set_from_resource $green        color2  #000000
+set_from_resource $brgreen      color10 #000000
+set_from_resource $yellow       color3  #000000
+set_from_resource $bryellow     color11 #000000
+set_from_resource $blue         color4  #000000
+set_from_resource $brblue       color12 #000000
+set_from_resource $magenta      color5  #000000
+set_from_resource $violet       color13 #000000
+set_from_resource $cyan         color6  #000000
+set_from_resource $brcyan       color14 #000000
+set_from_resource $gray         color7  #000000
 set_from_resource $white        color15 #000000
 set $transparent                #00000000
 
 #                        BORDER        BACKGROUND  TEXT      INDICATOR   CHILDBORDER
-client.focused           $orange       $orange     $magenta  $darkmagenta $darkblue
-client.unfocused         $transparent  $blue       $white    $darkblue    $black
-client.focused_inactive  $transparent  $blue       $white    $darkblue    $black
-client.urgent            $darkorange   $darkorange $black    $darkorange  $darkorange
+client.focused           $orange       $orange     $magenta  $magenta     $blue
+client.unfocused         $transparent  $blue       $white    $blue        $black
+client.focused_inactive  $transparent  $blue       $white    $blue        $black
+client.urgent            $orange       $orange     $black    $orange      $orange
 client.background        $black
