@@ -62,8 +62,8 @@
 #------------------------------------------------------
 # Fuzzy Nav
 #------------------------------------------------------
-	alias cf='cd $(echo -e "$(find ~/* -type d | grep -v '.git')\n$HOME/.Profigs" | fzf)'
-	alias cf.='cd $(find ./* -type d | grep -v '.git' | fzf)'
+	alias cf='cd $(echo -e "$(2>/dev/null find ~/* -type d | grep -v '.git')\n$HOME/.Profigs" | fzf)'
+	alias cf.='cd $(2>/dev/null find ./* -type d | grep -v '.git' | fzf)'
 #------------------------------------------------------
 # Colors
 #------------------------------------------------------

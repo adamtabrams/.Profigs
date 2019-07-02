@@ -3,9 +3,9 @@
 CMD="$EDITOR "
 
 if [ -d $HOME/.Profigs ]; then
-	ALLFILES=$({ find $HOME/.Profigs -type f | grep -v '.git'; find $HOME/* -type f; echo "$HOME/.histfile"; })
+	ALLFILES=$({ find $HOME/.Profigs -type f | grep -v '.git'; 2>/dev/null find $HOME/* -type f; echo "$HOME/.histfile"; })
 else
-	ALLFILES=$({ find $HOME/* -type f; echo "$HOME/.histfile"; })
+	ALLFILES=$({ 2>/dev/null find $HOME/* -type f; echo "$HOME/.histfile"; })
 fi
 
 FILES=$(echo "$ALLFILES" | fzf -m | tr '\n' ' ' | sed 's/ $//')

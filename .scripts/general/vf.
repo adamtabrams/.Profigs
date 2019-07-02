@@ -2,7 +2,7 @@
 
 CMD="$EDITOR "
 
-FILES=$(find ./* -type f | fzf -m | tr '\n' ' ' | sed 's/ $//')
+FILES=$(2>/dev/null find ./* -type f | fzf -m | tr '\n' ' ' | sed 's/ $//')
 
 [ -z "$FILES" ] && exit 1
 
