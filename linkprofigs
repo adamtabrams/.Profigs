@@ -6,9 +6,9 @@ backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -pv $backup
 
 # Archive old configs in $HOME, then create links
-mv -nv $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples "$backup/"
+mv -nv $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.zshenv $HOME/.scimrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples "$backup/"
 
-ln -sv $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples "$HOME/"
+ln -sv $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $HOME/.zshenv $HOME/.scimrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples "$HOME/"
 
 # Archive old configs in $HOME/.config, then create links
 mkdir -pv $HOME/.config/

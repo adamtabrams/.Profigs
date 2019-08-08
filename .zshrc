@@ -54,11 +54,13 @@
 	alias lg='lazygit'
 	alias yay='pacapt'
 	alias pacman='pacapt'
+	alias sc='scim'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
 	alias mkdir='mkdir -pv'
 	alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
+	alias myip='ifconfig | grep "inet 10" | awk '\''{print $2}'\'''
 #------------------------------------------------------
 # Fuzzy Nav
 #------------------------------------------------------
@@ -111,3 +113,5 @@
 # Plugins
 #------------------------------------------------------
 	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -114,3 +114,5 @@
             echo "done"
         }
         export -f nvimPlugins
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

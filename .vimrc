@@ -16,7 +16,8 @@
 "------------------------------------------------------
 " General
 "------------------------------------------------------
-	filetype plugin on
+	"filetype plugin on
+	filetype plugin indent on
 	set fileformats=unix,dos,mac
 	set history=200
 	set autowrite
@@ -43,7 +44,7 @@
 "------------------------------------------------------
 " Text formatting
 "------------------------------------------------------
-	set textwidth=72
+	set textwidth=90
 	set wrap
 	set linebreak
 	set formatoptions+=j
@@ -53,8 +54,8 @@
 "------------------------------------------------------
 " Indentation
 "------------------------------------------------------
-	set tabstop=4
-	set shiftwidth=4
+	set tabstop=2
+	set shiftwidth=2
 	set shiftround
 	set autoindent
 	set smartindent
@@ -65,6 +66,7 @@
 	set ignorecase
 	set smartcase
 	set incsearch
+	set nohlsearch
 	if has("nvim")
 		set inccommand=split
 	endif
@@ -83,7 +85,7 @@
 "------------------------------------------------------
 	set complete-=i
 	set complete+=.,w,b,u,t,k,kspell
-	set dictionary=
+	"set dictionary=
 	"set dictionary+=/usr/share/dict/words
 "------------------------------------------------------
 " Folding
@@ -105,33 +107,25 @@
 	set ttimeout
 	set ttimeoutlen=50
 "------------------------------------------------------
-" Filetypes
-"------------------------------------------------------
-	"autocmd FileType text setlocal formatoptions+=a spell textwidth=90
-"------------------------------------------------------
 " Theme
 "------------------------------------------------------
 	set t_Co=256
 	try
-"		colorscheme delek
 		colorscheme solarized
 	catch
 	endtry
-
-"	hi Folded cterm=bold ctermbg=DarkGray ctermfg=Yellow
 
 	hi StatusLine ctermbg=Black ctermfg=LightBlue
 	hi StatusLineNC ctermbg=Black ctermfg=Blue
 	hi User1 ctermbg=Black ctermfg=Magenta
 	hi User2 ctermbg=Black ctermfg=Red
 	hi User3 ctermbg=Black ctermfg=LightBlue
-	set laststatus=2
 	set statusline=%3*%.60f
 	set statusline+=%2*%M
 	set statusline+=%1*\ B:
 	set statusline+=%2*%n%*
-	set statusline+=\ %{getcwd()}
-	set statusline+=\ %1*[L:%l/%L\ C:%v\ D:%b\ H:%B]%<
+	set statusline+=%1*%=
+	set statusline+=\ [L:%l/%L\ C:%v\ D:%b\ H:%B]%<
 
 "------------------------------------------------------
 "-------------------- REMAPPINGS ----------------------
@@ -146,22 +140,11 @@
 		endif
 	endfunction
 "------------------------------------------------------
-" Align = append spaces to line until vcol x is reached
-"------------------------------------------------------
-	function Align(col)
-		execute "normal $"
-		if virtcol('.') < a:col
-			let numApp = a:col - virtcol('.') - 1
-			execute "normal " . numApp . "A "
-		endif
-		execute "normal j"
-	endfunction
-"------------------------------------------------------
 " Tabbing and Autocomplete
 "------------------------------------------------------
 	inoremap <silent> <Tab> <C-R>=CleverTab()<CR>
 	inoremap <S-Tab> <C-N>
-	inoremap <C-T> <C-V><Tab>
+	"inoremap <C-T> <C-V><Tab>
 "------------------------------------------------------
 " Autocomplete Filename or Line
 "------------------------------------------------------
@@ -198,10 +181,10 @@
 	"proper yank-to-line-end
 	nnoremap <S-Y> y$
 	"delete to Black Hole reg
-	nnoremap dD "_d
+	nnoremap d<C-D> "_d
 	"interact with the extended reg
-	nnoremap <C-y> "Ey
-	nnoremap <C-d> "Ed
+	nnoremap yY "Ey
+	nnoremap dD "Ed
 	nnoremap <C-e>e :call setreg('e', [])<CR>
 	nnoremap <C-e>p a<C-R>e<ESC>kJx
 	nnoremap <C-e><S-P> i<C-R>e<ESC>kJx
@@ -215,35 +198,24 @@
 "------------------------------------------------------
 " Essay Formatting
 "------------------------------------------------------
-	nnoremap <C-F> :setlocal formatoptions+=a spell textwidth=90<CR>
-	nnoremap <C-B> :setlocal formatoptions-=a nospell textwidth=72<CR>
+	nnoremap <C-F> :setlocal formatoptions+=a spell<CR>
+	nnoremap <C-B> :setlocal formatoptions-=a nospell<CR>
+"------------------------------------------------------
+" Auto Closing
+"------------------------------------------------------
+	iabbrev {  {<CR>}<ESC>O
+	iabbrev {; {<CR>};<ESC>O
+	iabbrev {, {<CR>},<ESC>O
+	iabbrev </ </<C-X><C-O>
 "------------------------------------------------------
 " Other
 "------------------------------------------------------
-  "toggle hiding line numbers
-	"nnoremap <S-Tab> :set nu! rnu!<CR>
   "faster escape in terminal mode
 	tnoremap <C-\> <C-\><C-N>
 	"allows writing to files with sudo
 	cnoremap w!! w !sudo tee > /dev/null %
 
-	"testing better find navigations
-	function QFind()
-		" this can throw an error (ESC,ESC)
-		" this does not switch highlight or NEXT,PREV
-		let ch1 = nr2char(getchar())
-		let ch2 = nr2char(getchar())
-		return ch1 . ch2
-		"execute "normal /" . ch1 . ch2 . ""
-		""execute 'call feedkeys(":nohlsearch\n")'
-	endfunction
-
-	"nnoremap // :<C-u>call QFind()<CR>
-	nnoremap <silent> // :<C-u>exec "normal /".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
-	nnoremap <silent> ?? :<C-u>exec "normal ?".nr2char(getchar()).nr2char(getchar())."<C-v><C-m>"<CR>
-	" tied to ctrl-i
 	nnoremap <silent> <S-Tab> :set hlsearch!<CR>
-	set nohlsearch
 
 "------------------------------------------------------
 "---------------------- CSCOPE ------------------------
