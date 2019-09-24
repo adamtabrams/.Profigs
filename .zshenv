@@ -1,11 +1,21 @@
+#### GENERAL ####
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+export PAGER="bat"
+export SHELL="zsh"
+export LANG=en_US.UTF-8
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=""
-# export FZF_DEFAULT_OPTS="--preview-window 'right:60%' --preview 'bat --color=always --style=changes {}'"
-# export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-export PATH=~/.scripts/general:$PATH
-export PATH=~/.local/bin:$PATH
-export PATH=~/go/bin:$PATH
-export PATH=~/node_modules/.bin:$PATH
+
+#### FILES/DIRS ####
+export ZDOTDIR="$HOME/.config/zsh"
+export VDOTFILE="$HOME/.config/vimrc"
+export MYVIMRC="$VDOTFILE"
+export HISTFILE="$HOME/.config/histfile"
+export MM="$HOME/.config/.marks"
+
+#### PATH ####
+export PATH="$HOME/.scripts/general:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/node_modules/.bin:$PATH"

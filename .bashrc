@@ -11,13 +11,11 @@
     #alias vim="~/Applications/nvim-osx64/bin/nvim"
 
     #testing
-	alias hvim="nvim ~/.bash_history"
-	toLow() {
-	   echo "for f in \$(ls); do rename -v \$f \$(echo \$f | tr [A-Z] [a-z]) \$f; done"
-       	}
-	cl() {
-	    cd "$1"; clear; ls -G --color=auto;
-	}
+    export HISTFILE="$HOME/.config/histfile"
+
+    toLow() {
+       echo "for f in \$(ls); do rename -v \$f \$(echo \$f | tr [A-Z] [a-z]) \$f; done"
+    }
 
     #use vim controls
         set -o vi
@@ -29,36 +27,25 @@
         alias la='ls -Ga --color=auto'
         alias ll='ls -Gl --color=auto'
 
-    #pushd and popd aliases
-	alias pd='pushd'
-	alias pod='popd'
-
     #color aliases
-	alias diff='diff --color=auto'
-	alias grep='grep --color=auto'
+        alias diff='diff --color=auto'
+        alias grep='grep --color=auto'
 
     #how bash starts a line
         PS1='\W\$ '
-	      #PS1='$(gitprompt)\W\$ '
+          #PS1='$(gitprompt)\W\$ '
 
         alias cs0="PS1=''"
         alias cs1="PS1='\$ '"
         alias cs2="PS1='\W\$ '"
         alias cs3="PS1='[\u@\h \w]\$ '"
 
-	#export GITPROMPT_FORMAT="[#m↓%b ↑%a ][#r!%c ][#gϟ%m ][#b&%s ][#y+%u ][@b#R%h
-#]"
-        #alias csg="PS1='\$(gitprompt)\W\$ '"
-	    #https://github.com/akupila/gitprompt
-	    #curl -sfL https://install.goreleaser.com/github.com/akupila/gitprompt.sh | sudo bash -s -- -b /usr/local/bin
-	    #gitprompt -format="#B(@b#R%h[#m ↓%b ↑%a][#r !%c][#g ϟ%m][#b &%s][#y +%u]#B)"
-
     #wifi reset shortcuts
         alias wifi='nmcli radio wifi off && nmcli radio wifi on'
         alias goog='ping www.google.com'
 
     #ctags shortcuts
-	alias mktags='mkdir -p ./.tags && cd ./.tags && ctags -R -f ./tags .. && cd ..'
+    alias mktags='mkdir -p ./.tags && cd ./.tags && ctags -R -f ./tags .. && cd ..'
 
     #creates dir, file, & symlink for neovim config
         nvimSetup() {
