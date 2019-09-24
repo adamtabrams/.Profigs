@@ -1,6 +1,0 @@
-#!/bin/sh
-
-WS="$(i3-focus-ws)"
-WSN="$(expr $(expr $WS % 10) + 1)"
-
-i3-msg "workspace $WSN; exec $BROWSER; workspace $WS"
