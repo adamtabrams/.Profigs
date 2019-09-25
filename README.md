@@ -1,8 +1,5 @@
 # .Profigs
-These are my current system configurations and .RCs
-A lot of credit is due to Luke Smith.
-I took inspiration from his setup and have borrow some of his scripts
-and configs.
+These are my current system configurations and .RCs for my Arch i3 system.
 
 
 ### To Use
