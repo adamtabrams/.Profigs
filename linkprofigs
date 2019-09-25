@@ -1,4 +1,4 @@
-g!/bin/bash
+#!/bin/bash
 
 OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -p "$OLD"
