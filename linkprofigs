@@ -1,9 +1,8 @@
-#!/bin/bash
+g!/bin/bash
 
 OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -p "$OLD"
 
-OLD_CONF=$OLD/.config
 CONF=$HOME/.config
 P_HOME=$HOME/.Profigs/home
 P_CONF=$HOME/.Profigs/config
@@ -23,11 +22,10 @@ for FILE in $(lsim "$P_HOME"); do
     fi
 done
 
-if ! home_links_to "$CONF" "$P_CONF"; then
-    mv "$CONF" "$OLD"
-    ln -s "$P_CONF" "$CONF"
-    for FILE in $(lsim "$OLD/.config"); do
-        mv -n "$OLD_CONF/$FILE" "$CONF"
-    done
-fi
+for FILE in $(lsim "$P_CONF"); do
+    if ! home_links_to "$FILE" "$P_CONF"; then
+        mv "$CONF/$FILE" "$OLD"
+        ln -s "$P_CONF/$FILE" "$CONF"
+    fi
+done
 

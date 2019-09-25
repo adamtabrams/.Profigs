@@ -1,7 +1,4 @@
 **/.DS_Store
 
-config/configstore
-config/histfile
-config/mssqlcli
-config/.marks
-config/.task
+
+config/zsh/.zcompdump
