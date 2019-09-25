@@ -1,9 +1,10 @@
 #### GENERAL ####
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export PAGER="bat"
+export PAGER="bat --decorations never"
 export SHELL="zsh"
 export LANG=en_US.UTF-8
+export CLICOLOR=1
 export BAT_CONFIG_PATH="$HOME/.config/bat.conf"
 export FZF_DEFAULT_OPTS=""
 

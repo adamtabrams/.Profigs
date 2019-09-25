@@ -74,8 +74,8 @@
 #------------------------------------------------------
 # Testing
 #------------------------------------------------------
-    alias la='ls -hpGA'
-    alias ll='ls -hpGl'
+    alias la='ls -HpGA'
+    alias ll='ls -HpGl'
     alias pls='sudo'
     alias v='nvim'
     alias k='kubectl'
@@ -90,7 +90,7 @@
 #------------------------------------------------------
 # Colors
 #------------------------------------------------------
-    alias ls='ls -hpG'
+    alias ls='ls -HpG'
     alias grep='grep --color=always'
 #------------------------------------------------------
 # Functions

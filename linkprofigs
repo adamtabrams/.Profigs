@@ -1,25 +1,32 @@
 #!/bin/bash
 
-# Create backup directory
-pfgs=$HOME/.Profigs
-backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
-mkdir -pv $backup
+OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
+mkdir -p "$OLD"
 
-# Archive old configs in $HOME, then create links
-mv -nv $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.zshenv $HOME/.scimrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples "$backup/"
+P_HOME=$HOME/.Profigs/home
+P_CONF=$HOME/.Profigs/config
+CONF=$HOME/.config
 
-ln -sv $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $HOME/.zshenv $HOME/.scimrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples "$HOME/"
+lsim() {
+    find "$1" -maxdepth 1 -mindepth 1 -exec basename {} \;
+}
 
-# Archive old configs in $HOME/.config, then create links
-mkdir -pv $HOME/.config/
-cnfg=$HOME/.config
+home_links_to() {
+    find "$HOME" -maxdepth 1 -type l -ls | grep -q "$1 \-> $2/$1"
+}
 
-mv -nv $cnfg/gtk-2.0 $cnfg/gtk-3.0 $cnfg/htop $cnfg/latexmk $cnfg/mpv $cnfg/nvim $cnfg/vifm "$backup/"
+for FILE in lsim $P_HOME; do
+    if ! home_links_to "$FILE" "$P_HOME"; then
+        mv "$HOME/$FILE" "$OLD"
+        ln -s "$P_HOME/$FILE" "$HOME"
+    fi
+done
 
-ln -sv $pfgs/gtk-2.0 $pfgs/gtk-3.0 $pfgs/htop $pfgs/latexmk $pfgs/mpv $pfgs/nvim $pfgs/vifm "$cnfg/"
+if ! home_links_to "$CONF" "$P_CONF"; then
+    mv "$CONF" "$OLD"
+    ln -s "$P_CONF" "$CONF"
+    for FILE in lsim $OLD/.config; do
+        mv -n "$FILE" "$CONF"
+    done
+fi
 
-mv -nv $HOME/.config/wall.png $backup/
-ln -sv $HOME/.Profigs/wallpaper.jpg $HOME/.config/wall.png
-
-#/ect
-	#pacman, lightdm, ssh
