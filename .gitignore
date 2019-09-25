@@ -1,4 +1,4 @@
-**/vifminfo
 **/.DS_Store
 
-vifm/vifmrc.old
+
+config/zsh/.zcompdump
