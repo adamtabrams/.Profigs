@@ -3,10 +3,8 @@ These configurations are intended for **MacOS**.
 
 First, clone or download this DIRECTLY to your $HOME directory.
 
-To ensure the project is correctly placed and to see which files and directories it contains, run:
-
 ```bash
-ls $HOME/.Profigs
+cd $HOME && git clone https://github.com/adamtabrams/.Profigs.git
 ```
 
 To create the proper symlinks to each of the config files and directories, run:
