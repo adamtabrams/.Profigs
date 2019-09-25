@@ -3,9 +3,10 @@
 OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
 mkdir -p "$OLD"
 
+OLD_CONF=$OLD/.config
+CONF=$HOME/.config
 P_HOME=$HOME/.Profigs/home
 P_CONF=$HOME/.Profigs/config
-CONF=$HOME/.config
 
 lsim() {
     find "$1" -maxdepth 1 -mindepth 1 -exec basename {} \;
@@ -15,7 +16,7 @@ home_links_to() {
     find "$HOME" -maxdepth 1 -type l -ls | grep -q "$1 \-> $2/$1"
 }
 
-for FILE in lsim $P_HOME; do
+for FILE in $(lsim "$P_HOME"); do
     if ! home_links_to "$FILE" "$P_HOME"; then
         mv "$HOME/$FILE" "$OLD"
         ln -s "$P_HOME/$FILE" "$HOME"
@@ -25,8 +26,8 @@ done
 if ! home_links_to "$CONF" "$P_CONF"; then
     mv "$CONF" "$OLD"
     ln -s "$P_CONF" "$CONF"
-    for FILE in lsim $OLD/.config; do
-        mv -n "$FILE" "$CONF"
+    for FILE in $(lsim "$OLD/.config"); do
+        mv -n "$OLD_CONF/$FILE" "$CONF"
     done
 fi
 

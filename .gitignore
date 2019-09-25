@@ -1,4 +1,6 @@
-**/vifminfo
 **/.DS_Store
 
-vifm/vifmrc.old
+config/configstore
+config/histfile
+config/mssqlcli
+config/.marks
