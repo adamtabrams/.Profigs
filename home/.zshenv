@@ -1,6 +1,7 @@
 #### GENERAL ####
 export EDITOR="nvim"
-export VISUAL="$EDITOR"
+export OPENER="nvim"
+export VISUAL="nvim"
 export PAGER="bat"
 export BAT_PAGER="less -R"
 export MANPAGER="bat --decorations=never"
