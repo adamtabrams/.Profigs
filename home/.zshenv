@@ -1,7 +1,9 @@
 #### GENERAL ####
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export PAGER="bat --decorations never"
+export PAGER="bat"
+export BAT_PAGER="less -R"
+export MANPAGER="bat --decorations=never"
 export SHELL="zsh"
 export LANG=en_US.UTF-8
 export CLICOLOR=1
@@ -13,7 +15,6 @@ export ZDOTDIR="$HOME/.config/zsh"
 export VDOTFILE="$HOME/.config/vimrc"
 export MYVIMRC="$VDOTFILE"
 export HISTFILE="$HOME/.config/histfile"
-export MM="$HOME/.config/.marks"
 
 #### PATH ####
 export PATH="$HOME/.scripts/general:$PATH"

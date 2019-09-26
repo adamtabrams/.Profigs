@@ -43,7 +43,7 @@
     bindkey -M menuselect 'k' vi-up-line-or-history
     bindkey -M menuselect 'l' vi-forward-char
     bindkey -M menuselect 'j' vi-down-line-or-history
-    # bindkey -v '^?' backward-delete-char
+    bindkey -v '^?' backward-delete-char
 #------------------------------------------------------
 # History searching
 #------------------------------------------------------
@@ -83,6 +83,7 @@
     alias k='kubectl'
     alias j='jump'
     alias t='task'
+    alias l='lfcd'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
@@ -148,6 +149,22 @@
 #------------------------------------------------------
     autoload edit-command-line; zle -N edit-command-line
     bindkey -M vicmd 'v' edit-command-line
+#------------------------------------------------------
+# lf file browser
+#------------------------------------------------------
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
 #------------------------------------------------------
 # Plugins
 #------------------------------------------------------

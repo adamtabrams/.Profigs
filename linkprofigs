@@ -15,17 +15,27 @@ home_links_to() {
     find "$HOME" -maxdepth 1 -type l -ls | grep -q "$1 \-> $2/$1"
 }
 
+# for every file in Profigs/home
 for FILE in $(lsim "$P_HOME"); do
-    if ! home_links_to "$FILE" "$P_HOME"; then
-        mv "$HOME/$FILE" "$OLD"
-        ln -s "$P_HOME/$FILE" "$HOME"
+    # if the file exists
+    if [ -e "$HOME/$FILE" ]; then
+        # if the file isn't a link to Profigs/home
+        if ! home_links_to "$FILE" "$P_HOME"; then
+            mv "$HOME/$FILE" "$OLD"
+            ln -s "$P_HOME/$FILE" "$HOME"
+        fi
     fi
 done
 
+# for every file in Profigs/config
 for FILE in $(lsim "$P_CONF"); do
-    if ! home_links_to "$FILE" "$P_CONF"; then
-        mv "$CONF/$FILE" "$OLD"
-        ln -s "$P_CONF/$FILE" "$CONF"
+    # if the file exists
+    if [ -e "$CONF/$FILE" ]; then
+        # if the file isn't a link to Profigs/config
+        if ! home_links_to "$FILE" "$P_CONF"; then
+            mv "$CONF/$FILE" "$OLD"
+            ln -s "$P_CONF/$FILE" "$CONF"
+        fi
     fi
 done
 

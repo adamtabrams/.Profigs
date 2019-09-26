@@ -1,0 +1,33 @@
+# interpreter for shell commands
+set shell zsh
+
+# set '-eu' options for shell commands
+# These options are used to have safer shell commands.
+set shellopts '-eu'
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+# use enter for shell commands
+map <enter> shell
+
+# use escape for quitting
+map <esc> quit
+
+# execute current file (must be executable)
+map x $$f
+map X !$f
+
+# set preview window to script in config
+set previewer ~/.config/lf/pv.sh
+
+# integrate fzf
+map F $(~/.config/lf/vim-fzf.sh)
+map f $lf -remote "send $id select '$(fzf)'"
+
+# open help
+# map H ~/.config/lf/help.txt
+
+# set internal field separator (IFS) to "\n" for shell commands
+# set ifs "\n"
+
