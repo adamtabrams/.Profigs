@@ -11,3 +11,7 @@ fi
 # Key bindings
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+bindkey '^G' fzf-cd-widget
+bindkey '^F' fzf-file-widget
+bindkey '^R' fzf-history-widget

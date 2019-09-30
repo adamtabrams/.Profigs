@@ -165,8 +165,9 @@
     nmap gc gc
 
 "--- Alignment --------------------------------------
-    nnoremap ga :Tabularize /
-    vnoremap ga :Tabularize /
+    nnoremap ga      :Tabularize //l2l0<Left><Left><Left><Left><Left>
+    nnoremap g<S-A>  :Tabularize /
+    vnoremap ga      :Tabularize /
 
 "--- Surrond ----------------------------------------
     nmap gsc     cs

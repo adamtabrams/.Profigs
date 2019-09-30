@@ -77,13 +77,13 @@
     alias la='ls -HpGA'
     alias ll='ls -HpGl'
     alias lla='ls -HpGlA'
-    alias lal='ls -HpGlA'
     alias pls='sudo'
     alias v='nvim'
     alias k='kubectl'
     alias j='jump'
     alias t='task'
     alias l='lfcd'
+    alias c='clear'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
