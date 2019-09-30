@@ -1,8 +1,0 @@
-#!/bin/sh
-FOO="bar"
-
-[ $FOO == "wrong" ] && exit
-
-if [ $FOO == "bar" ]; then
-	notify-send "This works!"
-fi
