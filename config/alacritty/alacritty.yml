@@ -534,15 +534,17 @@ key_bindings:
   - { key: Q,      mods: Command,         action: Quit             }
   - { key: W,      mods: Command,         action: Quit             }
   - { key: N,      mods: Command,         action: SpawnNewInstance }
-  - { key: K,      mods: Alt,             chars: "\x1b\x1b[A"      }
-  - { key: K,      mods: Command,         chars: "\x1b\x1b[A"      }
-  - { key: J,      mods: Alt,             chars: "\x1b\x1b[B"      }
-  - { key: J,      mods: Command,         chars: "\x1b\x1b[B"      }
+  - { key: K,      mods: Alt,             chars: "\x1bk"           }
+  - { key: K,      mods: Command,         chars: "\x1bk"           }
+  - { key: J,      mods: Alt,             chars: "\x1bj"           }
+  - { key: J,      mods: Command,         chars: "\x1bj"           }
+  - { key: U,      mods: Command,         action: ScrollPageUp     }
+  - { key: D,      mods: Command,         action: ScrollPageDown   }
 
-  - { key: Paste,                   action: Paste                            }
-  - { key: Copy,                    action: Copy                             }
   # - { key: L,        mods: Control, action: ClearLogNotice                   }
   # - { key: L,        mods: Control, chars: "\x0c"                            }
+  - { key: Paste,                   action: Paste                            }
+  - { key: Copy,                    action: Copy                             }
   - { key: Home,     mods: Alt,     chars: "\x1b[1;3H"                       }
   - { key: Home,                    chars: "\x1bOH",        mode: AppCursor  }
   - { key: Home,                    chars: "\x1b[H",        mode: ~AppCursor }
