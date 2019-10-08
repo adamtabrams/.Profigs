@@ -1,0 +1,13 @@
+Show installed formulae (no dependencies)
+
+    brew leaves
+
+
+Show installed casks
+
+    brew cask list
+
+
+Install from file
+
+    cat file.txt | xargs brew install
