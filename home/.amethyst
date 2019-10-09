@@ -1,0 +1,228 @@
+{
+    "layouts": [
+        "tall",
+        "wide",
+        "column",
+        "bsp"
+    ],
+    "Valid modifiers are": [
+        "option",
+        "shift",
+        "control",
+        "command"
+    ],
+    "mod1": [
+        "shift",
+        "control"
+    ],
+    "mod2": [
+        "control",
+        "option"
+    ],
+    "screens": 4,
+    "cycle-layout": {
+        "mod": "mod1",
+        "key": "left"
+    },
+    "cycle-layout-backward": {
+        "mod": "mod1",
+        "key": "right"
+    },
+    "select-tall-layout": {
+        "mod": "mod1",
+        "key": "t"
+    },
+    "select-wide-layout": {
+        "mod": "",
+        "key": ""
+    },
+    "select-fullscreen-layout": {
+        "mod": "mod1",
+        "key": "f"
+    },
+    "select-column-layout": {
+        "mod": "",
+        "key": ""
+    },
+    "focus-screen-ccw": {
+        "mod": "mod1",
+        "key": "p"
+    },
+    "focus-screen-cw": {
+        "mod": "mod1",
+        "key": "n"
+    },
+    "focus-screen-1": {
+        "mod": "",
+        "key": ""
+    },
+    "focus-screen-2": {
+        "mod": "",
+        "key": ""
+    },
+    "focus-screen-3": {
+        "mod": "",
+        "key": ""
+    },
+    "focus-screen-4": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-screen-1": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-screen-2": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-screen-3": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-screen-4": {
+        "mod": "",
+        "key": ""
+    },
+    "shrink-main": {
+        "mod": "mod1",
+        "key": "y"
+    },
+    "expand-main": {
+        "mod": "mod1",
+        "key": "o"
+    },
+    "increase-main": {
+        "mod": "mod1",
+        "key": "up"
+    },
+    "decrease-main": {
+        "mod": "mod1",
+        "key": "down"
+    },
+    "focus-ccw": {
+        "mod": "mod1",
+        "key": "j"
+    },
+    "focus-cw": {
+        "mod": "mod1",
+        "key": "k"
+    },
+    "focus-main": {
+        "mod": "mod1",
+        "key": "enter"
+    },
+    "swap-screen-ccw": {
+        "mod": "mod2",
+        "key": "p"
+    },
+    "swap-screen-cw": {
+        "mod": "mod2",
+        "key": "n"
+    },
+    "swap-ccw": {
+        "mod": "mod2",
+        "key": "j"
+    },
+    "swap-cw": {
+        "mod": "mod2",
+        "key": "k"
+    },
+    "swap-main": {
+        "mod": "mod2",
+        "key": "enter"
+    },
+    "throw-space-1": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-2": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-3": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-4": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-5": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-6": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-7": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-8": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-9": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-10": {
+        "mod": "",
+        "key": ""
+    },
+    "throw-space-left": {
+        "mod": "mod2",
+        "key": "h"
+    },
+    "throw-space-right": {
+        "mod": "mod2",
+        "key": "l"
+    },
+    "toggle-float": {
+        "mod": "mod1",
+        "key": "space"
+    },
+    "toggle-tiling": {
+        "mod": "mod1",
+        "key": "g"
+    },
+    "display-current-layout": {
+        "mod": "mod1",
+        "key": "/"
+    },
+    "reevaluate-windows": {
+        "mod": "mod1",
+        "key": "z"
+    },
+    "toggle-focus-follows-mouse": {
+        "mod": "",
+        "key": ""
+    },
+    "floating": [
+        "com.apple.systempreferences",
+        "com.cisco.Jabber"
+    ],
+    "floating-is-blacklist": true,
+    "float-small-windows": true,
+    "mouse-follows-focus": true,
+    "focus-follows-mouse": false,
+    "enables-layout-hud": true,
+    "enables-layout-hud-on-space-change": false,
+    "window-margin-size": 5,
+    "window-resize-step": 5,
+    "window-margins": true,
+    "window-minimum-height": 0,
+    "window-minimum-width": 0,
+    "ignore-menu-bar": false,
+    "use-canary-build": false,
+    "new-windows-to-main": false,
+    "follow-space-thrown-windows": true,
+    "send-crash-reports": false,
+    "screen-padding-top": 10,
+    "screen-padding-bottom": 10,
+    "screen-padding-left": 10,
+    "screen-padding-right": 10,
+    "debug-layout-info": false
+}
