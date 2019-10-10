@@ -19,7 +19,7 @@
         "control",
         "option"
     ],
-    "screens": 4,
+    "screens": 3,
     "cycle-layout": {
         "mod": "mod1",
         "key": "left"
@@ -46,11 +46,11 @@
     },
     "focus-screen-ccw": {
         "mod": "mod1",
-        "key": "p"
+        "key": "l"
     },
     "focus-screen-cw": {
         "mod": "mod1",
-        "key": "n"
+        "key": "h"
     },
     "focus-screen-1": {
         "mod": "",
@@ -114,11 +114,11 @@
     },
     "swap-screen-ccw": {
         "mod": "mod2",
-        "key": "p"
+        "key": "l"
     },
     "swap-screen-cw": {
         "mod": "mod2",
-        "key": "n"
+        "key": "h"
     },
     "swap-ccw": {
         "mod": "mod2",
@@ -174,11 +174,11 @@
     },
     "throw-space-left": {
         "mod": "mod2",
-        "key": "h"
+        "key": "p"
     },
     "throw-space-right": {
         "mod": "mod2",
-        "key": "l"
+        "key": "n"
     },
     "toggle-float": {
         "mod": "mod1",
