@@ -18,7 +18,7 @@ home_links_to() {
 # for every file in Profigs/home
 for FILE in $(lsim "$P_HOME"); do
     # if the file exists
-    if [ -e "$HOME/$FILE" ]; then
+    if [ -e "$HOME/$FILE" ] || [ -L "$HOME/$FILE" ]; then
         # if the file isn't a link to Profigs/home
         if ! home_links_to "$FILE" "$P_HOME"; then
             mv "$HOME/$FILE" "$OLD"
@@ -30,7 +30,7 @@ done
 # for every file in Profigs/config
 for FILE in $(lsim "$P_CONF"); do
     # if the file exists
-    if [ -e "$CONF/$FILE" ]; then
+    if [ -e "$CONF/$FILE" ] || [ -L "$CONF/$FILE" ]; then
         # if the file isn't a link to Profigs/config
         if ! home_links_to "$FILE" "$P_CONF"; then
             mv "$CONF/$FILE" "$OLD"
