@@ -83,7 +83,7 @@
     alias j='jump'
     alias t='task'
     alias l='lfcd'
-    alias c='clear'
+    alias cl='clear'
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
@@ -166,6 +166,13 @@ lfcd () {
         fi
     fi
 }
+#------------------------------------------------------
+# Mac OS Settings
+#------------------------------------------------------
+FontSmoothing=$(defaults read -g CGFontRenderingFontSmoothingDisabled)
+if [[ $FontSmoothing == 1 ]]; then
+    defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+fi
 #------------------------------------------------------
 # Plugins
 #------------------------------------------------------
