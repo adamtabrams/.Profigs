@@ -21,7 +21,7 @@
     set path+=**
     set tags+=./.tags;$HOME
     set shell=/bin/zsh
-    set iskeyword-=_
+    " set iskeyword-=_
 
 "--- Display ----------------------------------------
     syntax enable
@@ -118,8 +118,8 @@
     nnoremap <S-Y> y$
     tnoremap <C-\> <C-\><C-N>
     inoremap <C-V> <C-O>:set paste<CR><C-V><C-O>:set nopaste<CR>
-    cnoremap w!!   w !sudo tee > /dev/null %
-    cnoremap hh    vert help
+    cnoremap WW    w !sudo tee > /dev/null %
+    cnoremap HH    vert help
 
 "--- Tabbing ----------------------------------------
     function! CleverTab()
@@ -239,8 +239,8 @@
     let maplocalleader = "\<Space>"
 
 "--- Scrolling --------------------------------------
-    nnoremap <LocalLeader>j 5j
-    nnoremap <LocalLeader>k 5k
+    nnoremap <LocalLeader>j 5jzz
+    nnoremap <LocalLeader>k 5kzz
 
 "--- Splits -----------------------------------------
     nnoremap <silent> <LocalLeader>t :term<CR>a
@@ -249,7 +249,8 @@
     nnoremap <silent> <LocalLeader>- :exe "vertical resize " . (winwidth(0) * 4/5)<CR>
 
 "--- Substitute -------------------------------------
-    nnoremap <LocalLeader>s :%s:
+    nnoremap <LocalLeader>s      :%s::g<Left><Left>
+    nnoremap <LocalLeader><S-S>  :%s:<C-R><C-W>::g<Left><Left>
 
 "--- FZF --------------------------------------------
     let g:fzf_layout = { 'down': '~60%' }
