@@ -1,0 +1,9 @@
+With: pacman -Qqe > pkglist.txt
+When:
+NumPkgs:
+Groups:
+Restore: yay -S - < $HOME/.Profigs/pkglist.txt
+PkgsRemoved:
+NumPkgsRemoved:
+
+perl-timedate?D rlwrap?D ttf-fira-mono?D ttf-inconsolata?D ttf-linux-libertine?D aspell megatools remmina rustup valgrind xorg-xinit?? xwallpaper?B yay?M

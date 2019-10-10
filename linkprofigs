@@ -1,25 +1,41 @@
 #!/bin/bash
 
-# Create backup directory
-pfgs=$HOME/.Profigs
-backup=$HOME/.old-configs/$(date +%m-%d-%Y_Time%H-%M-%S)
-mkdir -pv $backup
+OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
+mkdir -p "$OLD"
 
-# Archive old configs in $HOME, then create links
-mv -nv -t "$backup/" $HOME/.vimrc $HOME/.bashrc $HOME/.zshrc $HOME/.profile $HOME/.Xdefaults $HOME/.Xresources $HOME/.scripts $HOME/.examples
+CONF=$HOME/.config
+P_HOME=$HOME/.Profigs/home
+P_CONF=$HOME/.Profigs/config
 
-ln -sv -t "$HOME/" $pfgs/.vimrc $pfgs/.bashrc $pfgs/.zshrc $pfgs/.profile $pfgs/.Xdefaults $pfgs/.Xresources $pfgs/.scripts $pfgs/.examples
+lsim() {
+    find "$1" -maxdepth 1 -mindepth 1 -exec basename {} \;
+}
 
-# Archive old configs in $HOME/.config, then create links
-mkdir -pv $HOME/.config/
-cnfg=$HOME/.config
+home_links_to() {
+    find "$HOME" -maxdepth 1 -type l -ls | grep -q "$1 \-> $2/$1"
+}
 
-mv -nv -t "$backup/" $cnfg/dunst $cnfg/gtk-2.0 $cnfg/gtk-3.0 $cnfg/htop $cnfg/i3 $cnfg/i3blocks $cnfg/latexmk $cnfg/mpv $cnfg/nvim $cnfg/vifm
+# for every file in Profigs/home
+for FILE in $(lsim "$P_HOME"); do
+    # if the file exists
+    if [ -e "$HOME/$FILE" -o -L "$HOME/$FILE" ]; then
+        # if the file isn't a link to Profigs/home
+        if ! home_links_to "$FILE" "$P_HOME"; then
+            mv "$HOME/$FILE" "$OLD"
+            ln -s "$P_HOME/$FILE" "$HOME"
+        fi
+    fi
+done
 
-ln -sv -t "$cnfg/" $pfgs/dunst $pfgs/gtk-2.0 $pfgs/gtk-3.0 $pfgs/htop $pfgs/i3 $pfgs/i3blocks $pfgs/latexmk $pfgs/mpv $pfgs/nvim $pfgs/vifm
+# for every file in Profigs/config
+for FILE in $(lsim "$P_CONF"); do
+    # if the file exists
+    if [ -e "$CONF/$FILE" -o -L "$CONF/$FILE" ]; then
+        # if the file isn't a link to Profigs/config
+        if ! home_links_to "$FILE" "$P_CONF"; then
+            mv "$CONF/$FILE" "$OLD"
+            ln -s "$P_CONF/$FILE" "$CONF"
+        fi
+    fi
+done
 
-mv -nv $HOME/.config/wall.png $backup/
-ln -sv $HOME/.Profigs/wallpaper.jpg $HOME/.config/wall.png
-
-#/ect
-	#pacman, lightdm, ssh

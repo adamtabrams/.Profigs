@@ -1,0 +1,17 @@
+#!/bin/sh
+
+list=$(xrandr --current | awk '{print $1}')
+list=$(echo -e "$list" | grep '-')
+res=$(echo -e "$list" | dmenu -i -p "Select monitor: ")
+
+[ -z "$res" ] && exit 1
+
+xrandr --output "$res" --auto
+hsetroot -fill "$HOME/.config/wall.png"
+
+# res=$(echo -e "hset\nxwall" | dmenu -i -p "Set wallpaper: ")
+# if [ $res == 'xwall' ]; then
+# 	setwallpaperx
+# else
+# 	setwallpaper
+# fi

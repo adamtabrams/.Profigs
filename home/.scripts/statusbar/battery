@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# BAT="$1"
+BAT="BAT0"
+
+capacity=$(cat /sys/class/power_supply/"$BAT"/capacity) || exit
+status=$(cat /sys/class/power_supply/"$BAT"/status)
+
+if [ "$capacity" -ge 80 ]; then
+	result=""
+elif [ "$capacity" -ge 60 ]; then
+	result=""
+elif [ "$capacity" -ge 40 ]; then
+	result=""
+elif [ "$capacity" -ge 20 ]; then
+	result=""
+else
+	result=""
+	[ "$status" = "Discharging" ] && result+=" "
+fi
+
+[ "$status" = "Charging" ] && result+=" "
+
+echo "$result"

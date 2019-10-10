@@ -1,0 +1,38 @@
+{
+  "settingsVersion": "1.64.6",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.overleaf.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://play.rust-lang.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://repl.it/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\n\nmap R reload hard",
+  "linkHintCharacters": "asdfghjklwertyuoxcvn",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "h: https://hub.uhg.com/Pages/Results.aspx?k=%s Hub\nhc: https://hubconnect.uhg.com/search.jspa?q=%s HubConnect\ng: https://github.com/search?q=%s Github\ngi: https://github.optum.com/search?q=%s Optum Github\n\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n#w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n  border: 0.15em solid #434448;\n  border-radius: 0.6em;\n  box-shadow: none;\n  text-shadow: none !important;\n  font-size: 12px !important;\n  font-weight: normal !important;\n  background: #434448;\n}\n\ndiv > .vimiumHintMarker span {\n  font-weight: normal !important;\n  color: #e2e3e7;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n  font-weight: normal !important;\n  color: #2aa198;\n}"
+}

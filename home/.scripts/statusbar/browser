@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) setsid $BROWSER
+esac
+
+# Firefox
+echo ""
+
+# Chrome
+# echo ""
