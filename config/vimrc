@@ -235,7 +235,7 @@
     nnoremap <silent> <Leader>an :ALENextWrap<CR>
     nnoremap <silent> <Leader>ap :ALEPreviousWrap<CR>
     nnoremap <silent> <Leader>ao :lopen<CR>
-    " nnoremap <silent> <Leader>ac :lclose<CR>
+    nnoremap <silent> <Leader>ac :lclose<CR>
     nnoremap <silent> <Leader>af :ALEFix<CR>
     nnoremap <silent> <Leader>a8 :e ~/.config/flake8<CR>
 
