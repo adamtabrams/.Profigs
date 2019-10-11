@@ -62,13 +62,17 @@
 
 "--- Change Indent ----------------------------------
     function! SetIndentLocal(num)
+        update
         let &l:tabstop = a:num
         let &l:shiftwidth = a:num
+        e
     endfunction
     function! SetIndent(num)
         let g:TabSize = a:num
+        wa
         let &tabstop = a:num
         let &shiftwidth = a:num
+        e
     endfunction
 
 "--- Searching --------------------------------------
@@ -119,7 +123,7 @@
     tnoremap <C-\> <C-\><C-N>
     inoremap <C-V> <C-O>:set paste<CR><C-V><C-O>:set nopaste<CR>
     cnoremap WW    w !sudo tee > /dev/null %
-    cnoremap HH    vert help
+    cnoremap HH    vert help<Space>
 
 "--- Tabbing ----------------------------------------
     function! CleverTab()
@@ -223,17 +227,25 @@
 "--- Indenting --------------------------------------
     nnoremap <Leader>ii :call SetIndent()<Left>
     nnoremap <Leader>il :call SetIndentLocal()<Left>
+    nnoremap <Leader>ia :bufdo call SetIndent()<Left>
 
 "--- ALE Linting ------------------------------------
-    nnoremap <silent> <Leader>aa :ALENext<CR>
+    nnoremap <silent> <Leader>aa :ALEFirst<CR>
     nnoremap <silent> <Leader>ag :ALEFirst<CR>
     nnoremap <silent> <Leader>an :ALENextWrap<CR>
     nnoremap <silent> <Leader>ap :ALEPreviousWrap<CR>
     nnoremap <silent> <Leader>ao :lopen<CR>
-    nnoremap <silent> <Leader>ac :lclose<CR>
+    " nnoremap <silent> <Leader>ac :lclose<CR>
     nnoremap <silent> <Leader>af :ALEFix<CR>
     nnoremap <silent> <Leader>a8 :e ~/.config/flake8<CR>
-    let g:ale_fixers = {'python': ['black'], 'vue': ['prettier'], 'javascript': ['prettier']}
+
+    set omnifunc=ale#completion#OmniFunc
+
+    let g:ale_fixers = {
+    \   'python': ['black'],
+    \   'vue': ['prettier'],
+    \   'javascript': ['prettier']
+    \}
 
 "### LocalLeader ####################################
     let maplocalleader = "\<Space>"
