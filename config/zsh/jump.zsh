@@ -6,6 +6,10 @@
 export MARKFILE=$HOME/.local/share/lf/marks
 
 jump() {
+    if [ $(echo $1 | head -c 1) == ~ ]; then cd "$1"
+    elif [ $(echo $1 | head -c 2) == // ]; then cd $(echo "$1" | sed "s:\/\/:$HOME\/:")
+    elif [ $(echo $1 | head -c 1) == / ]; then cd "$1"; fi
+
     MARKPATH=$(grep --color=never "^$1:" "$MARKFILE")
     MARKPATH=${MARKPATH:2}
     cd "$MARKPATH" 2>/dev/null || {echo "No such mark: $1"; return 1}
