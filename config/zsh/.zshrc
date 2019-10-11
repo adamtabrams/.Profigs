@@ -63,6 +63,7 @@
     alias ldk='lazydocker'
     alias yay='pacapt'
     alias sc='scim'
+    alias mkdir='mkdir -pv'
 #------------------------------------------------------
 # Configs
 #------------------------------------------------------
@@ -87,8 +88,6 @@
 #------------------------------------------------------
 # Other
 #------------------------------------------------------
-    alias mkdir='mkdir -pv'
-    alias mkprint='lpr -o sides=two-sided-long-edge -o collate=true -o media=letter -P $(lsprinter)'
     alias myip='ifconfig | grep "inet 10" | awk '\''{print $2}'\'''
 #------------------------------------------------------
 # Colors
