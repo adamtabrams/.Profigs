@@ -5,7 +5,6 @@ if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    autocmd VimEnter * PlugInstall --sync
-    " autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.local/nvim/site/plugged')
@@ -20,5 +19,19 @@ call plug#begin('~/.local/nvim/site/plugged')
     Plug 'yggdroot/indentline'
     Plug 'godlygeek/tabular'
 call plug#end()
+
+" FZF
+let g:fzf_layout = { 'down': '~60%' }
+command! -bang -nargs=? -complete=dir Files
+\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=? GFiles
+\ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" ALE
+let g:ale_fixers = {
+\   'python': ['black'],
+\   'vue': ['prettier'],
+\   'javascript': ['prettier']
+\}
 
 source $VDOTFILE

@@ -155,9 +155,6 @@
     tnoremap <C-P> <C-\><C-N>:bp<CR>
 
 "### G-Motions ######################################
-"--- Black Hole -------------------------------------
-    nnoremap gd "_d
-
 "--- Special Mark -----------------------------------
     nnoremap gm /<++><CR>cf>
 
@@ -241,12 +238,6 @@
 
     set omnifunc=ale#completion#OmniFunc
 
-    let g:ale_fixers = {
-    \   'python': ['black'],
-    \   'vue': ['prettier'],
-    \   'javascript': ['prettier']
-    \}
-
 "### LocalLeader ####################################
     let maplocalleader = "\<Space>"
 
@@ -265,14 +256,6 @@
     nnoremap <LocalLeader><S-S>  :%s:<C-R><C-W>::g<Left><Left>
 
 "--- FZF --------------------------------------------
-    let g:fzf_layout = { 'down': '~60%' }
-
-    command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-    command! -bang -nargs=? GFiles
-    \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
-
     nnoremap <silent> <LocalLeader><LocalLeader> :Buffers<CR>
     nnoremap <silent> <LocalLeader>b             :BLines<CR>
     nnoremap <silent> <LocalLeader>c             :GFiles?<CR>
