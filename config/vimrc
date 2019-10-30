@@ -178,6 +178,22 @@
     nmap gs<S-D> dS
     nmap gs<S-S> yS
 
+"--- vim-go -----------------------------------------
+    nnoremap goi      :GoInstall<CR>
+    nnoremap got      :GoTest<CR>
+    nnoremap gof      :GoTestFunc<CR>
+    nnoremap goa      :GoAlternate<CR>
+    nnoremap go<S-C>  :GoCoverageToggle<CR>
+    nnoremap gor      :GoRun %<CR><C-W>hi
+    nnoremap go<S-R>  :GoRun<CR><C-W>hi
+    nnoremap gob      :GoBuild<CR>
+    nnoremap go<S-B>  :GoTestCompile<CR>
+    nnoremap gon      :cnext<CR>
+    nnoremap gop      :cprevious<CR>
+    nnoremap goc      :cclose<CR>
+    nnoremap gol      :lclose<CR>
+
+
 "### Leader Keys ####################################
     let mapleader = "'"
     nnoremap <Leader><Leader> '
@@ -193,8 +209,8 @@
     inoremap <C-B>     <C-X><C-P>
 
 "--- Matching ---------------------------------------
-    inoremap <Leader>[ <CR>}<C-O><S-O><Tab>
-    inoremap <Leader>] <CR>},<C-O><S-O><Tab>
+    inoremap <Leader>[ <CR>}<C-O><S-O>
+    inoremap <Leader>] <CR>},<C-O><S-O>
 
 "--- Special Mark -----------------------------------
     inoremap <Leader>mm <Esc>/<++><CR>cf>
