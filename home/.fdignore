@@ -1,0 +1,13 @@
+Library
+Pictures
+Music
+Applications
+Movies
+Public
+
+**/.DS_Store
+**/OLD
+
+go
+node_modules
+MyJabberFiles

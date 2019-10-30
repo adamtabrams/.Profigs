@@ -12,7 +12,7 @@ set scrolloff 10
 map H push <f-1>
 
 # use enter for shell commands
-map <enter> shell
+map <enter> shell-wait
 
 # use escape for quitting
 map <esc> quit
@@ -25,12 +25,15 @@ map X !$f
 set previewer ~/.config/lf/pv.sh
 
 # integrate fzf
-map F $(~/.config/lf/vim-fzf.sh)
-map f $lf -remote "send $id select '$(fzf)'"
+map V $(~/.config/lf/vim-fzf.sh)
+map F $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
+map L !lazygit
 
 # General
 set incsearch
 set color256
+set sortby time
+set reverse
 
 # set internal field separator (IFS) to "\n" for shell commands
 # set ifs "\n"

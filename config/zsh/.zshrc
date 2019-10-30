@@ -3,7 +3,7 @@
 #------------------------------------------------------
 # General Settings
 #------------------------------------------------------
-    HISTFILE="$HOME/.config/histfile"
+    HISTFILE="$HISTFILE"
     HISTSIZE=10000
     SAVEHIST=10000
     setopt appendhistory extendedhistory incappendhistory
@@ -31,7 +31,7 @@
     zstyle ':completion:*' rehash true
     zstyle ':completion:*' menu select
     zmodload zsh/complist
-    zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
+    zstyle :compinstall filename "$ZDOTDIR/.zshrc"
     autoload -Uz compinit
     compinit
     # Include hidden files.
@@ -178,6 +178,7 @@ fi
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     source <(kubectl completion zsh)
     source <(helm completion zsh)
-    [ -f $HOME/.config/zsh/jump.zsh ] && source $HOME/.config/zsh/jump.zsh
-    [ -f $HOME/.config/zsh/fzf.zsh ] && source $HOME/.config/zsh/fzf.zsh
+    [ -f $ZDOTDIR/jump.zsh ] && source $ZDOTDIR/jump.zsh
+    [ -f $ZDOTDIR/venv.zsh ] && source $ZDOTDIR/venv.zsh
+    [ -f $ZDOTDIR/fzf.zsh ] && source $ZDOTDIR/fzf.zsh
 

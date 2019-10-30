@@ -540,6 +540,7 @@ key_bindings:
   - { key: J,      mods: Command,         chars: "\x1bj"           }
   - { key: U,      mods: Command,         action: ScrollPageUp     }
   - { key: D,      mods: Command,         action: ScrollPageDown   }
+  - { key: C,      mods: Alt,             chars: "\x1bc"           }
 
   # - { key: L,        mods: Control, action: ClearLogNotice                   }
   # - { key: L,        mods: Control, chars: "\x0c"                            }
