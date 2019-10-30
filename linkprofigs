@@ -24,6 +24,8 @@ for FILE in $(lsim "$P_HOME"); do
             mv "$HOME/$FILE" "$OLD"
             ln -s "$P_HOME/$FILE" "$HOME"
         fi
+    else
+        ln -s "$P_HOME/$FILE" "$HOME"
     fi
 done
 
@@ -36,6 +38,8 @@ for FILE in $(lsim "$P_CONF"); do
             mv "$CONF/$FILE" "$OLD"
             ln -s "$P_CONF/$FILE" "$CONF"
         fi
+    else
+        ln -s "$P_CONF/$FILE" "$CONF"
     fi
 done
 
