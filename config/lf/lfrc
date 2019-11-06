@@ -28,6 +28,7 @@ set previewer ~/.config/lf/pv.sh
 map V $(~/.config/lf/vim-fzf.sh)
 map F $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
 map L !lazygit
+map D :delete
 
 # General
 set incsearch
