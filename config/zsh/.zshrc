@@ -21,7 +21,7 @@
     autoload -Uz promptinit
     promptinit
     PROMPT='%F{blue}>%f '
-    RPROMPT='%F{yellow}%2~%f'
+    RPROMPT='%F{yellow}%3~%f'
 #------------------------------------------------------
 # Completion settings
 #------------------------------------------------------
@@ -145,7 +145,7 @@
     echo -ne '\e[5 q' # Use beam shape cursor on startup.
     preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 #------------------------------------------------------
-# Edit line in vim with ctrl-e:
+# Edit line in vim with normal-mode v
 #------------------------------------------------------
     autoload edit-command-line; zle -N edit-command-line
     bindkey -M vicmd 'v' edit-command-line
@@ -168,8 +168,8 @@ lfcd () {
 #------------------------------------------------------
 # Mac OS Settings
 #------------------------------------------------------
-FontSmoothing=$(defaults read -g CGFontRenderingFontSmoothingDisabled)
-if [[ $FontSmoothing == 1 ]]; then
+FontSmoothing=$(defaults read -g CGFontRenderingFontSmoothingDisabled) 2&>/dev/null
+if [[ $FontSmoothing != 0 ]]; then
     defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 fi
 #------------------------------------------------------
