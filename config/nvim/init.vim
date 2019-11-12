@@ -4,8 +4,9 @@ let &packpath = &runtimepath
 if empty(glob('~/.local/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   autocmd VimEnter * PlugInstall --sync
+    autocmd VimEnter * PlugInstall --sync
 endif
+source ~/.local/nvim/site/autoload/plug.vim
 
 call plug#begin('~/.local/nvim/site/plugged')
     Plug 'altercation/vim-colors-solarized'
