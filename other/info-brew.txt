@@ -8,6 +8,11 @@ Show installed casks
     brew cask list
 
 
-Install from file
+Install brew packages from file
 
-    cat file.txt | xargs brew install
+    cat brew-packs.txt | xargs brew install
+
+
+Install cask packages from file
+
+    cat cask-packs.txt | xargs brew cask
