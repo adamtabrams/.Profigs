@@ -4,8 +4,7 @@
 # General Settings
 #------------------------------------------------------
     HISTFILE="$HISTFILE"
-    HISTSIZE=10000
-    SAVEHIST=10000
+    HISTSIZE=SAVEHIST=10000000
     setopt appendhistory extendedhistory incappendhistory
     setopt histfindnodups nohistbeep sharehistory
     setopt histignorespace
