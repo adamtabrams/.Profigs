@@ -1,0 +1,32 @@
+#--- Default Options ----------------------------------
+alias grep='grep --color=always'
+alias mkdir='mkdir -pv'
+alias la='ls -HpGA'
+alias ll='ls -HpGl'
+
+#--- Shortcut -----------------------------------------
+# alias vim='nvim'
+alias vim='~/temp/nvim/neovim/build/bin/nvim'
+alias vi='nvim'
+alias v='nvim'
+alias sed='gsed'
+alias ldk='lazydocker'
+alias yay='pacapt'
+alias lg='lazygit'
+alias sc='scim'
+alias cl='clear'
+alias k='kubectl'
+alias t='task'
+alias l='lfcd'
+alias j='jump'
+alias c='jump'
+
+#--- Mini-Scripts -------------------------------------
+alias myip='ifconfig | grep "inet 10" | awk '\''{print $2}'\'''
+
+#--- Configs ------------------------------------------
+alias .zsh='nvim $ZDOTDIR/.zshrc'
+alias .alias='nvim $ZDOTDIR/alias'
+alias .env='nvim $HOME/.zshenv'
+alias .nvim='nvim $HOME/.config/nvim/init.vim'
+alias .hist='nvim $HISTFILE'
