@@ -12,7 +12,7 @@ set scrolloff 10
 map H push <f-1>
 
 # use enter for shell commands
-map <enter> shell-wait
+map <enter> shell
 
 # use escape for quitting
 map <esc> quit
@@ -27,7 +27,7 @@ set previewer ~/.config/lf/pv.sh
 # integrate fzf
 map V $(~/.config/lf/vim-fzf.sh)
 map F $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
-map L !lazygit
+map L $lazygit
 map D :delete
 
 # General
