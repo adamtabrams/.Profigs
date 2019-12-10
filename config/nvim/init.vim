@@ -8,7 +8,6 @@
     endif
 
     call plug#begin('~/.local/nvim/site/plugged')
-    " Plug 'sheerun/vim-polyglot'
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -20,6 +19,7 @@
     Plug 'dense-analysis/ale'
     Plug 'yggdroot/indentline'
     Plug 'fatih/vim-go'
+    Plug 'vimwiki/vimwiki'
     call plug#end()
 
 "##################### PLUGINS ######################
@@ -35,6 +35,8 @@
         \   'vue': ['prettier'],
         \   'javascript': ['prettier']
         \}
+
+    let g:vimwiki_url_maxsave = 0
 
     let g:go_fmt_command = "goimports"
     let g:go_highlight_types = 1
@@ -87,8 +89,8 @@
 
 "################### REMAPPINGS #####################
 "--- Should-Be-Defaults -----------------------------
-    cnoremap w!!   execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-    cnoremap help  vert help
+    cnoremap WW execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+    cnoremap HH vert help
     tnoremap <C-\> <C-\><C-N>
     nnoremap c "_c
     nnoremap <S-Y> y$
@@ -133,19 +135,19 @@
     " set omnifunc=ale#completion#OmniFunc
 
 "--- vim-go -----------------------------------------
-    nnoremap goi      :GoInstall<CR>
-    nnoremap got      :GoTest<CR>
-    nnoremap gof      :GoTestFunc<CR>
-    nnoremap goa      :GoAlternate<CR>
-    nnoremap go<S-C>  :GoCoverageToggle<CR>
-    nnoremap gor      :GoRun %<CR><C-W>hi
-    nnoremap go<S-R>  :GoRun<CR><C-W>hi
-    nnoremap gob      :GoBuild<CR>
-    nnoremap go<S-B>  :GoTestCompile<CR>
-    nnoremap gon      :cnext<CR>
-    nnoremap gop      :cprevious<CR>
-    nnoremap goc      :cclose<CR>
-    nnoremap gol      :lclose<CR>
+    nnoremap goi     :GoInstall<CR>
+    nnoremap got     :GoTest<CR>
+    nnoremap gof     :GoTestFunc<CR>
+    nnoremap goa     :GoAlternate<CR>
+    nnoremap go<S-C> :GoCoverageToggle<CR>
+    nnoremap gor     :GoRun %<CR><C-W>hi
+    nnoremap go<S-R> :GoRun<CR><C-W>hi
+    nnoremap gob     :GoBuild<CR>
+    nnoremap go<S-B> :GoTestCompile<CR>
+    nnoremap gon     :cnext<CR>
+    nnoremap gop     :cprevious<CR>
+    nnoremap goc     :cclose<CR>
+    nnoremap gol     :lclose<CR>
 
 
 "### Leader Keys ####################################
@@ -202,20 +204,3 @@
     nnoremap <silent> <LocalLeader><S-M>         :Maps<CR>
     nnoremap <silent> <LocalLeader><S-C>         :Commands<CR>
     nnoremap <silent> <LocalLeader><S-H>         :Helptags<CR>
-
-"##################### SETTINGS #####################
-    " set autowrite
-    " set hidden
-    " set path+=**
-    " set iskeyword-=_
-    " set showmatch
-    " set textwidth=90
-    " set linebreak
-    " set smartindent
-    " set complete+=k,kspell
-    " set omnifunc=syntaxcomplete#Complete
-    " set omnifunc=ale#completion#OmniFunc
-    " set termguicolors
-    " set t_Co=256
-    " cnoremap 3636 <C-U>undo<CR>
-    " inoremap <C-V> <C-O>:set paste<CR><C-V><C-O>:set nopaste<CR>

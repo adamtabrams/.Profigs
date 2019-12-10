@@ -1,6 +1,10 @@
 update: pdf
 	pidof mupdf | xargs kill -1
 
+mac: *.ms
+	@echo COMPILING $^
+	groff -ms -T ps $^ | pstopdf -o out.pdf
+
 pdf: *.ms
 	@echo COMPILING $^
 	groff -ms -T ps $^ | ps2pdf - out.pdf

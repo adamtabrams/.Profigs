@@ -1,44 +1,32 @@
-#------------------------------------------------------
-# General
-#------------------------------------------------------
+###################### General ######################
     eval $(gdircolors $ZDOTDIR/dircolors.ansi-dark)
     export KEYTIMEOUT=1
     setopt autocd notify
-#------------------------------------------------------
-# Prompt
-#------------------------------------------------------
+###################### Prompt #######################
     autoload -Uz promptinit
     promptinit
     PROMPT='%F{blue}>%f '
     RPROMPT='%F{yellow}%3~%f'
-#------------------------------------------------------
-# Completion
-#------------------------------------------------------
+###################### Completion ###################
     autoload -Uz compinit
     zstyle ':completion:*' menu select
     zmodload zsh/complist
     compinit
     # Include hidden files.
     _comp_options+=(globdots)
-#------------------------------------------------------
-# History
-#------------------------------------------------------
+###################### History ######################
     HISTFILE="$HISTFILE"
     HISTSIZE=SAVEHIST=10000000
     setopt appendhistory extendedhistory incappendhistory
     setopt histfindnodups nohistbeep sharehistory
     setopt histignorespace
-#------------------------------------------------------
-# History searching
-#------------------------------------------------------
+###################### History searching ############
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
     bindkey "^[[A" up-line-or-beginning-search
     bindkey "^[[B" down-line-or-beginning-search
-#------------------------------------------------------
-# Vim
-#------------------------------------------------------
+###################### Vim ##########################
 #--- j/k history search -------------------------------
     bindkey -M vicmd "k" up-line-or-beginning-search
     bindkey -M vicmd "j" down-line-or-beginning-search
@@ -77,32 +65,26 @@
 
     echo -ne '\e[5 q' # Use beam shape cursor on startup.
     preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-#------------------------------------------------------
-# save lf exit dir
-#------------------------------------------------------
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
+###################### Save lf Dir ##################
+    lfcd () {
+        tmp="$(mktemp)"
+        lf -last-dir-path="$tmp" "$@"
+        if [ -f "$tmp" ]; then
+            dir="$(cat "$tmp")"
+            rm -f "$tmp"
+            if [ -d "$dir" ]; then
+                if [ "$dir" != "$(pwd)" ]; then
+                    cd "$dir"
+                fi
             fi
         fi
-    fi
-}
-#------------------------------------------------------
-# Mac OS
-#------------------------------------------------------
+    }
+###################### Mac OS #######################
     FontSmoothing=$(defaults read -g CGFontRenderingFontSmoothingDisabled) 2&>/dev/null
     if [[ "$FontSmoothing" != 0 ]]; then
         defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
     fi
-#------------------------------------------------------
-# Plugins
-#------------------------------------------------------
+###################### Plugins ######################
     [ -f "$ZDOTDIR/jump.zsh" ] && source "$ZDOTDIR/jump.zsh"
     [ -f "$ZDOTDIR/venv.zsh" ] && source "$ZDOTDIR/venv.zsh"
     [ -f "$ZDOTDIR/fzf.zsh" ] && source "$ZDOTDIR/fzf.zsh"
