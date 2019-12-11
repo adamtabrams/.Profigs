@@ -25,7 +25,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map R reload hard\nmap ' Marks.activateGotoMode",
+  "keyMappings": "map R reload hard\nmap ' Marks.activateGotoMode\nmap <c-o> visitPreviousTab",
   "linkHintCharacters": "asdfgwerxcv",
   "linkHintNumbers": "ASDFGHJKLWERTYUO",
   "newTabUrl": "about:newtab",

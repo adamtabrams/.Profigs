@@ -25,16 +25,19 @@ map X !$f
 set previewer ~/.config/lf/pv.sh
 
 # integrate fzf
+map <a-c> $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
 map V $(~/.config/lf/vim-fzf.sh)
-map F $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
 map L $lazygit
 map D :delete
 
 # General
-set incsearch
 set color256
-set sortby time
+set scrolloff 2
+set incsearch
+set findlen 0
 set reverse
+set hidden
+# set sortby time
 
 # set internal field separator (IFS) to "\n" for shell commands
 # set ifs "\n"

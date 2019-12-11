@@ -37,6 +37,12 @@
         \}
 
     let g:vimwiki_url_maxsave = 0
+    let g:vimwiki_listsyms = " ○◐●✔"
+    let g:vimwiki_listsym_rejected = "✖"
+    let g:vimwiki_list_ignore_newline = 0
+    let g:vimwiki_text_ignore_newline = 0
+    let g:vimwiki_hl_cb_checked = 2
+    " let g:vimwiki_hl_headers = 1
 
     let g:go_fmt_command = "goimports"
     let g:go_highlight_types = 1
