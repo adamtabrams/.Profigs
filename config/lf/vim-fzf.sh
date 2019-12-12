@@ -1,7 +1,7 @@
 #!/bin/sh
 
-FILES=$(fzf -m | tr '\n' ' ' | sed 's/ $//')
+files=$(fzf -m | tr '\n' ' ' | sed 's/ $//')
 
-if [ "$FILES" ]; then
-    nvim $FILES
+if [ "$files" ]; then
+    "$EDITOR" $files
 fi

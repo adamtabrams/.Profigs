@@ -1,44 +1,24 @@
-# interpreter for shell commands
-set shell zsh
-
-# set '-eu' options for shell commands
-# These options are used to have safer shell commands.
+### General ###
+set shell sh
 set shellopts '-eu'
-
-# leave some space at the top and the bottom of the screen
+set ifs "\n"
 set scrolloff 10
-
-# quickly opens help
-map H push <f-1>
-
-# use enter for shell commands
-map <enter> shell
-
-# use escape for quitting
-map <esc> quit
-
-# execute current file (must be executable)
-map x $$f
-map X !$f
-
-# set preview window to script in config
-set previewer ~/.config/lf/pv.sh
-
-# integrate fzf
-map <a-c> $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
-map V $(~/.config/lf/vim-fzf.sh)
-map L $lazygit
-map D :delete
-
-# General
 set color256
-set scrolloff 2
 set incsearch
 set findlen 0
 set reverse
 set hidden
+set icons
 # set sortby time
+set previewer ~/.config/lf/preview.sh
 
-# set internal field separator (IFS) to "\n" for shell commands
-# set ifs "\n"
-
+### Mappings ###
+map <a-c> $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
+map H push <f-1>
+map <enter> shell
+map <esc> quit
+map x $$f
+map X !$f
+map V $(~/.config/lf/vim-fzf.sh)
+map L $lazygit
+map D :delete
