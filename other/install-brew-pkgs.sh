@@ -1,3 +1,7 @@
+#!/bin/sh
+# Generate list of installed progs: brew leaves
+
+progs_list=" \
 neovim
 zsh
 zsh-syntax-highlighting
@@ -10,6 +14,7 @@ fzf
 ripgrep
 fd
 lf
+grip
 gnu-sed
 jq
 docker-completion
@@ -25,4 +30,6 @@ wrk
 shellcheck
 black
 flake8
-go
+go"
+
+echo "$progs_list" | xargs brew install

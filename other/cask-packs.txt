@@ -1,5 +1,0 @@
-install amethyst
-install alacritty
-install brave-browser
-tap homebrew/cask-fonts
-install font-fira-code
