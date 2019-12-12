@@ -28,6 +28,7 @@
     eq() { echo $(( $@ )) }
     # improve math abilities with: zmodload zsh/mathfunc
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
+    up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
 
 #### Configs ##########################################
     alias .zsh='nvim $ZDOTDIR/.zshrc'
