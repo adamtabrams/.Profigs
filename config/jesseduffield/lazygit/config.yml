@@ -1,0 +1,28 @@
+gui:
+  scrollheight: 2
+  scrollpastbottom: true
+  theme:
+    lightTheme: false
+    activebordercolor:
+    - magenta
+    - bold
+    inactivebordercolor:
+    - white
+    optionstextcolor:
+    - blue
+  commitlength:
+    show: true
+  mouseEvents: true
+git:
+  merging:
+    manualCommit: false
+  skipHookPrefix: WIP
+  autoFetch: true
+update:
+  method: prompt
+  days: 14
+os:
+  opencommand: $EDITOR {{filename}}
+reporting: "off"
+confirmOnQuit: false
+startuppopupversion: 1
