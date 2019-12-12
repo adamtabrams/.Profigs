@@ -18,8 +18,7 @@
     HISTFILE="$HISTFILE"
     HISTSIZE=SAVEHIST=10000000
     setopt appendhistory extendedhistory incappendhistory
-    setopt histfindnodups nohistbeep sharehistory
-    setopt histignorespace
+    setopt histfindnodups sharehistory histignorespace
 ###################### History searching ############
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
@@ -79,6 +78,18 @@
             fi
         fi
     }
+###################### Dirstack #####################
+    DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+    if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+        dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+        [[ -d $dirstack[1] ]] && cd $dirstack[1]
+    fi
+    chpwd() {
+        print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+    }
+    DIRSTACKSIZE=4
+    setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME
+    setopt PUSHD_IGNORE_DUPS PUSHD_MINUS
 ###################### Mac OS #######################
     FontSmoothing=$(defaults read -g CGFontRenderingFontSmoothingDisabled) 2&>/dev/null
     if [[ "$FontSmoothing" != 0 ]]; then
