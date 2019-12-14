@@ -83,6 +83,7 @@
     set ignorecase smartcase fileignorecase wildignorecase
     set number relativenumber
     set splitbelow splitright
+    set autowrite
     set nohlsearch
     colorscheme solarized
     syntax enable
@@ -97,38 +98,38 @@
 "--- Should-Be-Defaults -----------------------------
     cnoremap WW execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
     cnoremap HH vert help
-    tnoremap <C-\> <C-\><C-N>
+    tnoremap <c-\> <c-\><c-n>
     nnoremap c "_c
-    nnoremap <S-Y> y$
+    nnoremap <s-y> y$
 
 "--- Tabbing ----------------------------------------
     function! CleverTab()
         if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
             return "\<Tab>"
         else
-            return "\<C-P>"
+            return "\<c-n>"
         endif
     endfunction
 
-    inoremap <silent> <Tab>         <C-R>=CleverTab()<CR>
-    inoremap          <S-Tab>       <C-N>
+    inoremap <silent> <Tab>         <c-r>=CleverTab()<CR>
+    inoremap          <s-Tab>       <c-n>
 
 "--- Splits/Buffers ---------------------------------
-    nnoremap <C-H> <C-W>h
-    nnoremap <C-J> <C-W>j
-    nnoremap <C-K> <C-W>k
-    nnoremap <C-L> <C-W>l
-    tnoremap <C-H> <C-\><C-N><C-W>h
-    tnoremap <C-L> <C-\><C-N><C-W>l
-    nnoremap <C-N> :bn<CR>
-    nnoremap <C-P> :bp<CR>
-    tnoremap <C-N> <C-\><C-N>:bn<CR>
-    tnoremap <C-P> <C-\><C-N>:bp<CR>
+    nnoremap <c-h> <c-w>h
+    nnoremap <c-j> <c-w>j
+    nnoremap <c-k> <c-w>k
+    nnoremap <c-l> <c-w>l
+    tnoremap <c-h> <c-\><c-n><c-w>h
+    tnoremap <c-l> <c-\><c-n><c-w>l
+    nnoremap <c-n> :bn<CR>
+    nnoremap <c-p> :bp<CR>
+    tnoremap <c-n> <c-\><c-n>:bn<CR>
+    tnoremap <c-p> <c-\><c-n>:bp<CR>
 
 "### G-Motions ######################################
 "--- Surrond ----------------------------------------
     nmap gs     ys
-    nmap g<S-S> yS
+    nmap g<s-s> yS
 
 "--- ALE Linting ------------------------------------
     nnoremap <silent> gaa :ALEFirst<CR>
@@ -145,11 +146,11 @@
     nnoremap got     :GoTest<CR>
     nnoremap gof     :GoTestFunc<CR>
     nnoremap goa     :GoAlternate<CR>
-    nnoremap go<S-C> :GoCoverageToggle<CR>
-    nnoremap gor     :GoRun %<CR><C-W>hi
-    nnoremap go<S-R> :GoRun<CR><C-W>hi
+    nnoremap go<s-c> :GoCoverageToggle<CR>
+    nnoremap gor     :GoRun %<CR><c-w>hi
+    nnoremap go<s-r> :GoRun<CR><c-w>hi
     nnoremap gob     :GoBuild<CR>
-    nnoremap go<S-B> :GoTestCompile<CR>
+    nnoremap go<s-b> :GoTestCompile<CR>
     nnoremap gon     :cnext<CR>
     nnoremap gop     :cprevious<CR>
     nnoremap goc     :cclose<CR>
@@ -163,20 +164,20 @@
 
 "------------------- INSERT MODE --------------------
 "--- Autocomplete -----------------------------------
-    inoremap <Leader>f <C-X><C-F>
-    inoremap <Leader>l <C-X><C-L>
-    inoremap <Leader>o <C-X><C-O>
-    inoremap <Leader>b <C-X><C-P>
-    "^ <C-X><C-P> block complete (hit repeatedly: fuzzy line complete)
+    inoremap <Leader>f <c-x><c-f>
+    inoremap <Leader>l <c-x><c-l>
+    inoremap <Leader>o <c-x><c-o>
+    inoremap <Leader>b <c-x><c-p>
+    "^ <c-x><c-p> block complete (hit repeatedly: fuzzy line complete)
 
 "--- Unicode ----------------------------------------
-    " inoremap <Leader>d <C-V>u2714
-    inoremap <Leader>d <C-V>u2705
+    " inoremap <Leader>d <c-v>u2714
+    inoremap <Leader>d <c-v>u2705
 
 "------------------- NORMAL MODE --------------------
 "--- Substitute -------------------------------------
     nnoremap <Leader>s     :%s::g<Left><Left>
-    nnoremap <Leader><S-S> :%s:<C-R><C-W>::g<Left><Left>
+    nnoremap <Leader><s-s> :%s:<c-r><c-w>::g<Left><Left>
 
 "--- Toggle -----------------------------------------
     nnoremap <silent> <Leader>h :set hlsearch!<CR>
@@ -184,7 +185,7 @@
 
 "--- Splits -----------------------------------------
     nnoremap <silent> <Leader>t :term<CR>a
-    nnoremap <silent> <Leader>v :vsp<CR><C-W>l:bn<CR>
+    nnoremap <silent> <Leader>v :vsp<CR><c-w>l:bn<CR>
 
 "--- Resize -----------------------------------------
     nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 5/4)<CR>
@@ -197,16 +198,16 @@
     nnoremap <silent> <LocalLeader><LocalLeader> :BLines<CR>
     nnoremap <silent> <LocalLeader>l             :Lines<CR>
     nnoremap <silent> <LocalLeader>r             :Rg<CR>
-    nnoremap          <LocalLeader>~             :Files ~
     nnoremap <silent> <LocalLeader>f             :Files<CR>
+    nnoremap          <LocalLeader>~             :Files ~
     nnoremap          <LocalLeader>.             :Files ../
     nnoremap <silent> <LocalLeader>b             :Buffers<CR>
     nnoremap <silent> <LocalLeader>g             :GFiles<CR>
-    nnoremap <silent> <LocalLeader>c             :GFiles?<CR>
-    nnoremap <silent> <LocalLeader>m             :Marks<CR>
-    nnoremap <silent> <LocalLeader>h             :History<CR>
+    nnoremap <silent> <LocalLeader>s             :GFiles?<CR>
+    nnoremap <silent> <LocalLeader>'             :Marks<CR>
+    nnoremap <silent> <LocalLeader>-             :History<CR>
     nnoremap <silent> <LocalLeader>:             :History:<CR>
-    nnoremap <silent> <LocalLeader><S-F>         :Filetypes<CR>
-    nnoremap <silent> <LocalLeader><S-M>         :Maps<CR>
-    nnoremap <silent> <LocalLeader><S-C>         :Commands<CR>
-    nnoremap <silent> <LocalLeader><S-H>         :Helptags<CR>
+    nnoremap <silent> <LocalLeader>c             :Commands<CR>
+    nnoremap <silent> <LocalLeader>t             :Filetypes<CR>
+    nnoremap <silent> <LocalLeader>m             :Maps<CR>
+    nnoremap <silent> <LocalLeader>h             :Helptags<CR>
