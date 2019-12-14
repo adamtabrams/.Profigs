@@ -3,13 +3,13 @@ These configurations are intended for **MacOS**.
 
 First, clone or download this DIRECTLY to your $HOME directory.
 
-```bash
+```sh
 cd $HOME && git clone https://github.com/adamtabrams/.Profigs.git
 ```
 
 To create the proper symlinks to each of the config files and directories, run:
 
-```bash
+```sh
 $HOME/.Profigs/linkprofigs
 ```
 

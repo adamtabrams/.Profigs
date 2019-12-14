@@ -15,6 +15,7 @@
     alias lg='lazygit'
     alias sc='scim'
     alias cl='clear'
+    alias :q='exit'
     alias k='kubectl'
     alias t='task'
     alias l='lfcd'
