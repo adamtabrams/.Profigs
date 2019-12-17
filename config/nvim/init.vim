@@ -146,15 +146,15 @@
     nnoremap got     :GoTest<CR>
     nnoremap gof     :GoTestFunc<CR>
     nnoremap goa     :GoAlternate<CR>
-    nnoremap go<s-c> :GoCoverageToggle<CR>
-    nnoremap gor     :GoRun %<CR><c-w>hi
-    nnoremap go<s-r> :GoRun<CR><c-w>hi
+    nnoremap goc     :GoCoverageToggle<CR>
+    nnoremap gor     :GoRun %<CR><c-w>li
+    nnoremap go<s-r> :GoRun<CR><c-w>li
     nnoremap gob     :GoBuild<CR>
     nnoremap go<s-b> :GoTestCompile<CR>
     nnoremap gon     :cnext<CR>
     nnoremap gop     :cprevious<CR>
-    nnoremap goc     :cclose<CR>
-    nnoremap gol     :lclose<CR>
+    nnoremap goq     :cclose<CR>:lclose<CR>
+    " nnoremap gol     :lclose<CR>
 
 
 "### Leader Keys ####################################
