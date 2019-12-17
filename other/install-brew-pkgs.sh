@@ -27,9 +27,9 @@ tree
 httpie
 tig
 wrk
-shellcheck
-black
-flake8
-go"
+shellcheck"
+# black
+# flake8
+# go
 
 echo "$progs_list" | xargs brew install
