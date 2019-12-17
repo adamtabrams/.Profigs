@@ -1,7 +1,6 @@
 #### GENERAL ########################################
     export SHELL="zsh"
     export LANG=en_US.UTF-8
-    export CLICOLOR=1
     # export EDITOR="nvim"
     export EDITOR="$HOME/temp/nvim/neovim/build/bin/nvim"
     export OPENER="$EDITOR"
@@ -9,6 +8,10 @@
     export PAGER="bat"
     export MANPAGER="$PAGER --language=man --theme=1337 --terminal-width=+250"
     export GIT_PAGER="$PAGER"
+
+#### COLORS #########################################
+    export CLICOLOR=1
+    export GREP_OPTIONS="--color=auto"
 
 #### FILES/DIRS #####################################
     export ZDOTDIR="$HOME/.config/zsh"

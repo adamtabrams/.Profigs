@@ -1,8 +1,7 @@
 #### Default Options ##################################
-    alias grep='grep --color=always'
-    alias mkdir='mkdir -pv'
-    alias la='ls -HpGA'
-    alias ll='ls -HpGl'
+    alias ls='ls -Hp'
+    alias la='ls -HpA'
+    alias ll='ls -Hpl'
 
 #### Shortcut #########################################
     alias vim='nvim'
