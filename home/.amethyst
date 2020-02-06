@@ -3,6 +3,7 @@
         "tall",
         "wide",
         "column",
+        "fullscreen",
         "bsp"
     ],
     "Valid modifiers are": [

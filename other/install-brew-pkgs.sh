@@ -24,9 +24,11 @@ coreutils
 sc-im
 htop
 tree
+watch
 httpie
 tig
 wrk
+golangci/tap/golangci-lint
 shellcheck"
 # black
 # flake8

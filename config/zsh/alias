@@ -26,7 +26,7 @@
 
 #### Alias-like Funcitons #############################
     eq() { echo $(( $@ )) }
-    # improve math abilities with: zmodload zsh/mathfunc
+    # for more maths: zmodload zsh/mathfunc
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
     up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
 
