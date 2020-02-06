@@ -30,10 +30,14 @@
         \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
     let g:ale_fixers = {
-        \   'go': ['gofmt','goimports'],
+        \   'go': ['goimports'],
         \   'python': ['black'],
         \   'vue': ['prettier'],
         \   'javascript': ['prettier']
+        \}
+
+    let g:ale_linters = {
+        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint']
         \}
 
     let g:vimwiki_url_maxsave = 0
@@ -44,19 +48,35 @@
     let g:vimwiki_hl_cb_checked = 2
     " let g:vimwiki_hl_headers = 1
 
-    let g:go_fmt_command = "goimports"
-    let g:go_highlight_types = 1
     let g:go_highlight_fields = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_extra_types = 1
     let g:go_highlight_functions = 1
     let g:go_highlight_function_calls = 1
+    let g:go_highlight_functions_parameters = 1
     let g:go_highlight_operators = 1
-    let g:go_highlight_extra_types = 1
     let g:go_highlight_build_constraints = 1
     let g:go_highlight_generate_tags = 1
-    " let g:go_list_type = "quickfix"
-    " let g:go_fmt_autosave = 0
+    let g:go_highlight_format_strings = 1
+    let g:go_highlight_variable_declarations = 1
+    let g:go_highlight_variable_assignments = 1
+
+    let g:go_highlight_diagnostic_errors = 0
+    let g:go_highlight_diagnostic_warnings = 0
+
+    let g:go_fmt_autosave = 0
+    let g:go_fmt_command = "goimports"
     " let g:go_fmt_fail_silently = 1
     " let g:go_auto_type_info = 1
+    " let g:go_list_type = "quickfix"
+    " let g:go_list_autoclose = 0
+    let g:go_gopls_complete_unimported = 1
+    " let g:go_gopls_staticcheck = 0
+
+    " let g:go_term_enabled = 1
+    " let g:go_term_close_on_exit = 0
+    " let g:go_term_mode = "split"
+    " let g:go_term_height = 5
 
     let g:solarized_termtrans = 1
     let g:solarized_visibility = "high"
@@ -85,6 +105,7 @@
     set splitbelow splitright
     set autowrite
     set nohlsearch
+    set background=dark
     colorscheme solarized
     syntax enable
 
@@ -112,7 +133,7 @@
     endfunction
 
     inoremap <silent> <Tab>         <c-r>=CleverTab()<CR>
-    inoremap          <s-Tab>       <c-n>
+    inoremap          <s-Tab>       <c-p>
 
 "--- Splits/Buffers ---------------------------------
     nnoremap <c-h> <c-w>h
@@ -142,20 +163,35 @@
     " set omnifunc=ale#completion#OmniFunc
 
 "--- vim-go -----------------------------------------
-    nnoremap goi     :GoInstall<CR>
+    nnoremap goi     :GoInfo<CR>
     nnoremap got     :GoTest<CR>
-    nnoremap gof     :GoTestFunc<CR>
+    nnoremap go<s-t> :GoTestFunc!<CR>
     nnoremap goa     :GoAlternate<CR>
+    nnoremap go<s-a> :e <c-r>%<LEFT><LEFT><LEFT>_test<CR>
     nnoremap goc     :GoCoverageToggle<CR>
-    nnoremap gor     :GoRun %<CR><c-w>li
-    nnoremap go<s-r> :GoRun<CR><c-w>li
+    nnoremap go<s-c> :GoCoverageBrowser<CR>
+    nnoremap gor     :GoRun %<CR>
+    nnoremap go<s-r> :GoRun %<Space>
+    " nnoremap go<s-r> :GoRun<CR>
+    nnoremap g<s-d>  :sp<CR>:GoDef<CR>
+    nnoremap god     :GoDoc
+    nnoremap go<s-d> :GoDocBrowser<Space>
     nnoremap gob     :GoBuild<CR>
     nnoremap go<s-b> :GoTestCompile<CR>
     nnoremap gon     :cnext<CR>
     nnoremap gop     :cprevious<CR>
     nnoremap goq     :cclose<CR>:lclose<CR>
-    " nnoremap gol     :lclose<CR>
+    nnoremap go<s-q> <c-w>j:bd<CR>
+    nnoremap goo     <c-w>o
+    nnoremap goy     Bl"wy3f/3f/:let @w.="tree/master/"<CR>l"Wyt":let @+=@w<CR>
 
+"--- vim-wiki -----------------------------------------
+    function! PrepSum()
+        execute("norm V:s/ /+/g\<CR>")
+    endfunction
+    function! CalcSum()
+        execute("norm \"sddo=\<c-r>=\<c-r>s\<CR>\<ESC>\"sdiW")
+    endfunction
 
 "### Leader Keys ####################################
     let mapleader = ","
