@@ -15,3 +15,5 @@ $HOME/.Profigs/linkprofigs
 
 Note: Any of your own configuration files shouldn't be overwritten by the script.
 Any of your files, that conflict with those in this project will be stored in $HOME/.cache/profigs/{data-time}.
+
+[ ] - test item
