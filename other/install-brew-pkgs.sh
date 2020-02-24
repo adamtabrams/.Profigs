@@ -26,6 +26,7 @@ htop
 tree
 watch
 httpie
+hub
 tig
 wrk
 golangci/tap/golangci-lint
