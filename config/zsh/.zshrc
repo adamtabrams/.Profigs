@@ -87,7 +87,7 @@
     chpwd() {
         print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
     }
-    DIRSTACKSIZE=4
+    DIRSTACKSIZE=5
     setopt AUTO_PUSHD PUSHD_SILENT PUSHD_TO_HOME
     setopt PUSHD_IGNORE_DUPS PUSHD_MINUS
 ###################### Mac OS #######################
@@ -100,7 +100,7 @@
     [ -f "$ZDOTDIR/venv.zsh" ] && source "$ZDOTDIR/venv.zsh"
     [ -f "$ZDOTDIR/fzf.zsh" ] && source "$ZDOTDIR/fzf.zsh"
     [ -f "$ZDOTDIR/alias" ] && source "$ZDOTDIR/alias"
-    source <(kubectl completion zsh)
-    source <(helm completion zsh)
+    # source <(kubectl completion zsh)
+    # source <(helm completion zsh)
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null
     $ZDOTDIR/backup-history.sh
