@@ -103,7 +103,7 @@
     set ignorecase smartcase fileignorecase wildignorecase
     set number relativenumber
     set splitbelow splitright
-    set autowrite
+    set autowriteall
     set nohlsearch
     set background=dark
     colorscheme solarized
@@ -218,6 +218,9 @@
 "--- Toggle -----------------------------------------
     nnoremap <silent> <Leader>h :set hlsearch!<CR>
     nnoremap <silent> <Leader>l :IndentLinesToggle<CR>
+
+"--- FileType ---------------------------------------
+    nnoremap <silent> <Leader>f :set filetype=<CR>
 
 "--- Splits -----------------------------------------
     nnoremap <silent> <Leader>t :term<CR>a
