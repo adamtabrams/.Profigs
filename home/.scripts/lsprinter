@@ -1,3 +1,0 @@
-#!/bin/sh
-
-lpstat -s | grep $(sudo lpinfo -v | grep '/usb/' | awk '{print $2}') | awk '{print $3}' | tr -d ':'
