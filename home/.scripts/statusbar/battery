@@ -22,3 +22,4 @@ fi
 [ "$status" = "Charging" ] && result+=" "
 
 echo "$result"
+# echo "$capacity"%
