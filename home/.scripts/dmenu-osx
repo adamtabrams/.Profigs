@@ -1,21 +1,19 @@
 #!/bin/sh
 
-if [ ! "${TERMINAL}" ]; then
-    echo "You must set the TERMINAL env var" && exit 1
-elif [ ! "${DMENU_OSX_CACHE_DIR}" ]; then
+if [ ! "${DMENU_OSX_CACHE_DIR}" ]; then
     echo "You must set the DMENU_OSX_CACHE_DIR env var" && exit 1
 fi
 
 if [ ! -d "${DMENU_OSX_CACHE_DIR}" ]; then
     mkdir "${DMENU_OSX_CACHE_DIR}"
 fi
-input="${DMENU_OSX_CACHE_DIR}/input"
-output="${DMENU_OSX_CACHE_DIR}/output"
-touch "${input}" "${output}"
-cat /dev/stdin > "${input}"
 
-${TERMINAL} -t float \
-    --position 30 55 -d 80 10 \
-    -e sh -c "<${input} fzf > ${output}"
+infile="${DMENU_OSX_CACHE_DIR}/input"
+outfile="${DMENU_OSX_CACHE_DIR}/output"
 
-cat "${output}" && exit 0
+touch "${infile}" "${outfile}"
+cat /dev/stdin > "${infile}"
+
+popup-term "<${infile} fzf > ${outfile}"
+
+cat "${outfile}" && exit 0

@@ -9,6 +9,10 @@
     export MANPAGER="$PAGER --language=man --theme=1337 --terminal-width=+250"
     export GIT_PAGER="$PAGER"
 
+#### SCRIPT VARS ####################################
+    export TERMINAL="/Applications/Alacritty.app/Contents/MacOS/alacritty"
+    export DMENU_OSX_CACHE_DIR="${HOME}/.cache/dmenu-osx"
+
 #### COLORS #########################################
     export CLICOLOR=1
     export GREP_OPTIONS="--color=auto"

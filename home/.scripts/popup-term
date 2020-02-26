@@ -1,0 +1,25 @@
+#!/bin/sh
+
+if [ ! "${TERMINAL}" ]; then
+    echo "You must set the TERMINAL env var" && exit 1
+fi
+
+title="float"
+columns="140"
+lines="10"
+xpos="50"
+ypos="50"
+workdir="${HOME}"
+
+if [ "$@" ]; then
+    ${TERMINAL} --title "${title}" \
+        --dimensions "${columns}" "${lines}" \
+        --position "${xpos}" "${ypos}" \
+        --working-directory "${workdir}" \
+        --command sh -c "$@"
+else
+    ${TERMINAL} --title "${title}" \
+        --dimensions "${columns}" "${lines}" \
+        --position "${xpos}" "${ypos}" \
+        --working-directory "${workdir}"
+fi
