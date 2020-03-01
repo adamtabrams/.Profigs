@@ -11,14 +11,11 @@
         "command"
     ],
     "mod1": [
-        "option",
-        "shift",
-        "control",
         "command"
     ],
     "mod2": [
-        "control",
-        "option"
+        "command",
+        "shift"
     ],
     "screens": 3,
     "cycle-layout": {
