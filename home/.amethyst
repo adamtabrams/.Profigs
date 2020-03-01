@@ -1,8 +1,6 @@
 {
     "layouts": [
         "tall",
-        "wide",
-        "column",
         "fullscreen",
         "bsp"
     ],
@@ -13,8 +11,10 @@
         "command"
     ],
     "mod1": [
+        "option",
         "shift",
-        "control"
+        "control",
+        "command"
     ],
     "mod2": [
         "control",
@@ -30,16 +30,16 @@
         "key": "right"
     },
     "select-tall-layout": {
-        "mod": "mod1",
-        "key": "t"
+        "mod": "",
+        "key": ""
     },
     "select-wide-layout": {
         "mod": "",
         "key": ""
     },
     "select-fullscreen-layout": {
-        "mod": "mod1",
-        "key": "f"
+        "mod": "",
+        "key": ""
     },
     "select-column-layout": {
         "mod": "",
@@ -186,20 +186,24 @@
         "key": "space"
     },
     "toggle-tiling": {
-        "mod": "mod1",
-        "key": "g"
+        "mod": "",
+        "key": ""
     },
     "display-current-layout": {
-        "mod": "mod1",
-        "key": "/"
+        "mod": "",
+        "key": ""
     },
     "reevaluate-windows": {
-        "mod": "mod1",
-        "key": "z"
+        "mod": "",
+        "key": ""
     },
     "toggle-focus-follows-mouse": {
         "mod": "",
         "key": ""
+    },
+    "relaunch-amethyst": {
+        "mod": "mod1",
+        "key": "z"
     },
     "floating": [
         "com.apple.systempreferences",
@@ -229,5 +233,6 @@
     "screen-padding-bottom": 10,
     "screen-padding-left": 10,
     "screen-padding-right": 10,
-    "debug-layout-info": false
+    "debug-layout-info": false,
+    "restore-layouts-on-launch": true
 }
