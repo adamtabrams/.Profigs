@@ -13,6 +13,7 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-abolish'
     Plug 'tomtom/tcomment_vim'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
@@ -37,7 +38,7 @@
         \}
 
     let g:ale_linters = {
-        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint']
+        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint -D lll']
         \}
 
     let g:vimwiki_url_maxsave = 0
@@ -103,9 +104,10 @@
     set ignorecase smartcase fileignorecase wildignorecase
     set number relativenumber
     set splitbelow splitright
-    set autowriteall
+    set hidden
     set nohlsearch
     set background=dark
+    set iskeyword+=-
     colorscheme solarized
     syntax enable
 
@@ -114,8 +116,12 @@
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
+    autocmd BufNewFile,BufRead yaml setlocal tabstop=2 shiftwidth=2
 
 "################### REMAPPINGS #####################
+"--- Hotfix -----------------------------------------
+    cnoremap 3636 <C-U>undo<CR>
+
 "--- Should-Be-Defaults -----------------------------
     cnoremap WW execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
     cnoremap HH vert help
