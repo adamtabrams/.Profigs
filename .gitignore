@@ -2,5 +2,6 @@
 
 
 config/zsh/.zcompdump
-config/jesseduffield/lazygit/state.yml
 config/nvim/.netrwhist
+config/jesseduffield/lazygit/*
+config/karabiner/automatic_backups/*
