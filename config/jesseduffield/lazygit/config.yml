@@ -4,15 +4,18 @@ gui:
   theme:
     lightTheme: false
     activebordercolor:
-    - magenta
+    - red
     - bold
     inactivebordercolor:
-    - white
+    - blue
     optionstextcolor:
+    - blue
+    selectedLineBgColor:
     - blue
   commitlength:
     show: true
   mouseEvents: true
+  skipUnstageLineWarning: false
 git:
   merging:
     manualCommit: false
