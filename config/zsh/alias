@@ -8,25 +8,22 @@
     alias vi='nvim'
     alias v='nvim'
     alias ww='nvim ~/vimwiki/index.wiki'
-    alias sed='gsed'
     alias ldk='lazydocker'
     alias yay='pacapt'
     alias lg='lazygit'
     alias sc='scim'
-    alias cl='clear'
+    alias bc='bc -q'
+    alias cl='clear && ls'
+    alias cll="printf '\033\143'"
     alias :q='exit'
     alias k='kubectl'
-    alias t='task'
     alias l='lfcd'
     alias j='jump'
     alias c='jump'
 
-#### Mini-Scripts #####################################
-    alias myip='ifconfig | grep "inet 10" | awk '\''{print $2}'\'''
-
-#### Alias-like Funcitons #############################
-    eq() { echo $(( $@ )) }
-    # for more maths: zmodload zsh/mathfunc
+#### Funcitons ########################################
+    cr() { cd $(cd ~/repos && fd -d1 | fzf | xargs echo "$HOME/repos/" | tr -d ' ') }
+    ip() { ifconfig | grep "inet 10" | awk '{print $2}' }
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
     up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
 
