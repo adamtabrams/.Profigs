@@ -47,6 +47,7 @@
     let g:vimwiki_list_ignore_newline = 0
     let g:vimwiki_text_ignore_newline = 0
     let g:vimwiki_hl_cb_checked = 2
+    " let g:vimwiki_conceal = 1
     " let g:vimwiki_hl_headers = 1
 
     let g:go_highlight_fields = 1
@@ -104,8 +105,8 @@
     set ignorecase smartcase fileignorecase wildignorecase
     set number relativenumber
     set splitbelow splitright
-    set hidden
     set nohlsearch
+    set hidden
     set background=dark
     set iskeyword+=-
     colorscheme solarized
@@ -116,7 +117,7 @@
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
-    autocmd BufNewFile,BufRead yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 
 "################### REMAPPINGS #####################
 "--- Hotfix -----------------------------------------
