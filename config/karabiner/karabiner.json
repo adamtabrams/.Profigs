@@ -8,10 +8,10 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 25,
-                    "basic.to_delayed_action_delay_milliseconds": 250,
-                    "basic.to_if_alone_timeout_milliseconds": 250,
-                    "basic.to_if_held_down_threshold_milliseconds": 250,
+                    "basic.simultaneous_threshold_milliseconds": 10,
+                    "basic.to_delayed_action_delay_milliseconds": 100,
+                    "basic.to_if_alone_timeout_milliseconds": 200,
+                    "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
@@ -61,6 +61,33 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change tab key to fn. (Post tab key when pressed alone)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "optional": [
+                                            "option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
@@ -160,7 +187,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -267,7 +294,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -374,7 +401,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -481,7 +508,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -556,7 +583,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -629,7 +656,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -702,7 +729,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -786,7 +813,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -872,7 +899,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -949,7 +976,7 @@
                                     }
                                 },
                                 "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 500
+                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -969,17 +996,18 @@
                         ]
                     },
                     {
-                        "description": "Change Option + h/j/k/l to Arrows",
+                        "description": "Change Fn + h/j/k/l to Arrows",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "fn"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "shift",
+                                            "option"
                                         ]
                                     }
                                 },
@@ -995,10 +1023,11 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "fn"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "shift",
+                                            "option"
                                         ]
                                     }
                                 },
@@ -1014,10 +1043,11 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "fn"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "shift",
+                                            "option"
                                         ]
                                     }
                                 },
@@ -1033,10 +1063,11 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "option"
+                                            "fn"
                                         ],
                                         "optional": [
-                                            "caps_lock"
+                                            "shift",
+                                            "option"
                                         ]
                                     }
                                 },
@@ -1074,18 +1105,18 @@
                         },
                         {
                             "from": {
-                                "key_code": "right_command"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "left_option"
                             },
                             "to": {
                                 "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_command"
+                            },
+                            "to": {
+                                "key_code": "right_option"
                             }
                         },
                         {
