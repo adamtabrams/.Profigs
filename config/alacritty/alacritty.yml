@@ -534,13 +534,13 @@ key_bindings:
   - { key: V,          mods: Command,         action: Paste            }
   - { key: C,          mods: Command,         action: Copy             }
   - { key: Q,          mods: Command,         action: Quit             }
-  - { key: N,          mods: Alt,             action: SpawnNewInstance }
-  - { key: Apostrophe, mods: Command,         action: SpawnNewInstance }
-  - { key: K,          mods: Alt,             chars: "\x1bk"           }
-  - { key: J,          mods: Alt,             chars: "\x1bj"           }
   - { key: U,          mods: Command,         action: ScrollPageUp     }
   - { key: D,          mods: Command,         action: ScrollPageDown   }
+  - { key: Apostrophe, mods: Command,         action: SpawnNewInstance }
   - { key: C,          mods: Alt,             chars: "\x1bc"           }
+  - { key: J,          mods: Alt,             chars: "\x1bj"           }
+  - { key: K,          mods: Alt,             chars: "\x1bk"           }
+  # - { key: Up,                                chars: "\x1b"        }
   # - { key: K,      mods: Command,         chars: "\x1bk"           }
   # - { key: J,      mods: Command,         chars: "\x1bj"           }
 
