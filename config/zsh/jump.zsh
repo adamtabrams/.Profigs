@@ -26,6 +26,7 @@ jump() {
         cd "$1"
         return 0
     elif [[ $(echo -n $1 | wc -c) -lt 1 ]]; then
+        cd "$HOME"
         return 0
     fi
 

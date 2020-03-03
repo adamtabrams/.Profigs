@@ -33,3 +33,4 @@
     alias .env='nvim $HOME/.zshenv'
     alias .nvim='nvim $HOME/.config/nvim/init.vim'
     alias .hist='nvim $HISTFILE'
+    alias .swap='cd $HOME/.local/share/nvim/swap && ls'
