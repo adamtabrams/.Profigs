@@ -20,7 +20,7 @@ gui:
 git:
   paging:
     colorArg: always
-    useConfig: false
+    pager: delta --dark --paging=never --24-bit-color=never
   merging:
     manualCommit: false
   skipHookPrefix: WIP

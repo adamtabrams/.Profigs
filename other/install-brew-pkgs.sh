@@ -6,15 +6,14 @@ neovim
 zsh
 zsh-syntax-highlighting
 lazygit
+git-delta
 lazydocker
 pacapt
-task
 bat
 fzf
 ripgrep
 fd
 lf
-grip
 gnu-sed
 jq
 docker-completion
@@ -31,6 +30,7 @@ tig
 wrk
 golangci/tap/golangci-lint
 shellcheck"
+# grip
 # black
 # flake8
 # go
