@@ -1,6 +1,7 @@
 gui:
   scrollheight: 2
   scrollpastbottom: true
+  sidePanelWidth: 0.3333
   theme:
     lightTheme: false
     activebordercolor:
@@ -17,6 +18,9 @@ gui:
   mouseEvents: true
   skipUnstageLineWarning: false
 git:
+  paging:
+    colorArg: always
+    useConfig: false
   merging:
     manualCommit: false
   skipHookPrefix: WIP
