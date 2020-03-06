@@ -20,7 +20,7 @@
                         "manipulators": [
                             {
                                 "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 200,
+                                    "basic.to_if_alone_timeout_milliseconds": 175
                                 },
                                 "from": {
                                     "key_code": "spacebar",
