@@ -10,10 +10,24 @@ marks() {
 }
 
 jump() {
-    if [[ $(echo $1 | head -c 1) == ~ ]]; then cd "$1"; return 0
-    elif [[ $(echo $1 | head -c 1) == / ]]; then cd "$1"; return 0
-    elif [[ $(echo $1 | head -c 1) == . ]]; then cd "$1"; return 0
-    elif [[ $(echo -n $1 | wc -c) -gt 1 ]]; then cd "$1"; return 0
+    if [[ $(echo $1 | head -c 2) == // ]]; then
+        cd $(echo "$1" | sed "s|//|$HOME/|")
+        return 0
+    elif [[ $(echo $1 | head -c 1) == ~ ]]; then
+        cd "$1"
+        return 0
+    elif [[ $(echo $1 | head -c 1) == / ]]; then
+        cd "$1"
+        return 0
+    elif [[ $(echo $1 | head -c 1) == . ]]; then
+        cd "$1"
+        return 0
+    elif [[ $(echo -n $1 | wc -c) -gt 1 ]]; then
+        cd "$1"
+        return 0
+    elif [[ $(echo -n $1 | wc -c) -lt 1 ]]; then
+        cd "$HOME"
+        return 0
     fi
 
     markline=$(grep --color=never "^${1}:" "$MARKFILE")

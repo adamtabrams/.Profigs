@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ ! "${DMENU_OSX_CACHE_DIR}" ]; then
+    echo "You must set the DMENU_OSX_CACHE_DIR env var" && exit 1
+fi
+
+if [ ! -d "${DMENU_OSX_CACHE_DIR}" ]; then
+    mkdir "${DMENU_OSX_CACHE_DIR}"
+fi
+
+infile="${DMENU_OSX_CACHE_DIR}/input"
+outfile="${DMENU_OSX_CACHE_DIR}/output"
+
+touch "${infile}" "${outfile}"
+cat /dev/stdin > "${infile}"
+
+popup-term "<${infile} fzf > ${outfile}"
+
+cat "${outfile}" && exit 0

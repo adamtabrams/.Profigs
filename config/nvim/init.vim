@@ -13,6 +13,7 @@
     Plug 'vim-airline/vim-airline-themes'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-abolish'
     Plug 'tomtom/tcomment_vim'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
@@ -37,7 +38,7 @@
         \}
 
     let g:ale_linters = {
-        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint']
+        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint -D lll']
         \}
 
     let g:vimwiki_url_maxsave = 0
@@ -47,6 +48,7 @@
     let g:vimwiki_text_ignore_newline = 0
     let g:vimwiki_hl_cb_checked = 2
     " let g:vimwiki_hl_headers = 1
+    let g:vimwiki_conceallevel = 0
 
     let g:go_highlight_fields = 1
     let g:go_highlight_types = 1
@@ -84,6 +86,10 @@
     " let g:solarized_termcolors = 256
     " let g:solarized_diffmode = "normal"
 
+    let g:indentLine_char = '│'
+    " let g:indentLine_enabled = 0
+    " let g:indentLine_setConceal = 0
+
     let g:airline_powerline_fonts = 1
     let g:airline_solarized_bg="dark"
 
@@ -103,9 +109,10 @@
     set ignorecase smartcase fileignorecase wildignorecase
     set number relativenumber
     set splitbelow splitright
-    set autowrite
     set nohlsearch
+    set hidden
     set background=dark
+    set iskeyword+=-
     colorscheme solarized
     syntax enable
 
@@ -114,8 +121,13 @@
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
+    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType json IndentLinesDisable
 
 "################### REMAPPINGS #####################
+"--- Hotfix -----------------------------------------
+    cnoremap 3636 <C-U>undo<CR>
+
 "--- Should-Be-Defaults -----------------------------
     cnoremap WW execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
     cnoremap HH vert help
@@ -218,6 +230,9 @@
 "--- Toggle -----------------------------------------
     nnoremap <silent> <Leader>h :set hlsearch!<CR>
     nnoremap <silent> <Leader>l :IndentLinesToggle<CR>
+
+"--- FileType ---------------------------------------
+    nnoremap <silent> <Leader>f :set filetype=<CR>
 
 "--- Splits -----------------------------------------
     nnoremap <silent> <Leader>t :term<CR>a

@@ -1,19 +1,26 @@
 gui:
   scrollheight: 2
   scrollpastbottom: true
+  sidePanelWidth: 0.3333
   theme:
     lightTheme: false
     activebordercolor:
-    - magenta
+    - red
     - bold
     inactivebordercolor:
-    - white
+    - blue
     optionstextcolor:
+    - blue
+    selectedLineBgColor:
     - blue
   commitlength:
     show: true
   mouseEvents: true
+  skipUnstageLineWarning: false
 git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --24-bit-color=never
   merging:
     manualCommit: false
   skipHookPrefix: WIP

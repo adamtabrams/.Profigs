@@ -1,8 +1,6 @@
 {
     "layouts": [
         "tall",
-        "wide",
-        "column",
         "fullscreen",
         "bsp"
     ],
@@ -13,12 +11,11 @@
         "command"
     ],
     "mod1": [
-        "shift",
-        "control"
+        "command"
     ],
     "mod2": [
-        "control",
-        "option"
+        "command",
+        "shift"
     ],
     "screens": 3,
     "cycle-layout": {
@@ -30,16 +27,16 @@
         "key": "right"
     },
     "select-tall-layout": {
-        "mod": "mod1",
-        "key": "t"
+        "mod": "",
+        "key": ""
     },
     "select-wide-layout": {
         "mod": "",
         "key": ""
     },
     "select-fullscreen-layout": {
-        "mod": "mod1",
-        "key": "f"
+        "mod": "",
+        "key": ""
     },
     "select-column-layout": {
         "mod": "",
@@ -186,24 +183,32 @@
         "key": "space"
     },
     "toggle-tiling": {
-        "mod": "mod1",
-        "key": "g"
+        "mod": "",
+        "key": ""
     },
     "display-current-layout": {
-        "mod": "mod1",
-        "key": "/"
+        "mod": "",
+        "key": ""
     },
     "reevaluate-windows": {
-        "mod": "mod1",
-        "key": "z"
+        "mod": "",
+        "key": ""
     },
     "toggle-focus-follows-mouse": {
         "mod": "",
         "key": ""
     },
+    "relaunch-amethyst": {
+        "mod": "mod1",
+        "key": "z"
+    },
     "floating": [
         "com.apple.systempreferences",
-        "com.cisco.Jabber"
+        "com.cisco.Jabber",
+        {
+            "id": "io.alacritty",
+            "window-titles": [ "float" ]
+        }
     ],
     "floating-is-blacklist": true,
     "float-small-windows": true,
@@ -225,5 +230,6 @@
     "screen-padding-bottom": 10,
     "screen-padding-left": 10,
     "screen-padding-right": 10,
-    "debug-layout-info": false
+    "debug-layout-info": false,
+    "restore-layouts-on-launch": true
 }

@@ -8,27 +8,29 @@
     alias vi='nvim'
     alias v='nvim'
     alias ww='nvim ~/vimwiki/index.wiki'
-    alias sed='gsed'
     alias ldk='lazydocker'
     alias yay='pacapt'
     alias lg='lazygit'
     alias sc='scim'
+    alias bc='bc -q'
     alias cl='clear'
+    alias cls='clear && ls'
+    alias cll="printf '\033\143'"
     alias :q='exit'
     alias k='kubectl'
-    alias t='task'
     alias l='lfcd'
     alias j='jump'
     alias c='jump'
 
-#### Mini-Scripts #####################################
-    alias myip='ifconfig | grep "inet 10" | awk '\''{print $2}'\'''
-
-#### Alias-like Funcitons #############################
-    eq() { echo $(( $@ )) }
-    # for more maths: zmodload zsh/mathfunc
+#### Functions ########################################
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
     up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
+    ip() { ifconfig | grep "inet 10" | awk '{print $2}' }
+    cr() {
+        cd $(cd ~/repos && fd -d1 | \
+            fzf --reverse --preview="bat {}/README.md" | \
+            xargs echo "$HOME/repos/" | tr -d ' ')
+    }
 
 #### Configs ##########################################
     alias .zsh='nvim $ZDOTDIR/.zshrc'
@@ -36,3 +38,4 @@
     alias .env='nvim $HOME/.zshenv'
     alias .nvim='nvim $HOME/.config/nvim/init.vim'
     alias .hist='nvim $HISTFILE'
+    alias .swap='cd $HOME/.local/share/nvim/swap && ls'

@@ -1,13 +1,16 @@
 #### GENERAL ########################################
     export SHELL="zsh"
     export LANG=en_US.UTF-8
-    # export EDITOR="nvim"
-    export EDITOR="$HOME/temp/nvim/neovim/build/bin/nvim"
+    export EDITOR="nvim"
     export OPENER="$EDITOR"
     export VISUAL="$EDITOR"
     export PAGER="bat"
     export MANPAGER="$PAGER --language=man --theme=1337 --terminal-width=+250"
     export GIT_PAGER="$PAGER"
+
+#### SCRIPT VARS ####################################
+    export TERMINAL="/Applications/Alacritty.app/Contents/MacOS/alacritty"
+    export DMENU_OSX_CACHE_DIR="${HOME}/.cache/dmenu-osx"
 
 #### COLORS #########################################
     export CLICOLOR=1
@@ -20,10 +23,13 @@
 #### PATH ###########################################
     export PATH="$HOME/.scripts:$PATH"
     export PATH="$HOME/.local/bin:$PATH"
-    # export PATH="$GOROOT/bin:$PATH"
-    export PATH="$GOPATH/bin:$PATH"
     export PATH="$HOME/.cargo/bin:$PATH"
     export PATH="$HOME/node_modules/.bin:$PATH"
+
+#### GO #############################################
+    # export GOROOT=$(find /usr/local/Cellar/go -name "libexec" -maxdepth 2 | sort -r | head -1)
+    export GOPATH="$HOME/go"
+    export PATH="$GOPATH/bin:$PATH"
 
 #### BAT ############################################
     export BAT_PAGER="less -R"
