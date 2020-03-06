@@ -8,9 +8,9 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 10,
+                    "basic.simultaneous_threshold_milliseconds": 125,
                     "basic.to_delayed_action_delay_milliseconds": 100,
-                    "basic.to_if_alone_timeout_milliseconds": 200,
+                    "basic.to_if_alone_timeout_milliseconds": 150,
                     "basic.to_if_held_down_threshold_milliseconds": 100,
                     "mouse_motion_to_scroll.speed": 100
                 },
@@ -19,6 +19,9 @@
                         "description": "Change spacebar to left_ctrl if pressed with other keys (Post spacebar when pressed alone)",
                         "manipulators": [
                             {
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 130,
+                                },
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": {
@@ -186,9 +189,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -292,9 +292,6 @@
                                             }
                                         ]
                                     }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -400,9 +397,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -507,9 +501,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -582,9 +573,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -655,9 +643,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -727,9 +712,6 @@
                                             }
                                         ]
                                     }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -811,9 +793,6 @@
                                             }
                                         ]
                                     }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {
@@ -898,9 +877,6 @@
                                         ]
                                     }
                                 },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
-                                },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -974,9 +950,6 @@
                                             }
                                         ]
                                     }
-                                },
-                                "parameters": {
-                                    "basic.simultaneous_threshold_milliseconds": 200
                                 },
                                 "to": [
                                     {

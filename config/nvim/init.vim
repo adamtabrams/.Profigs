@@ -47,8 +47,8 @@
     let g:vimwiki_list_ignore_newline = 0
     let g:vimwiki_text_ignore_newline = 0
     let g:vimwiki_hl_cb_checked = 2
-    " let g:vimwiki_conceal = 1
     " let g:vimwiki_hl_headers = 1
+    let g:vimwiki_conceallevel = 0
 
     let g:go_highlight_fields = 1
     let g:go_highlight_types = 1
@@ -86,6 +86,10 @@
     " let g:solarized_termcolors = 256
     " let g:solarized_diffmode = "normal"
 
+    let g:indentLine_char = '│'
+    " let g:indentLine_enabled = 0
+    " let g:indentLine_setConceal = 0
+
     let g:airline_powerline_fonts = 1
     let g:airline_solarized_bg="dark"
 
@@ -118,6 +122,7 @@
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
     autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType json IndentLinesDisable
 
 "################### REMAPPINGS #####################
 "--- Hotfix -----------------------------------------
