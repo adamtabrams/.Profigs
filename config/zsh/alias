@@ -16,6 +16,7 @@
     alias cl='clear'
     alias cls='clear && ls'
     alias cll="printf '\033\143'"
+    alias hb='hub browse'
     alias :q='exit'
     alias k='kubectl'
     alias l='lfcd'

@@ -1,13 +1,12 @@
 "##################### PLUG #########################
-    if ! filereadable(expand('~/.local/nvim/site/autoload/plug.vim'))
+    if ! filereadable(expand('~/.local/share/nvim/site/autoload/plug.vim'))
         echo "Downloading junegunn/vim-plug to manage plugins..."
-        silent !mkdir -p ~/.local/nvim/site/autoload/
-        silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-            \ > ~/.local/nvim/site/autoload/plug.vim
+        silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
         autocmd VimEnter * PlugInstall
     endif
 
-    call plug#begin('~/.local/nvim/site/plugged')
+    call plug#begin('~/.local/share/nvim/site/plugged')
     Plug 'altercation/vim-colors-solarized'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -148,12 +147,18 @@
     inoremap          <s-Tab>       <c-p>
 
 "--- Splits/Buffers ---------------------------------
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-j> <c-w>j
-    nnoremap <c-k> <c-w>k
-    nnoremap <c-l> <c-w>l
-    tnoremap <c-h> <c-\><c-n><c-w>h
-    tnoremap <c-l> <c-\><c-n><c-w>l
+    nnoremap <left>  <c-w>h
+    nnoremap <down>  <c-w>j
+    nnoremap <up>    <c-w>k
+    nnoremap <right> <c-w>l
+    tnoremap <left>  <c-\><c-n><c-w>h
+    tnoremap <right> <c-\><c-n><c-w>l
+    " nnoremap <c-h> <c-w>h
+    " nnoremap <c-j> <c-w>j
+    " nnoremap <c-k> <c-w>k
+    " nnoremap <c-l> <c-w>l
+    " tnoremap <c-h> <c-\><c-n><c-w>h
+    " tnoremap <c-l> <c-\><c-n><c-w>l
     nnoremap <c-n> :bn<CR>
     nnoremap <c-p> :bp<CR>
     tnoremap <c-n> <c-\><c-n>:bn<CR>
@@ -246,13 +251,13 @@
 
 "### FZF ############################################
     let maplocalleader = "\<Space>"
+    nnoremap <silent> <LocalLeader>b             :Buffers<CR>
     nnoremap <silent> <LocalLeader><LocalLeader> :BLines<CR>
     nnoremap <silent> <LocalLeader>l             :Lines<CR>
     nnoremap <silent> <LocalLeader>r             :Rg<CR>
     nnoremap <silent> <LocalLeader>f             :Files<CR>
     nnoremap          <LocalLeader>~             :Files ~
     nnoremap          <LocalLeader>.             :Files ../
-    nnoremap <silent> <LocalLeader>b             :Buffers<CR>
     nnoremap <silent> <LocalLeader>g             :GFiles<CR>
     nnoremap <silent> <LocalLeader>s             :GFiles?<CR>
     nnoremap <silent> <LocalLeader>'             :Marks<CR>
