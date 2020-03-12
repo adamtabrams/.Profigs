@@ -147,18 +147,12 @@
     inoremap          <s-Tab>       <c-p>
 
 "--- Splits/Buffers ---------------------------------
-    nnoremap <left>  <c-w>h
-    nnoremap <down>  <c-w>j
-    nnoremap <up>    <c-w>k
-    nnoremap <right> <c-w>l
-    tnoremap <left>  <c-\><c-n><c-w>h
-    tnoremap <right> <c-\><c-n><c-w>l
-    " nnoremap <c-h> <c-w>h
-    " nnoremap <c-j> <c-w>j
-    " nnoremap <c-k> <c-w>k
-    " nnoremap <c-l> <c-w>l
-    " tnoremap <c-h> <c-\><c-n><c-w>h
-    " tnoremap <c-l> <c-\><c-n><c-w>l
+    nnoremap <c-h> <c-w>h
+    nnoremap <c-j> <c-w>j
+    nnoremap <c-k> <c-w>k
+    nnoremap <c-l> <c-w>l
+    tnoremap <c-h> <c-\><c-n><c-w>h
+    tnoremap <c-l> <c-\><c-n><c-w>l
     nnoremap <c-n> :bn<CR>
     nnoremap <c-p> :bp<CR>
     tnoremap <c-n> <c-\><c-n>:bn<CR>

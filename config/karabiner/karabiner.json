@@ -65,11 +65,11 @@
                         ]
                     },
                     {
-                        "description": "Left option key: command+shift",
+                        "description": "Left command key: command+shift",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_option"
+                                    "key_code": "left_command"
                                 },
                                 "to": [
                                     {
@@ -82,51 +82,14 @@
                         ]
                     },
                     {
-                        "description": "Left command key: control+alt",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "modifiers": "left_option"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Left control key: control+alt+shift",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_control"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "modifiers": [
-                                            "left_option",
-                                            "left_shift"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Control + h/j/k/l: Arrows",
+                        "description": "Right option + h/j/k/l: Arrows",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "shift",
@@ -146,7 +109,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "shift",
@@ -166,7 +129,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "shift",
@@ -186,7 +149,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "shift",
@@ -197,6 +160,91 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Right option + n/m/,/.: Alt+Arrows",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": "right_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": "right_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": "right_option"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": "right_option"
                                     }
                                 ],
                                 "type": "basic"
@@ -270,7 +318,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
                                             "key_code": "j"
@@ -374,7 +422,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
                                             "key_code": "k"
@@ -478,7 +526,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
                                             "key_code": "h"
@@ -582,7 +630,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
                                             "key_code": "l"
@@ -631,308 +679,6 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "v",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "pointing_button": "button1"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "d"
-                                        },
-                                        {
-                                            "key_code": "v"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4_scroll",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "pointing_button": "button1"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "mouse_keys_mode_v4",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "b",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "pointing_button": "button3"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "d"
-                                        },
-                                        {
-                                            "key_code": "b"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4_scroll",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "pointing_button": "button3"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "mouse_keys_mode_v4",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "pointing_button": "button2"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "d"
-                                        },
-                                        {
-                                            "key_code": "n"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4_scroll",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "pointing_button": "button2"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "mouse_keys_mode_v4",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4_scroll",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4_scroll",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    },
-                                    "simultaneous": [
-                                        {
-                                            "key_code": "d"
-                                        },
-                                        {
-                                            "key_code": "s"
-                                        }
-                                    ],
-                                    "simultaneous_options": {
-                                        "key_down_order": "strict",
-                                        "key_up_order": "strict_inverse",
-                                        "to_after_key_up": [
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4",
-                                                    "value": 0
-                                                }
-                                            },
-                                            {
-                                                "set_variable": {
-                                                    "name": "mouse_keys_mode_v4_scroll",
-                                                    "value": 0
-                                                }
-                                            }
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4",
-                                            "value": 1
-                                        }
-                                    },
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4_scroll",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "mouse_keys_mode_v4_scroll",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "mouse_keys_mode_v4",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "f",
                                     "modifiers": {
                                         "optional": [
@@ -942,9 +688,7 @@
                                 },
                                 "to": [
                                     {
-                                        "mouse_key": {
-                                            "speed_multiplier": 2.0
-                                        }
+                                        "pointing_button": "button1"
                                     }
                                 ],
                                 "type": "basic"
@@ -958,7 +702,7 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
                                             "key_code": "f"
@@ -991,9 +735,7 @@
                                         }
                                     },
                                     {
-                                        "mouse_key": {
-                                            "speed_multiplier": 2.0
-                                        }
+                                        "pointing_button": "button1"
                                     }
                                 ],
                                 "type": "basic"
@@ -1008,6 +750,242 @@
                                 ],
                                 "from": {
                                     "key_code": "g",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "pointing_button": "button2"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "left_option"
+                                        },
+                                        {
+                                            "key_code": "g"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse",
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4_scroll",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "pointing_button": "button2"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4_scroll",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4_scroll",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "left_option"
+                                        },
+                                        {
+                                            "key_code": "a"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse",
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4_scroll",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4_scroll",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4_scroll",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "mouse_key": {
+                                            "speed_multiplier": 2.0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "simultaneous": [
+                                        {
+                                            "key_code": "left_option"
+                                        },
+                                        {
+                                            "key_code": "d"
+                                        }
+                                    ],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse",
+                                        "to_after_key_up": [
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4",
+                                                    "value": 0
+                                                }
+                                            },
+                                            {
+                                                "set_variable": {
+                                                    "name": "mouse_keys_mode_v4_scroll",
+                                                    "value": 0
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "mouse_keys_mode_v4",
+                                            "value": 1
+                                        }
+                                    },
+                                    {
+                                        "mouse_key": {
+                                            "speed_multiplier": 2.5
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "mouse_keys_mode_v4",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1032,10 +1010,10 @@
                                     },
                                     "simultaneous": [
                                         {
-                                            "key_code": "d"
+                                            "key_code": "left_option"
                                         },
                                         {
-                                            "key_code": "g"
+                                            "key_code": "s"
                                         }
                                     ],
                                     "simultaneous_options": {
@@ -1103,6 +1081,22 @@
                             },
                             "to": {
                                 "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_command"
+                            },
+                            "to": {
+                                "key_code": "right_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "right_option"
+                            },
+                            "to": {
+                                "key_code": "right_command"
                             }
                         }
                     ]
