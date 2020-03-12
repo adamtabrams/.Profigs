@@ -16,7 +16,29 @@
                 },
                 "rules": [
                     {
-                        "description": "Caps_lock key: press for escape, hold for command.",
+                        "description": "Tab key: press for tab, hold for control",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "tab"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Caps_lock key: press for escape, hold for command",
                         "manipulators": [
                             {
                                 "from": {
@@ -43,72 +65,16 @@
                         ]
                     },
                     {
-                        "description": "z key: press for z, hold for control.",
+                        "description": "Left option key: command+shift",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "optional": [
-                                            "left_shift",
-                                            "left_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "z"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "slash key: press for slash, hold for control.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "slash"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_control",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "slash"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tab key: press for tab, hold for command+shift",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab"
+                                    "key_code": "left_option"
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_command",
-                                        "lazy": true,
                                         "modifiers": "left_shift"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "tab"
                                     }
                                 ],
                                 "type": "basic"
