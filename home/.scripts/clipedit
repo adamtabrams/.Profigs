@@ -1,0 +1,9 @@
+#!/bin/sh
+
+EDITOR=${EDITOR:-vim}
+temp_file=$(mktemp)
+
+pbpaste > "$temp_file"
+"$EDITOR" "$temp_file"
+pbcopy < "$temp_file"
+rm "$temp_file"

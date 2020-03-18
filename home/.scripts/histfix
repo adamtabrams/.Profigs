@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ ! "$HISTFILE" ]; then
+    echo "HISTFILE is not set"
+    exit 1
+fi
+
+hist_dir=$(dirname "$HISTFILE")
+hist_bak="${hist_dir}/histfile.bak"
+
+cat "$HISTFILE" >> "$hist_bak"
+cp "$hist_bak" "$HISTFILE"
+
+echo "histfile:     $(wc -l "$HISTFILE")"
+echo "histfile.bak: $(wc -l "$hist_bak")"
+echo "DONE"

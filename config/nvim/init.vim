@@ -146,6 +146,13 @@
     inoremap <silent> <Tab>         <c-r>=CleverTab()<CR>
     inoremap          <s-Tab>       <c-p>
 
+"--- Autocomplete -----------------------------------
+    inoremap <c-f> <c-x><c-f>
+    inoremap <c-l> <c-x><c-l>
+    inoremap <c-o> <c-x><c-o>
+    inoremap <c-b> <c-x><c-p>
+    "^ <c-x><c-p> block complete (hit repeatedly: fuzzy line complete)
+
 "--- Splits/Buffers ---------------------------------
     nnoremap <c-h> <c-w>h
     nnoremap <c-j> <c-w>j
@@ -210,13 +217,6 @@
     inoremap <Leader><Leader> <Leader>
 
 "------------------- INSERT MODE --------------------
-"--- Autocomplete -----------------------------------
-    inoremap <Leader>f <c-x><c-f>
-    inoremap <Leader>l <c-x><c-l>
-    inoremap <Leader>o <c-x><c-o>
-    inoremap <Leader>b <c-x><c-p>
-    "^ <c-x><c-p> block complete (hit repeatedly: fuzzy line complete)
-
 "--- Unicode ----------------------------------------
     " inoremap <Leader>d <c-v>u2714
     inoremap <Leader>d <c-v>u2705
