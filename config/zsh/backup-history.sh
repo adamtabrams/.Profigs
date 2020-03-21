@@ -1,22 +1,31 @@
 #!/bin/sh
 
-hist_dir="$(dirname "$HISTFILE")"
+[ ! "$HISTFILE" ] && echo "No HISTFILE env var defined" && exit 1
 
-if [ -f "$hist_dir/histfile.bak.info" ]; then
-    [ "$(date +%Y%m%d)" = "$(cat "$hist_dir"/histfile.bak.info)" ] && exit 0
+backup="$(dirname "$HISTFILE")/$(basename "$HISTFILE").bak"
+last_changed=$(stat -t "%Y%m%d" -qf "%Sc" "$backup")
+today=$(date +%Y%m%d)
+touch "$backup"
+histfile_ln=$(wc -l < "$HISTFILE")
+backup_ln=$(wc -l < "$backup")
 
-    histfile_ln="$(wc -l < "$HISTFILE")"
-    bakfile_ln="$(wc -l < "$hist_dir"/histfile.bak)"
+warn() {
+    echo "History file lines: $histfile_ln"
+    echo "Backup file lines: $backup_ln"
+    echo "Aborting backup to avoid losing any history"
+}
 
-    if [ "$histfile_ln" -lt "$bakfile_ln" ]; then
-        echo "History file lines: $histfile_ln"
-        echo "Backup file lines: $bakfile_ln"
-        echo "Aborting backup to avoid losing any history"
-        exit 0
-    fi
-fi
+fix() {
+    echo "Would you like restore history from backup? (y/n)"
+    read -r answer
+    [ "$answer" = "y" ] &&
+        cat "$HISTFILE" >> "$backup" &&
+        cp "$backup" "$HISTFILE"
+}
 
-cp "$HISTFILE" "$hist_dir/histfile.bak"
-date +%Y%m%d > "$hist_dir/histfile.bak.info"
+[ "$last_changed" != "$today" ] &&
+    [ "$histfile_ln" -gt "$backup_ln" ] &&
+    cp "$HISTFILE" "$backup" && exit 0
 
-
+[ "$histfile_ln" -lt "$backup_ln" ] &&
+    warn && fix
