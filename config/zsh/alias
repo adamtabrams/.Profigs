@@ -29,12 +29,9 @@
     ip() { ifconfig | grep "inet 10" | awk '{print $2}' }
     cr() {
         cd $(cd ~/repos && fd -d1 | \
-            fzf --reverse --preview="bat {}/README.md" | \
+            fzf --reverse \
+            --preview="bat {}/README.md 2>/dev/null" | \
             xargs echo "$HOME/repos/" | tr -d ' ')
-    }
-    rmswap() {
-        rm $(cd "$HOME/.local/share/nvim/swap" && \
-            find . -type f | fzf -m --preview='')
     }
 
 #### Configs ##########################################

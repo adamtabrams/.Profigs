@@ -5,7 +5,7 @@
     export OPENER="$EDITOR"
     export VISUAL="$EDITOR"
     export PAGER="bat"
-    export MANPAGER="$PAGER --language=man --theme=1337 --terminal-width=+250"
+    export MANPAGER="col -bx | $PAGER --language=man"
     export GIT_PAGER="$PAGER"
 
 #### SCRIPT VARS ####################################
@@ -39,6 +39,7 @@
     fzf_base_command="fd --hidden --exclude .git --follow"
     export FZF_DEFAULT_COMMAND="$fzf_base_command --type file"
     export FZF_DEFAULT_OPTS="--preview='bat {} 2> /dev/null'"
+    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --preview-window=':hidden'"
     export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-u:page-up"
     export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-d:page-down"
     export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind=ctrl-f:jump"
