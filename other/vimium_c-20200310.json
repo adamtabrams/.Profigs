@@ -9,10 +9,6 @@
 	},
 	"exclusionRules": [
 		{
-			"pattern": ":https://owa.uhc.com/",
-			"passKeys": "# / ? a c e j k o s x "
-		},
-		{
 			"pattern": ":https://leetcode.com/",
 			"passKeys": ""
 		}
@@ -27,11 +23,7 @@
 	],
 	"linkHintCharacters": "asdfjklrtyugh",
 	"searchEngines": [
-		"h: https://hub.uhg.com/Pages/Results.aspx?k=%s Hub",
-		"hc: https://hubconnect.uhg.com/search.jspa?q=%s HubConnect",
 		"g: https://github.com/search?q=%s Github",
-		"gi: https://github.optum.com/search?q=%s Optum ",
-		"ge: https://github.optum.com/search?q=org%3ADataExternalization+%s HCP",
 		"",
 		"",
 		"# gm: https://www.google.com/maps?q=%s Google maps",
