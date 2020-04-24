@@ -1,7 +1,4 @@
 #!/bin/sh
 
-files=$(fzf -m | tr '\n' ' ' | sed 's/ $//')
-
-if [ "$files" ]; then
-    "$EDITOR" $files
-fi
+files=$(fzf -m | tr '\n' ' ')
+[ "$files" ] && "$EDITOR" $files

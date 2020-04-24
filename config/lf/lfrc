@@ -1,24 +1,27 @@
 ### General ###
-set shell sh
+# set shell sh
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
 set color256
+set icons
 set incsearch
 set findlen 0
-set reverse
-set hidden
-set icons
-# set sortby time
 set previewer ~/.config/lf/preview.sh
+set sortby 'ctime'
+set reverse
 
 ### Mappings ###
-map <a-c> $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
-map H push <f-1>
+map <c-g> $lf -remote "send $id cd '$(~/.config/lf/cd-fzf.sh)'"
+map <c-f> $(~/.config/lf/vim-fzf.sh)
 map <enter> shell
 map <esc> quit
+map H push <f-1>
 map x $$f
 map X !$f
-map V $(~/.config/lf/vim-fzf.sh)
 map L $lazygit
 map D :delete
+
+# custom ignore
+set ignorer ~/.config/lf/ignore.sh
+set nodirfirst
