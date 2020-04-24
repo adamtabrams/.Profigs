@@ -13,6 +13,7 @@
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-fugitive'
     Plug 'tomtom/tcomment_vim'
     Plug '/usr/local/opt/fzf'
     Plug 'junegunn/fzf.vim'
@@ -20,10 +21,12 @@
     Plug 'yggdroot/indentline'
     Plug 'fatih/vim-go'
     Plug 'vimwiki/vimwiki'
+    Plug 'rust-lang/rust.vim'
+    Plug 'racer-rust/vim-racer'
     call plug#end()
 
 "##################### PLUGINS ######################
-    let g:fzf_layout = { 'down': '~60%' }
+    let g:fzf_layout = { 'down': '~70%' }
     command! -bang -nargs=? -complete=dir Files
         \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
     command! -bang -nargs=? GFiles
@@ -31,14 +34,28 @@
 
     let g:ale_fixers = {
         \   'go': ['goimports'],
+        \   'rust': ['rustfmt'],
         \   'python': ['black'],
         \   'vue': ['prettier'],
         \   'javascript': ['prettier']
         \}
 
+    let g:ale_rust_rls_config = {
+        \   'rust': {
+        \     'clippy_preference': 'on'
+        \   }
+        \ }
+
+    let g:rustlint1 = ['rls', 'cargo']
+    let g:rustlint2 = ['rls', 'cargo', 'rustc']
+
     let g:ale_linters = {
-        \   'go': ['gofmt', 'golint', 'govet', 'gobuild', 'golangci-lint -D lll']
+        \   'go': ['gopls', 'gobuild', 'golangci-lint'],
+        \   'rust': g:rustlint1
         \}
+
+    let g:ale_go_golangci_lint_options = "--enable-all -D lll"
+    let g:ale_rust_ignore_error_codes = ['E0601']
 
     let g:vimwiki_url_maxsave = 0
     let g:vimwiki_listsyms = " ○◐●✔"
@@ -46,51 +63,39 @@
     let g:vimwiki_list_ignore_newline = 0
     let g:vimwiki_text_ignore_newline = 0
     let g:vimwiki_hl_cb_checked = 2
-    " let g:vimwiki_hl_headers = 1
     let g:vimwiki_conceallevel = 0
 
-    let g:go_highlight_fields = 1
-    let g:go_highlight_types = 1
     let g:go_highlight_extra_types = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_function_calls = 1
-    let g:go_highlight_functions_parameters = 1
+    let g:go_highlight_space_tab_error = 1
     let g:go_highlight_operators = 1
-    let g:go_highlight_build_constraints = 1
-    let g:go_highlight_generate_tags = 1
+    let g:go_highlight_functions_parameters = 1
+    let g:go_highlight_function_calls = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_string_spellcheck = 1
     let g:go_highlight_format_strings = 1
     let g:go_highlight_variable_declarations = 1
     let g:go_highlight_variable_assignments = 1
-
-    let g:go_highlight_diagnostic_errors = 0
+    let g:go_highlight_diagnostic_errors = 1
     let g:go_highlight_diagnostic_warnings = 0
 
     let g:go_fmt_autosave = 0
-    let g:go_fmt_command = "goimports"
-    " let g:go_fmt_fail_silently = 1
-    " let g:go_auto_type_info = 1
-    " let g:go_list_type = "quickfix"
-    " let g:go_list_autoclose = 0
-    let g:go_gopls_complete_unimported = 1
-    " let g:go_gopls_staticcheck = 0
-
-    " let g:go_term_enabled = 1
-    " let g:go_term_close_on_exit = 0
-    " let g:go_term_mode = "split"
-    " let g:go_term_height = 5
+    let g:go_imports_autosave = 0
+    let g:go_imports_mode = "gopls"
+    let g:go_gopls_complete_unimported = v:true
+    let g:go_gopls_deep_completion = v:true
+    let g:go_gopls_matcher = "fuzzy"
 
     let g:solarized_termtrans = 1
     let g:solarized_visibility = "high"
     let g:solarized_contrast = "high"
-    " let g:solarized_termcolors = 256
-    " let g:solarized_diffmode = "normal"
-
-    let g:indentLine_char = '│'
-    " let g:indentLine_enabled = 0
-    " let g:indentLine_setConceal = 0
 
     let g:airline_powerline_fonts = 1
-    let g:airline_solarized_bg="dark"
+    let g:airline_solarized_bg = "dark"
+
+    let g:indentLine_char = '│'
+
+    let g:racer_insert_paren = 1
 
 "##################### SETTINGS #####################
     set fileformats=unix,mac,dos
@@ -115,149 +120,207 @@
     colorscheme solarized
     syntax enable
 
+"##################### AUTOCMDS #####################
     autocmd TermOpen * setlocal nonu nornu
     autocmd TermOpen * IndentLinesDisable
+    autocmd TermOpen * startinsert
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
-    autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+    autocmd FileType yaml tabstop=2 shiftwidth=2
     autocmd FileType json IndentLinesDisable
+
+"################### FUNCTIONS ######################
+    function! ResizeMode()
+        let key = nr2char(getchar())
+        while key != "q" && key != "\<ESC>"
+            if key == "h"
+                vertical resize -5
+            elseif key == "l"
+                vertical resize +5
+            elseif key == "j"
+                resize +5
+            elseif key == "k"
+                resize -5
+            elseif key == "="
+                wincmd =
+            endif
+            redraw
+            let key = nr2char(getchar())
+        endwhile
+        return ""
+    endfunction
+
+    function! GetMotion()
+        let a = getchar()
+        let b = ""
+        let c = ""
+        if a >= char2nr("0") && a <= char2nr("9")
+            let b = GetMotion()
+        elseif a == char2nr("i")
+            let c = getchar()
+        elseif a == char2nr("t") || a == char2nr("f")
+            let c = getchar()
+        elseif a == char2nr("T") || a == char2nr("F")
+            let c = getchar()
+        endif
+        return nr2char(a) . b . nr2char(c)
+    endfunction
+
+    function! ChangeReplace(...)
+        let motion = get(a:, 1)
+        if a:0 == 0
+            let motion = GetMotion()
+        endif
+        exe 'norm "_c'.motion.trim(getreg("+"))
+        " let save_cursor = getcurpos()
+        " norm ==
+        " call setpos(".", save_cursor)
+        call repeat#set(":call ChangeReplace('".motion."')\<CR>",-1)
+        return ""
+    endfunction
+
+    function! CleverTab()
+        if pumvisible()
+            return "\<c-n>"
+        elseif strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
+            return "\<Tab>"
+        endif
+        return "\<c-n>"
+    endfunction
+
+    function! OmniTab()
+        if pumvisible()
+            return "\<c-p>"
+        endif
+        return "\<c-x>\<c-o>"
+    endfunction
+
+    function! CompletionStatus()
+        call complete(col('.'), ['✔', '●', '◐', '○', '✖', ' '])
+        return ""
+    endfunc
 
 "################### REMAPPINGS #####################
 "--- Hotfix -----------------------------------------
-    cnoremap 3636 <C-U>undo<CR>
+    cnoremap 3636  <c-u>undo<CR>
 
 "--- Should-Be-Defaults -----------------------------
-    cnoremap WW execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-    cnoremap HH vert help
-    tnoremap <c-\> <c-\><c-n>
-    nnoremap c "_c
-    nnoremap <s-y> y$
+    cnoremap WW     execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+    tnoremap <c-\>  <c-\><c-n>
+    nnoremap c      "_c
+    nnoremap <s-y>  y$
 
-"--- Tabbing ----------------------------------------
-    function! CleverTab()
-        if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$'
-            return "\<Tab>"
-        else
-            return "\<c-n>"
-        endif
-    endfunction
+"--- Functions ---------------------------------------
+    nnoremap <silent> <c-w>r      <c-w>t:call ResizeMode()<CR>
+    nnoremap <silent> <c-w><s-r>  :call ResizeMode()<CR>
 
-    inoremap <silent> <Tab>         <c-r>=CleverTab()<CR>
-    inoremap          <s-Tab>       <c-p>
+    nnoremap <silent> g<s-c>      :call ChangeReplace()<CR>
+
+    inoremap <silent> <c-c>       <c-r>=CompletionStatus()<CR>
+
+    inoremap <silent> <Tab>       <c-r>=CleverTab()<CR>
+    inoremap <silent> <s-Tab>     <c-r>=OmniTab()<CR>
 
 "--- Autocomplete -----------------------------------
-    inoremap <c-f> <c-x><c-f>
-    inoremap <c-l> <c-x><c-l>
-    inoremap <c-o> <c-x><c-o>
-    inoremap <c-b> <c-x><c-p>
-    "^ <c-x><c-p> block complete (hit repeatedly: fuzzy line complete)
+    inoremap <c-f>  <c-x><c-f>
+    inoremap <c-l>  <c-x><c-l>
+    inoremap <c-b>  <c-x><c-p>
+    "^ <c-x><c-p> block complete (continue completing where left off)
 
 "--- Splits/Buffers ---------------------------------
-    nnoremap <c-h> <c-w>h
-    nnoremap <c-j> <c-w>j
-    nnoremap <c-k> <c-w>k
-    nnoremap <c-l> <c-w>l
-    tnoremap <c-h> <c-\><c-n><c-w>h
-    tnoremap <c-l> <c-\><c-n><c-w>l
-    nnoremap <c-n> :bn<CR>
-    nnoremap <c-p> :bp<CR>
-    tnoremap <c-n> <c-\><c-n>:bn<CR>
-    tnoremap <c-p> <c-\><c-n>:bp<CR>
+    nmap gw  <c-w>
+    tmap gw  <c-\><c-w>
 
-"### G-Motions ######################################
-"--- Surrond ----------------------------------------
-    nmap gs     ys
-    nmap g<s-s> yS
+    nnoremap <silent> gn       :bn<CR>
+    nnoremap <silent> gp       :bp<CR>
+    tnoremap <silent> gn       :bn<CR>
+    tnoremap <silent> gp       :bp<CR>
+    nnoremap <silent> gbd      :bd<CR>
+    nnoremap <silent> gb<s-d>  :bd \| sbn<CR>
 
-"--- ALE Linting ------------------------------------
-    nnoremap <silent> gaa :ALEFirst<CR>
-    nnoremap <silent> gag :ALEFirst<CR>
-    nnoremap <silent> gan :ALENextWrap<CR>
-    nnoremap <silent> gap :ALEPreviousWrap<CR>
-    nnoremap <silent> gao :lopen<CR>
-    nnoremap <silent> gac :lclose<CR>
-    nnoremap <silent> gaf :ALEFix<CR>
-    " set omnifunc=ale#completion#OmniFunc
+"--- Coding -----------------------------------------
+    nnoremap gon      :cnext<CR>
+    nnoremap gop      :cprevious<CR>
+    nnoremap goq      :cclose<CR>:lclose<CR>
+    nnoremap gos      :%s//g<Left><Left>
+    nnoremap go<s-s>  :%s/<c-r><c-w>//g<Left><Left>
+    nnoremap gth      :set hlsearch!<CR>
+    nnoremap gtl      :IndentLinesToggle<CR>
 
-"--- vim-go -----------------------------------------
-    nnoremap goi     :GoInfo<CR>
-    nnoremap got     :GoTest<CR>
-    nnoremap go<s-t> :GoTestFunc!<CR>
-    nnoremap goa     :GoAlternate<CR>
-    nnoremap go<s-a> :e <c-r>%<LEFT><LEFT><LEFT>_test<CR>
-    nnoremap goc     :GoCoverageToggle<CR>
-    nnoremap go<s-c> :GoCoverageBrowser<CR>
-    nnoremap gor     :GoRun %<CR>
-    nnoremap go<s-r> :GoRun %<Space>
-    " nnoremap go<s-r> :GoRun<CR>
-    nnoremap g<s-d>  :sp<CR>:GoDef<CR>
-    nnoremap god     :GoDoc
-    nnoremap go<s-d> :GoDocBrowser<Space>
-    nnoremap gob     :GoBuild<CR>
-    nnoremap go<s-b> :GoTestCompile<CR>
-    nnoremap gon     :cnext<CR>
-    nnoremap gop     :cprevious<CR>
-    nnoremap goq     :cclose<CR>:lclose<CR>
-    nnoremap go<s-q> <c-w>j:bd<CR>
-    nnoremap goo     <c-w>o
-    nnoremap goy     Bl"wy3f/3f/:let @w.="tree/master/"<CR>l"Wyt":let @+=@w<CR>
+    nnoremap g<s-a>   i<c-r>=repeat(" ",col("'m")-col("."))<CR><ESC>
+    vnoremap g<s-a>   s<c-r>=repeat(" ",col("'m")-col("."))<CR><ESC>
 
-"--- vim-wiki -----------------------------------------
-    function! PrepSum()
-        execute("norm V:s/ /+/g\<CR>")
-    endfunction
-    function! CalcSum()
-        execute("norm \"sddo=\<c-r>=\<c-r>s\<CR>\<ESC>\"sdiW")
-    endfunction
+"--- SURROUND ----------------------------------------
+    nmap gs      ys
+    nmap g<s-s>  yS
 
-"### Leader Keys ####################################
+    nmap dsf     dt(ds(
+    nmap dsm     dt[ds[
+    nmap dsl     dt{ds{
+    nmap dsv     dt<ds<
+
+"--- ALE LINTING ------------------------------------
+    nnoremap <silent> gaa  :ALEFirst<CR>
+    nnoremap <silent> gan  :ALENextWrap<CR>
+    nnoremap <silent> gap  :ALEPreviousWrap<CR>
+    nnoremap <silent> gaf  :ALEFix<CR>
+    nnoremap <silent> gad  :ALEDetail<CR>
+
+"--- VIM-GO -----------------------------------------
+    autocmd FileType go nnoremap goi      :GoInfo<CR>
+    autocmd FileType go nnoremap got      :GoTest<CR>
+    autocmd FileType go nnoremap go<s-t>  :GoTestFunc!<CR>
+    autocmd FileType go nnoremap goa      :GoAlternate<CR>
+    autocmd FileType go nnoremap go<s-a>  :e <c-r>%<LEFT><LEFT><LEFT>_test<CR>
+    autocmd FileType go nnoremap goc      :GoCoverageToggle<CR>
+    autocmd FileType go nnoremap go<s-c>  :GoCoverageBrowser<CR>
+    autocmd FileType go nnoremap gor      :GoRun %<CR>
+    autocmd FileType go nnoremap go<s-r>  :GoRun %<Space>
+    autocmd FileType go nnoremap gd       :GoDef<CR>
+    autocmd FileType go nnoremap g<s-d>   :sp<CR>:GoDef<CR>
+    autocmd FileType go nnoremap gob      :GoBuild<CR>
+    autocmd FileType go nnoremap go<s-b>  :GoTestCompile<CR>
+    autocmd FileType go nnoremap go<s-b>  :GoTestCompile<CR>
+    autocmd FileType go nnoremap gtl      :set list!<CR>
+    autocmd FileType go IndentLinesDisable
+    autocmd FileType go highlight link Whitespace Conceal
+    autocmd FileType go set list listchars=tab:\|\ "comment to keep prev space
+
+"--- VIM-RUST ---------------------------------------
+    augroup Racer
+        " autocmd!
+        autocmd FileType rust nmap gd       <Plug>(rust-def)
+        autocmd FileType rust nmap g<s-d>   <Plug>(rust-def-split)
+        autocmd FileType rust nmap <s-k>    <Plug>(rust-doc)
+        autocmd FileType rust nmap gor      :Crun<CR>
+        autocmd FileType rust nmap go<s-r>  :Crun<Space>
+        autocmd FileType rust nmap got      :Ctest<CR>
+        autocmd FileType rust nmap go<s-t>  :RustTest<CR>
+        autocmd FileType rust nmap gob      :Cbuild<CR>
+        autocmd FileType rust nmap gtr      :let g:ale_linters['rust'] = g:rustlint1<CR>
+        autocmd FileType rust nmap gt<s-r>  :let g:ale_linters['rust'] = g:rustlint2<CR>
+    augroup END
+
+"--- Leader Key -------------------------------------
     let mapleader = ","
-    nnoremap <Leader><Leader> <Leader>
-    inoremap <Leader><Leader> <Leader>
 
-"------------------- INSERT MODE --------------------
-"--- Unicode ----------------------------------------
-    " inoremap <Leader>d <c-v>u2714
-    inoremap <Leader>d <c-v>u2705
-
-"------------------- NORMAL MODE --------------------
-"--- Substitute -------------------------------------
-    nnoremap <Leader>s     :%s::g<Left><Left>
-    nnoremap <Leader><s-s> :%s:<c-r><c-w>::g<Left><Left>
-
-"--- Toggle -----------------------------------------
-    nnoremap <silent> <Leader>h :set hlsearch!<CR>
-    nnoremap <silent> <Leader>l :IndentLinesToggle<CR>
-
-"--- FileType ---------------------------------------
-    nnoremap <silent> <Leader>f :set filetype=<CR>
-
-"--- Splits -----------------------------------------
-    nnoremap <silent> <Leader>t :term<CR>a
-    nnoremap <silent> <Leader>v :vsp<CR><c-w>l:bn<CR>
-
-"--- Resize -----------------------------------------
-    nnoremap <silent> <Leader>< :exe "vertical resize " . (winwidth(0) * 5/4)<CR>
-    nnoremap <silent> <Leader>> :exe "vertical resize " . (winwidth(0) * 3/4)<CR>
-    nnoremap <silent> <Leader>k :exe "resize " . (winheight(0) * 5/4)<CR>
-    nnoremap <silent> <Leader>j :exe "resize " . (winheight(0) * 3/4)<CR>
-
-"### FZF ############################################
+"--- FZF --------------------------------------------
     let maplocalleader = "\<Space>"
-    nnoremap <silent> <LocalLeader>b             :Buffers<CR>
-    nnoremap <silent> <LocalLeader><LocalLeader> :BLines<CR>
-    nnoremap <silent> <LocalLeader>l             :Lines<CR>
-    nnoremap <silent> <LocalLeader>r             :Rg<CR>
-    nnoremap <silent> <LocalLeader>f             :Files<CR>
-    nnoremap          <LocalLeader>~             :Files ~
-    nnoremap          <LocalLeader>.             :Files ../
-    nnoremap <silent> <LocalLeader>g             :GFiles<CR>
-    nnoremap <silent> <LocalLeader>s             :GFiles?<CR>
-    nnoremap <silent> <LocalLeader>'             :Marks<CR>
-    nnoremap <silent> <LocalLeader>-             :History<CR>
-    nnoremap <silent> <LocalLeader>:             :History:<CR>
-    nnoremap <silent> <LocalLeader>c             :Commands<CR>
-    nnoremap <silent> <LocalLeader>t             :Filetypes<CR>
-    nnoremap <silent> <LocalLeader>m             :Maps<CR>
-    nnoremap <silent> <LocalLeader>h             :Helptags<CR>
+    nnoremap <LocalLeader><LocalLeader>  :BLines<CR>
+    nnoremap <LocalLeader>l              :Lines<CR>
+    nnoremap <LocalLeader>b              :Buffers<CR>
+    nnoremap <LocalLeader>r              :Rg<CR>
+    nnoremap <LocalLeader>f              :Files<CR>
+    nnoremap <LocalLeader>~              :Files ~
+    nnoremap <LocalLeader>.              :Files ../
+    nnoremap <LocalLeader>g              :GFiles<CR>
+    nnoremap <LocalLeader>s              :GFiles?<CR>
+    nnoremap <LocalLeader>'              :Marks<CR>
+    nnoremap <LocalLeader>-              :History<CR>
+    nnoremap <LocalLeader>:              :History:<CR>
+    nnoremap <LocalLeader>c              :Commands<CR>
+    nnoremap <LocalLeader>m              :Maps<CR>
+    nnoremap <LocalLeader>h              :Helptags<CR>
+    nnoremap <LocalLeader>t              :Filetypes<CR>
+    nnoremap <LocalLeader><s-t>          :set filetype=<CR>
