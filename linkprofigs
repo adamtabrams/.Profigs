@@ -1,45 +1,57 @@
-#!/bin/bash
+#!/bin/sh
 
-OLD=$HOME/.cache/profigs/$(date +%m-%d-%Y_Time%H-%M-%S)
-mkdir -p "$OLD"
+temp_dir=$(mktemp -d)
+orig_home="$HOME"
+orig_conf="$HOME/.config"
+prof_home="$HOME/.Profigs/home"
+prof_conf="$HOME/.Profigs/config"
+home_symlinks=$(find "$orig_home" -maxdepth 1 -type l -ls)
+conf_symlinks=$(find "$orig_conf" -maxdepth 1 -type l -ls)
 
-CONF=$HOME/.config
-P_HOME=$HOME/.Profigs/home
-P_CONF=$HOME/.Profigs/config
-
-lsim() {
-    find "$1" -maxdepth 1 -mindepth 1 -exec basename {} \;
+lss() {
+    dir_to_search="$1"
+    find "$dir_to_search" -maxdepth 1 -mindepth 1 -exec basename {} \;
 }
 
-home_links_to() {
-    find "$HOME" -maxdepth 1 -type l -ls | grep -q "$1 \-> $2/$1"
+links_to() {
+    list_of_links="$1"
+    filename="$2"
+    target_dir="$3"
+    echo "$list_of_links" | grep -q "$filename \-> $target_dir/$filename"
 }
 
 # for every file in Profigs/home
-for FILE in $(lsim "$P_HOME"); do
-    # if the file exists
-    if [ -e "$HOME/$FILE" ] || [ -L "$HOME/$FILE" ]; then
-        # if the file isn't a link to Profigs/home
-        if ! home_links_to "$FILE" "$P_HOME"; then
-            mv "$HOME/$FILE" "$OLD"
-            ln -s "$P_HOME/$FILE" "$HOME"
-        fi
-    else
-        ln -s "$P_HOME/$FILE" "$HOME"
-    fi
+for file in $(lss "$prof_home"); do
+
+    # if the file doesn't exists make a link
+    [ ! -e "$orig_home/$file" ] && [ ! -L "$orig_home/$file" ] &&
+        ln -s "$prof_home/$file" "$orig_home" &&
+        continue
+
+    # if the file is a link to Profigs/home skip
+    links_to "$home_symlinks" "$file" "$prof_home" &&
+        continue
+
+    # remove old file and make a link
+    echo "moving ~/$file to $temp_dir"
+    mv "$orig_home/$file" "$temp_dir"
+    ln -s "$prof_home/$file" "$orig_home"
 done
 
 # for every file in Profigs/config
-for FILE in $(lsim "$P_CONF"); do
-    # if the file exists
-    if [ -e "$CONF/$FILE" ] || [ -L "$CONF/$FILE" ]; then
-        # if the file isn't a link to Profigs/config
-        if ! home_links_to "$FILE" "$P_CONF"; then
-            mv "$CONF/$FILE" "$OLD"
-            ln -s "$P_CONF/$FILE" "$CONF"
-        fi
-    else
-        ln -s "$P_CONF/$FILE" "$CONF"
-    fi
-done
+for file in $(lss "$prof_conf"); do
 
+    # if the file doesn't exists make a link
+    [ ! -e "$orig_conf/$file" ] && [ ! -L "$orig_conf/$file" ] &&
+        ln -s "$prof_conf/$file" "$orig_conf" &&
+        continue
+
+    # if the file is a link to Profigs/config skip
+    links_to "$conf_symlinks" "$file" "$prof_conf" &&
+        continue
+
+    # remove old file and make a link
+    echo "moving ~/$file to $temp_dir"
+    mv "$orig_conf/$file" "$temp_dir"
+    ln -s "$prof_conf/$file" "$orig_conf"
+done
