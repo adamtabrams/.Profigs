@@ -2,6 +2,7 @@
     alias ls='ls -Hp'
     alias la='ls -HpA'
     alias ll='ls -Hpl'
+    alias bc='bc -q'
 
 #### Shortcut #########################################
     alias vim='nvim'
@@ -11,8 +12,6 @@
     alias ldk='lazydocker'
     alias yay='pacapt'
     alias lg='lazygit'
-    alias sc='scim'
-    alias bc='bc -q'
     alias cl='clear'
     alias cls='clear && ls'
     alias cll="printf '\033\143'"
@@ -22,16 +21,46 @@
     alias l='lfcd'
     alias j='jump'
     alias c='jump'
+    alias gh='cd ~'
 
 #### Functions ########################################
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
     up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
     ip() { ifconfig | grep "inet 10" | awk '{print $2}' }
     cr() {
-        cd $(cd ~/repos && fd -d1 | \
-            fzf --reverse \
-            --preview="bat {}/README.md 2>/dev/null" | \
+        cd $(cd ~/repos && fd -d1 |
+            fzf --reverse |
             xargs echo "$HOME/repos/" | tr -d ' ')
+    }
+    br() {
+        cr && hub browse && cd -1 >/dev/null
+    }
+    lr() {
+        for repo in $(cd ~/repos && fd -d1 | fzf --reverse --multi)
+        do
+            lazygit -p "$HOME/repos/$repo"
+        done
+    }
+    wr() {
+        nvim $(cd ~/vimwiki && fd |
+            fzf --reverse |
+            xargs echo "$HOME/vimwiki/" | tr -d ' ')
+    }
+
+###################### Save lf Dir ##################
+    lfcd () {
+        tmp="$(mktemp)"
+        ~/repos/lf/lf-bufio -last-dir-path="$tmp" "$@"
+        # lf -last-dir-path="$tmp" "$@"
+        if [ -f "$tmp" ]; then
+            dir="$(cat "$tmp")"
+            rm -f "$tmp"
+            if [ -d "$dir" ]; then
+                if [ "$dir" != "$(pwd)" ]; then
+                    cd "$dir"
+                fi
+            fi
+        fi
     }
 
 #### Configs ##########################################

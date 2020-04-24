@@ -64,20 +64,6 @@
 
     echo -ne '\e[5 q' # Use beam shape cursor on startup.
     preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-###################### Save lf Dir ##################
-    lfcd () {
-        tmp="$(mktemp)"
-        lf -last-dir-path="$tmp" "$@"
-        if [ -f "$tmp" ]; then
-            dir="$(cat "$tmp")"
-            rm -f "$tmp"
-            if [ -d "$dir" ]; then
-                if [ "$dir" != "$(pwd)" ]; then
-                    cd "$dir"
-                fi
-            fi
-        fi
-    }
 ###################### Dirstack #####################
     DIRSTACKFILE="$HOME/.cache/zsh/dirs"
     if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then

@@ -1,12 +1,13 @@
 #### GENERAL ########################################
     export SHELL="zsh"
-    export LANG=en_US.UTF-8
+    export LANG="en_US.UTF-8"
     export EDITOR="nvim"
     export OPENER="$EDITOR"
     export VISUAL="$EDITOR"
     export PAGER="bat"
     export MANPAGER="col -bx | $PAGER --language=man"
     export GIT_PAGER="$PAGER"
+    export BROWSER="/Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser"
 
 #### SCRIPT VARS ####################################
     export TERMINAL="/Applications/Alacritty.app/Contents/MacOS/alacritty"
@@ -23,13 +24,17 @@
 #### PATH ###########################################
     export PATH="$HOME/.scripts:$PATH"
     export PATH="$HOME/.local/bin:$PATH"
-    export PATH="$HOME/.cargo/bin:$PATH"
     export PATH="$HOME/node_modules/.bin:$PATH"
+
+#### Rust #############################################
+    export PATH="$HOME/.cargo/bin:$PATH"
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 #### GO #############################################
     # export GOROOT=$(find /usr/local/Cellar/go -name "libexec" -maxdepth 2 | sort -r | head -1)
     export GOPATH="$HOME/go"
     export PATH="$GOPATH/bin:$PATH"
+    export GO111MODULE="on"
 
 #### BAT ############################################
     export BAT_PAGER="less -R"

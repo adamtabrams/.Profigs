@@ -30,7 +30,7 @@ mark() {
 unmark() {
     [[ $(uname -s) == Darwin ]] &&
         sed -i '' -e "/^${1}:/d" "$MARKFILE" &&
-        exit 0
+        return 0
 
     sed -i "/^${1}:/d" "$MARKFILE"
 }
