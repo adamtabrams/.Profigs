@@ -1,0 +1,49 @@
+{
+	"name": "Vimium C",
+	"@time": "4/24/2020, 1:56:13 PM",
+	"time": 1587754573201,
+	"environment": {
+		"extension": "1.81.5",
+		"platform": "mac",
+		"chrome": 80
+	},
+	"exclusionRules": [
+		{
+			"pattern": ":https://owa.*.com/",
+			"passKeys": "# / ? a c e j k o s x "
+		},
+		{
+			"pattern": ":https://leetcode.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": ":https://play.rust-lang.org/",
+			"passKeys": ""
+		}
+	],
+	"keyMappings": [
+		"map R reload hard",
+		"map ' Marks.activate",
+		"map <c-g> Marks.activate",
+		"map <c-o> visitPreviousTab",
+		"map <c-f> LinkHints.activateModeWithQueue",
+		""
+	],
+	"linkHintCharacters": "asdfjklrtyugh",
+	"searchEngines": [
+		"g: https://github.com/search?q=%s Github",
+	],
+	"showAdvancedCommands": true,
+	"showAdvancedOptions": true,
+	"userDefinedCss": [
+		".D > .LH {",
+		"  background: white;",
+		"  border-color: black;",
+		"}",
+		".D > .LH > .MC {",
+		"  color: white;",
+		"}",
+		""
+	],
+	"vimSync": false
+}
