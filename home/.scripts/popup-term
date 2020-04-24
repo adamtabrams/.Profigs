@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ ! "${TERMINAL}" ]; then
-    echo "You must set the TERMINAL env var" && exit 1
-fi
+[ ! "${TERMINAL}" ] &&
+    echo "You must set the TERMINAL env var" &&
+    exit 1
 
 title="float"
 columns="140"

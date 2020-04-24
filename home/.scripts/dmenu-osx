@@ -1,12 +1,12 @@
 #!/bin/sh
 
-if [ ! "${DMENU_OSX_CACHE_DIR}" ]; then
-    echo "You must set the DMENU_OSX_CACHE_DIR env var" && exit 1
-fi
+[ ! "${DMENU_OSX_CACHE_DIR}" ] &&
+    echo "You must set the DMENU_OSX_CACHE_DIR env var" &&
+    exit 1
 
-if [ ! -d "${DMENU_OSX_CACHE_DIR}" ]; then
+
+[ ! -d "${DMENU_OSX_CACHE_DIR}" ] &&
     mkdir "${DMENU_OSX_CACHE_DIR}"
-fi
 
 infile="${DMENU_OSX_CACHE_DIR}/input"
 outfile="${DMENU_OSX_CACHE_DIR}/output"

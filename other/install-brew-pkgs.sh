@@ -5,34 +5,31 @@ progs_list=" \
 neovim
 zsh
 zsh-syntax-highlighting
+pacapt
 lazygit
 git-delta
-lazydocker
-pacapt
+hub
+tig
 bat
 fzf
 ripgrep
 fd
 lf
-gnu-sed
 jq
+yq
+httpie
+wrk
+htop
+coreutils
+gnu-sed
+sc-im
+tree
+watch
+lazydocker
 docker-completion
 kubernetes-cli
 kubernetes-helm
-coreutils
-sc-im
-htop
-tree
-watch
-httpie
-hub
-tig
-wrk
 golangci/tap/golangci-lint
 shellcheck"
-# grip
-# black
-# flake8
-# go
 
 echo "$progs_list" | xargs brew install

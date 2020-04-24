@@ -5,3 +5,5 @@ config/zsh/.zcompdump
 config/nvim/.netrwhist
 config/jesseduffield/lazygit/*
 config/karabiner/automatic_backups/*
+
+config/jesseduffield/lazydocker/development.log
