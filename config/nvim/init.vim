@@ -96,6 +96,7 @@
     let g:indentLine_char = '│'
 
     let g:racer_insert_paren = 1
+    let g:racer_experimental_completer = 1
 
 "##################### SETTINGS #####################
     set fileformats=unix,mac,dos
@@ -127,7 +128,7 @@
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
-    autocmd FileType yaml tabstop=2 shiftwidth=2
+    autocmd FileType yaml set tabstop=2 shiftwidth=2
     autocmd FileType json IndentLinesDisable
 
 "################### FUNCTIONS ######################
