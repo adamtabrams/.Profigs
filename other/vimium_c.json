@@ -1,15 +1,15 @@
 {
 	"name": "Vimium C",
-	"@time": "4/24/2020, 1:56:13 PM",
-	"time": 1587754573201,
+	"@time": "5/22/2020, 5:22:08 PM",
+	"time": 1590186128242,
 	"environment": {
-		"extension": "1.81.5",
+		"extension": "1.83.2",
 		"platform": "mac",
-		"chrome": 80
+		"chrome": 81
 	},
 	"exclusionRules": [
 		{
-			"pattern": ":https://owa.*.com/",
+			"pattern": ":https://owa.###.com/",
 			"passKeys": "# / ? a c e j k o s x "
 		},
 		{
@@ -17,8 +17,16 @@
 			"passKeys": ""
 		},
 		{
+			"pattern": ":https://www.flowdock.com/",
+			"passKeys": "? "
+		},
+		{
 			"pattern": ":https://play.rust-lang.org/",
 			"passKeys": ""
+		},
+		{
+			"pattern": ":https://mail.google.com/",
+			"passKeys": "# / ? a c e j k o s x "
 		}
 	],
 	"keyMappings": [
@@ -31,7 +39,15 @@
 	],
 	"linkHintCharacters": "asdfjklrtyugh",
 	"searchEngines": [
+		"r: https://doc.rust-lang.org/std/?search=%s Rust",
 		"g: https://github.com/search?q=%s Github",
+		"o: https://github.#####.com/search?q=%s ##### Github",
+		"d: https://github.#####.com/search?q=org%3A###################+%s #######",
+		"p: https://github.#####.com/search?q=org%3A###+%s ###",
+		"eb: https://github.#####.com/search?q=org%3A#####+%s #####",
+		"ee: https://github.#####.com/search?q=org%3A####+%s ####",
+		"ea: https://github.#####.com/search?q=org%3A####+%s ####",
+		""
 	],
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true,
