@@ -54,7 +54,7 @@
         \   'rust': g:rustlint1
         \}
 
-    let g:ale_go_golangci_lint_options = "--enable-all -D lll"
+    let g:ale_go_golangci_lint_options = "--enable-all -D lll,gomnd -E EXC0002 --skip-files _test.go"
     let g:ale_rust_ignore_error_codes = ['E0601']
 
     let g:vimwiki_url_maxsave = 0
@@ -128,7 +128,7 @@
     autocmd BufWritePre * %s:\s\+$::e
     autocmd BufNewFile,BufRead * setlocal formatoptions -=o
     autocmd BufNewFile,BufRead Jenkinsfile setlocal filetype=groovy
-    autocmd FileType yaml set tabstop=2 shiftwidth=2
+    autocmd FileType yaml,json set tabstop=2 shiftwidth=2
     autocmd FileType json IndentLinesDisable
 
 "################### FUNCTIONS ######################
@@ -243,7 +243,8 @@
 "--- Coding -----------------------------------------
     nnoremap gon      :cnext<CR>
     nnoremap gop      :cprevious<CR>
-    nnoremap goq      :cclose<CR>:lclose<CR>
+    nnoremap goq      :cclose \| lclose<CR>
+    nnoremap go<s-q>  <c-w>j<c-w>q
     nnoremap gos      :%s//g<Left><Left>
     nnoremap go<s-s>  :%s/<c-r><c-w>//g<Left><Left>
     nnoremap gth      :set hlsearch!<CR>

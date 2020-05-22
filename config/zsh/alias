@@ -22,18 +22,27 @@
     alias j='jump'
     alias c='jump'
     alias gh='cd ~'
+    alias loc='tokei -s code'
 
 #### Functions ########################################
     up() { fc -e "gsed -i -e \"s|\s| $@ |\"" }
     up2() { fc -e "gsed -i -e \"s|\s| $@ |2\"" }
+
     ip() { ifconfig | grep "inet 10" | awk '{print $2}' }
+
+    glog() { git log --oneline --no-decorate "-${1:-5}" ${@:2} }
+
+    bak() { cp "$1" "${1}.bak" }
+    unbak() { mv "$1" $(sed "s/.bak$//" <<< "$1") }
+
     cr() {
-        cd $(cd ~/repos && fd -d1 |
+        goto=$(cd ~/repos && fd -d1 |
             fzf --reverse |
             xargs echo "$HOME/repos/" | tr -d ' ')
+        [ "$goto" ] && cd "$goto"
     }
     br() {
-        cr && hub browse && cd -1 >/dev/null
+        prev_dir=$(pwd) && cr && hub browse && cd "$prev_dir"
     }
     lr() {
         for repo in $(cd ~/repos && fd -d1 | fzf --reverse --multi)
