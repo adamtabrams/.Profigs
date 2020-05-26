@@ -1,3 +1,6 @@
+### Deprecated: check out [this](https://github.com/adamtabrams/fig) instead!
+
+
 ## Usage
 These configurations are intended for **MacOS**.
 
